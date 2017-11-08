@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.App">
+	<Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="backImage" TargetType="Image">
+                <Setter Property="Source" Value="uoy.png" />
+                <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0, 0, 1, 1" />
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+        </ResourceDictionary>
+
+
+    </Application.Resources>
+</Application>

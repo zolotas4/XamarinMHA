@@ -1,0 +1,19 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HelloWorld.LoginPage"
+             Title="Login">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sign Up" Clicked="RegisterButtonClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" x:Name="LoginPageLayout">
+            <Label Text="Username" />
+            <Entry x:Name="usernameEntry" Placeholder="username" />
+            <Label Text="Password" />
+            <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
+            <Button Text="Login" Clicked="LoginButtonClicked"/>
+            <Label x:Name="loginButton" />
+            <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

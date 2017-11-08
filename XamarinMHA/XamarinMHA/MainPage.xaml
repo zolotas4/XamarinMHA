@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MainPage">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="icon.png"/>
+                    <Label Text="My Bookings" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="key.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="loginImageTapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Login/Register" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="icon.png"/>
+                    <Label Text="Accounts" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="icon.png"/>
+                    <Label Text="Time Left" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
