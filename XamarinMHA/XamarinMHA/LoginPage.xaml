@@ -6,14 +6,17 @@
         <ToolbarItem Text="Sign Up" Clicked="RegisterButtonClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" x:Name="LoginPageLayout">
-            <Label Text="Username" />
-            <Entry x:Name="usernameEntry" Placeholder="username" />
-            <Label Text="Password" />
-            <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
-            <Button Text="Login" Clicked="LoginButtonClicked"/>
-            <Label x:Name="loginButton" />
-            <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
-        </StackLayout>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <StackLayout x:Name="LoginPageLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Label Text="Username" Style="{StaticResource greyLargeFonts}"/>
+                <Entry x:Name="usernameEntry" Placeholder="username" />
+                <Label Text="Password" Style="{StaticResource greyLargeFonts}"/>
+                <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
+                <Button Text="Login" Clicked="LoginButtonClicked"/>
+                <Label x:Name="loginButton" Style="{StaticResource greyLargeFonts}"/>
+                <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

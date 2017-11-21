@@ -42,14 +42,26 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserDetails.xaml.cs">
-      <DependentUpon>UserDetails.xaml</DependentUpon>
+    <Compile Include="AboutKeyfort.xaml.cs">
+      <DependentUpon>AboutKeyfort.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserProfile.xaml.cs">
-      <DependentUpon>UserProfile.xaml</DependentUpon>
+    <Compile Include="ContactUsPage.xaml.cs">
+      <DependentUpon>ContactUsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserHome.xaml.cs">
-      <DependentUpon>UserHome.xaml</DependentUpon>
+    <Compile Include="MakeAppointmentPage.xaml.cs">
+      <DependentUpon>MakeAppointmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesPage.xaml.cs">
+      <DependentUpon>ResourcesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetailsPage.xaml.cs">
+      <DependentUpon>UserDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserHomePage.xaml.cs">
+      <DependentUpon>UserHomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PeopleMessage.cs" />
     <Compile Include="Person.cs" />
@@ -95,25 +107,49 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserHome.xaml">
+    <EmbeddedResource Include="UserHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserProfile.xaml">
+    <EmbeddedResource Include="UserProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserDetails.xaml">
+    <EmbeddedResource Include="UserDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutKeyfort.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ResourcesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ContactUsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MakeAppointmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -9,9 +9,14 @@
                 <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
                 <Setter Property="AbsoluteLayout.LayoutBounds" Value="0, 0, 1, 1" />
                 <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="Opacity" Value="0.3" />
+            </Style>
+            <OnPlatform x:Key="FontFamilyName" x:TypeArguments="x:String" iOS="MarkerFelt-Thin" Android="OpenSans" WinPhone="Segoe UI" />
+            <Style x:Key="greyLargeFonts" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="#1976D2"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
             </Style>
         </ResourceDictionary>
-
-
     </Application.Resources>
 </Application>

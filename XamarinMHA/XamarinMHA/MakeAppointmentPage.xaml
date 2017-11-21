@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MakeAppointmentPage"
+             Title="Make an Appointment">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <StackLayout>
+                    <Label Text="Select Date" />
+                    <DatePicker x:Name="dateEntry" Format="dd-MM-yyyy"/>
+                    <Label Text="Select Mentor" />
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="icon.png"></Image>
+                        <Picker x:Name="mentorPicker" HorizontalOptions="FillAndExpand"></Picker>
+                    </StackLayout>
+                    <Label Text="Select Slot Duration"/>
+                    <Picker x:Name="slotDurationPicker" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>30 Minutes</x:String>
+                            <x:String>1 Hour</x:String>
+                            <x:String>2 Hours</x:String>
+                        </Picker.Items>
+                    </Picker>
+                        <Button Text="Find Slot"/>
+                    <Label x:Name="completeRegistrationButton" />
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

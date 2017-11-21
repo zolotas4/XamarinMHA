@@ -31,8 +31,10 @@ namespace HelloWorld
             Person user = JsonConvert.DeserializeObject<Person>(response);
             if (String.Equals(passwordEntry.Text, user.Password))
             {
-                UserHome uh = new UserHome();
-                uh.BindingContext = user;
+                UserHomePage uh = new UserHomePage
+                {
+                    BindingContext = user
+                };
                 await Navigation.PushAsync(uh);
             } else
             {
