@@ -110,7 +110,6 @@ C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\layout\tabbar.xml
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\layout\toolbar.xml
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\values\styles.xml
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\key.png
-C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\uoy.png
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\R.cs.flag
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\uploadflags.txt
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\bin\Debug\HelloWorld.Android.dll.mdb
@@ -120,3 +119,14 @@ C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\HelloWo
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\socialmedia.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\contactus.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\userlogin.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\keyfort.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\resources.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\uoy.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\useredit.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\userprofile.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\appointment.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\timeleft.png
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\res\drawable\chat.png
