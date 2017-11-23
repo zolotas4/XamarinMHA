@@ -11,6 +11,6 @@ namespace HelloWorld
     class PeopleMessage
     {
         [JsonProperty("_embedded")]
-        public Embedded embedded { get; set; }
+        public MentorEmbeddedWrapper embedded { get; set; }
     }
 }
