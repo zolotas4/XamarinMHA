@@ -9,6 +9,8 @@
                 <Label Text="Welcome to Xamarin.Forms 23"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+                <Button Text="Select Image" Clicked="SelectImageButtonClicked"/>
+                <Image x:Name="PersonImageHolder"></Image>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

@@ -1,14 +1,12 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
+using Plugin.Media;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Diagnostics;
+using System.IO;
+
 
 namespace HelloWorld
 {
@@ -24,5 +22,25 @@ namespace HelloWorld
             //HttpClient oHttpClient = new HttpClient();
             //var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(mentor), Encoding.UTF8, sContentType));
         }
+
+        async void SelectImageButtonClicked(object sender, EventArgs e)
+        {
+            String username = "thanos";
+            await CrossMedia.Current.Initialize();
+            var file = await CrossMedia.Current.PickPhotoAsync(null);
+            PersonImageHolder.Source = file.Path;
+            HttpClient client = new HttpClient();
+            MultipartFormDataContent form = new MultipartFormDataContent();
+            form.Add(new StreamContent(file.GetStream()), "file", file.Path);
+            HttpResponseMessage response = await client.PostAsync("http://10.0.3.2:8080/photo/upload/" + username + "/", form);
+            Debug.WriteLine(response.StatusCode);
+            Debug.WriteLine(response.ReasonPhrase);
+            Debug.WriteLine(response.ToString());
+        }
+
+
+
     }
+
+    
 }
