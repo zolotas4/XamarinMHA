@@ -27,7 +27,8 @@ namespace HelloWorld
         {
             HttpClient oHttpClient = new HttpClient();
             string url = "http://10.0.3.2:8080/people/search/findByUserName?username=" + usernameEntry.Text;
-            var response = oHttpClient.GetStringAsync(url).Result;
+            Debug.WriteLine(url);
+            var response = await oHttpClient.GetStringAsync(url);
             Person user = JsonConvert.DeserializeObject<Person>(response);
             if (String.Equals(passwordEntry.Text, user.Password))
             {

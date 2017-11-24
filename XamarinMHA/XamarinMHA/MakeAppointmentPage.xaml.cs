@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -37,6 +37,22 @@ namespace HelloWorld
             Debug.WriteLine(mentorsList[1].FirstName);
             mentorPicker.ItemsSource = mentorsList;
             mentorPicker.ItemDisplayBinding = new Binding("FirstLastName");
+        }
+
+        async private void retrieveMentorPhotoAndPopulateImageHolder(String username)
+        {
+            HttpClient client = new HttpClient();
+            //MultipartFormDataContent form = new MultipartFormDataContent();
+            //form.Add(new StreamContent(file.GetStream()), "file", file.Path);
+            HttpResponseMessage response = await client.GetAsync("http://10.0.3.2:8080/photo/download/" + username + "/");
+            Byte[] result = await response.Content.ReadAsByteArrayAsync();
+            MentorPic.Source = ImageSource.FromStream(() => new MemoryStream(result));
+        }
+
+        private void mentorPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedMentorUsername = ((Mentor) mentorPicker.SelectedItem).UserName;
+            retrieveMentorPhotoAndPopulateImageHolder(selectedMentorUsername);
         }
     }
 }
