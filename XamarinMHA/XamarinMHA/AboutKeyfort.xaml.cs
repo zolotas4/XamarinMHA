@@ -6,13 +6,14 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Diagnostics;
 using System.IO;
-
+using Plugin.Media.Abstractions;
 
 namespace HelloWorld
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutKeyfort : ContentPage
     {
+        MediaFile file = null;
         //string url = "http://10.0.3.2:8080/mentors/";
         //string sContentType = "application/json";
         public AboutKeyfort()
@@ -25,10 +26,15 @@ namespace HelloWorld
 
         async void SelectImageButtonClicked(object sender, EventArgs e)
         {
-            String username = "thanos";
             await CrossMedia.Current.Initialize();
-            var file = await CrossMedia.Current.PickPhotoAsync(null);
+            file = await CrossMedia.Current.PickPhotoAsync(null);
             PersonImageHolder.Source = file.Path;
+            
+        }
+
+        async void UploadImageButtonClicked(object sender, EventArgs e)
+        {
+            String username = "thanos";
             HttpClient client = new HttpClient();
             MultipartFormDataContent form = new MultipartFormDataContent();
             form.Add(new StreamContent(file.GetStream()), "file", file.Path);
@@ -38,9 +44,22 @@ namespace HelloWorld
             Debug.WriteLine(response.ToString());
         }
 
+        async void RetrieveImageButtonClicked(object sender, EventArgs e)
+        {
+            String username = "thanos";
+            HttpClient client = new HttpClient();
+            //MultipartFormDataContent form = new MultipartFormDataContent();
+            //form.Add(new StreamContent(file.GetStream()), "file", file.Path);
+            HttpResponseMessage response = await client.GetAsync("http://10.0.3.2:8080/photo/download/" + username + "/");
+            Byte[] result = await response.Content.ReadAsByteArrayAsync();
+            Debug.WriteLine(response.StatusCode);
+            Debug.WriteLine(response.ReasonPhrase);
+            Debug.WriteLine(response.ToString());
+           
+            RetrivedImageHolder.Source = ImageSource.FromStream(() => new MemoryStream(result));
+        }
 
-
-    }
+        }
 
     
 }

@@ -11,6 +11,9 @@
                 HorizontalOptions="CenterAndExpand" />
                 <Button Text="Select Image" Clicked="SelectImageButtonClicked"/>
                 <Image x:Name="PersonImageHolder"></Image>
+                <Button Text="Upload Image" Clicked="UploadImageButtonClicked"/>
+                <Button Text="Retrieve Image" Clicked="RetrieveImageButtonClicked"/>
+                <Image x:Name="RetrivedImageHolder"></Image>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
