@@ -2,6 +2,14 @@ HelloWorld.Droid.MainActivity, HelloWorld.Android;md5fd8ed8046cea676d1ed0ce1fd72
 HelloWorld.Droid.MainActivity, HelloWorld.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5fd8ed8046cea676d1ed0ce1fd728c386.MainActivity
 HelloWorld.Droid.MainActivity;md5fd8ed8046cea676d1ed0ce1fd728c386.MainActivity
 helloworld.droid.MainActivity;md5fd8ed8046cea676d1ed0ce1fd728c386.MainActivity
+HelloWorld.Droid.MainApplication, HelloWorld.Android;md5fd8ed8046cea676d1ed0ce1fd728c386.MainApplication
+HelloWorld.Droid.MainApplication, HelloWorld.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5fd8ed8046cea676d1ed0ce1fd728c386.MainApplication
+HelloWorld.Droid.MainApplication;md5fd8ed8046cea676d1ed0ce1fd728c386.MainApplication
+helloworld.droid.MainApplication;md5fd8ed8046cea676d1ed0ce1fd728c386.MainApplication
+Plugin.Media.MediaPickerActivity, Plugin.Media;md5f1b52d9f1d5d1981437e7e130649468a.MediaPickerActivity
+Plugin.Media.MediaPickerActivity, Plugin.Media, Version=3.0.1.0, Culture=neutral, PublicKeyToken=null;md5f1b52d9f1d5d1981437e7e130649468a.MediaPickerActivity
+Plugin.Media.MediaPickerActivity;md5f1b52d9f1d5d1981437e7e130649468a.MediaPickerActivity
+plugin.media.MediaPickerActivity;md5f1b52d9f1d5d1981437e7e130649468a.MediaPickerActivity
 Android.Support.V4.Widget.SearchViewCompat/IOnCloseListenerImplementor, Xamarin.Android.Support.Compat;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
 Android.Support.V4.Widget.SearchViewCompat+IOnCloseListenerImplementor, Xamarin.Android.Support.Compat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor
 Android.Support.V4.Widget.SearchViewCompat.IOnCloseListenerImplementor;mono.android.support.v4.widget.SearchViewCompat_OnCloseListenerImplementor

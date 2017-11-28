@@ -1,6 +1,11 @@
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\HelloWorld.Android.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\FormsViewGroup.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Newtonsoft.Json.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Plugin.CurrentActivity.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Plugin.Media.Abstractions.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Plugin.Media.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Plugin.Permissions.Abstractions.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Plugin.Permissions.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Xamarin.Android.Support.Annotations.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Xamarin.Android.Support.Compat.dll
@@ -27,6 +32,7 @@ C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\mscorli
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Core.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.IO.Compression.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Net.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Net.Http.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Xml.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Xml.Linq.dll
@@ -62,6 +68,7 @@ C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Diagnostics.Tools.dll
+C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Net.Primitives.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
 C:\Git\XamarinMHA\XamarinMHA\XamarinMHA.Android\obj\Debug\android\assets\Mono.Security.dll
