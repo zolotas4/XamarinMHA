@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld.AboutKeyfort" Title="About Keyfort">
+             x:Class="HelloWorld.UploadVerificationDocumentPage">
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
             <StackLayout>
-                <Label Text="An email was sent to the provided email adress containg instructions on how to verify your subscription. Please use the following button to upload the required proof." />
-                <Button Text="Select Image" Clicked="SelectImageButtonClicked"/>
-                <Image x:Name="PersonImageHolder" IsVisible="False"></Image>
+                <Label x:Name="IntroText" Text="An email was sent to the provided email adress containg instructions on how to verify your subscription. Please use the following button to upload the required proof." />
+                <Button x:Name="SelectImageButton"  Text="Select Image" Clicked="SelectImageButtonClicked"/>
+                <Image x:Name="VerificationFormImageHolder" IsVisible="False"></Image>
                 <Button x:Name="UploadImageButton" Text="Upload Image" Clicked="UploadImageButtonClicked" IsVisible="False"/>
             </StackLayout>
         </AbsoluteLayout>

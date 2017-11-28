@@ -44,6 +44,7 @@ namespace HelloWorld
             Debug.WriteLine(response.ToString());
         }
 
+        /*
         async void RetrieveImageButtonClicked(object sender, EventArgs e)
         {
             String username = "thanos";
@@ -58,7 +59,7 @@ namespace HelloWorld
            
             RetrivedImageHolder.Source = ImageSource.FromStream(() => new MemoryStream(result));
         }
-
+        */
         }
 
     

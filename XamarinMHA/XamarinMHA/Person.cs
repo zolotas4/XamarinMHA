@@ -10,7 +10,7 @@ namespace HelloWorld
     [JsonObject("people")]
     class Person
     {
-        public Person(string FirstName, string LastName, string UserName, string Password, string Email, string Phone, string DateOfBirth)
+        public Person(string FirstName, string LastName, string UserName, string Password, string Email, string Phone, string DateOfBirth, string Approved, string Submitted)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
@@ -19,6 +19,8 @@ namespace HelloWorld
             this.Email = Email;
             this.Phone = Phone;
             this.DateOfBirth = DateOfBirth;
+            this.Approved = Approved;
+            this.Submitted = Submitted;
         }
 
         [JsonProperty("firstName")]
@@ -35,5 +37,9 @@ namespace HelloWorld
         public String DateOfBirth { get; set; }
         [JsonProperty("phone")]
         public String Phone { get; set; }
+        [JsonProperty("approved")]
+        public String Approved { get; set; }
+        [JsonProperty("submitted")]
+        public String Submitted { get; set; }
     }
 }

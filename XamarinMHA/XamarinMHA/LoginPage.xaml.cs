@@ -39,11 +39,22 @@ namespace HelloWorld
                 Person user = JsonConvert.DeserializeObject<Person>(await response.Content.ReadAsStringAsync());
                 if (String.Equals(passwordEntry.Text, user.Password))
                 {
-                    UserHomePage uh = new UserHomePage
+                    // User has register but not approved.
+                    if (user.Approved == "true")
                     {
-                        BindingContext = user
-                    };
-                    await Navigation.PushAsync(uh);
+                        UserHomePage uh = new UserHomePage
+                        {
+                            BindingContext = user
+                        };
+                        await Navigation.PushAsync(uh);
+                    } else
+                    {
+                        UploadVerificationDocumentPage page = new UploadVerificationDocumentPage
+                        {
+                            BindingContext = user
+                        };
+                        await Navigation.PushAsync(page);
+                    }
                 }
                 else
                 {

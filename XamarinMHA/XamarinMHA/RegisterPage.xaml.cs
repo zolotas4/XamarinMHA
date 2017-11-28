@@ -25,10 +25,17 @@ namespace HelloWorld
 
         async void CompleteRegistrationButtonClicked(object sender, EventArgs e)
         {
-            Person person = new Person(firstNameEntry.Text, lastNameEntry.Text, usernameEntry.Text, passwordEntry.Text, emailEntry.Text, phoneEntry.Text, dobEntry.Date.Date.ToString());
+            Person person = new Person(firstNameEntry.Text, lastNameEntry.Text, usernameEntry.Text, passwordEntry.Text, emailEntry.Text, phoneEntry.Text, dobEntry.Date.Date.ToString(), "false", "false");
             HttpClient oHttpClient = new HttpClient();
-            var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, sContentType));
-            
+            HttpResponseMessage response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, sContentType));
+            if (response.IsSuccessStatusCode)
+            {
+                UploadVerificationDocumentPage page = new UploadVerificationDocumentPage
+                {
+                    BindingContext = person
+                };
+                await Navigation.PushAsync(page);
+            }
         }
     }
 }

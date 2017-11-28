@@ -64,6 +64,9 @@
     <Compile Include="ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UploadVerificationDocumentPage.xaml.cs">
+      <DependentUpon>UploadVerificationDocumentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserDetailsPage.xaml.cs">
       <DependentUpon>UserDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MentorHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UploadVerificationDocumentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
