@@ -14,9 +14,28 @@ public class Person {
     private String dateOfBirth;
     private String phone;
 
+    public String getSubmitted() {
+        return submitted;
+    }
+
+    public void setSubmitted(String submitted) {
+        this.submitted = submitted;
+    }
+
+    public String getApproved() {
+        return approved;
+    }
+
+    public void setApproved(String approved) {
+        this.approved = approved;
+    }
+
+    private String submitted;
+    private String approved;
+
     public Person() {}
 
-    public Person(String firstName, String lastName, String userName, String password, String email, String dateOfBirth, String phone) {
+    public Person(String firstName, String lastName, String userName, String password, String email, String dateOfBirth, String phone, String submitted, String approved) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -24,6 +43,8 @@ public class Person {
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
+        this.submitted = submitted;
+        this.approved = approved;
     }
 
     public String getPhone() { return phone; }

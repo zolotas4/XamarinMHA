@@ -1,10 +1,6 @@
 package app.model;
 
-import com.mongodb.gridfs.GridFSDBFile;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-
-import java.awt.Image;
 
 public class Mentor {
 
@@ -16,23 +12,16 @@ public class Mentor {
     private String userName;
     private String password;
     private String email;
-    @DBRef
-    private Photo photo;
 
     public Mentor() {}
 
-    public Mentor(String firstName, String lastName, String userName, String password, String email, Photo photo) {
+    public Mentor(String firstName, String lastName, String userName, String password, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.email = email;
-        this.photo = photo;
     }
-
-    public Photo getPhoto() {return  photo; }
-
-    public void setPhoto(Photo photo) { this.photo = photo; }
 
     public String getPassword() { return password; }
 
