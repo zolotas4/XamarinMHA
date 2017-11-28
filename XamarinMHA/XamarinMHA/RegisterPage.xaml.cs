@@ -30,6 +30,8 @@ namespace HelloWorld
             HttpResponseMessage response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, sContentType));
             if (response.IsSuccessStatusCode)
             {
+                String sendEmailUrl = "http://10.0.3.2:8080/email/send/" + person.Email + "/" + person.FirstName + "/";
+                response = await oHttpClient.GetAsync(sendEmailUrl);
                 UploadVerificationDocumentPage page = new UploadVerificationDocumentPage
                 {
                     BindingContext = person

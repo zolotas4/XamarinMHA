@@ -17,8 +17,6 @@ namespace HelloWorld
 
     class Embedded
     {
-        //[JsonProperty("people")]
-        //public List<Person> people { get; set; }
         [JsonProperty("mentors")]
         public List<Mentor> Mentors { get; set; }
     }

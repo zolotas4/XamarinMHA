@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Link.cs" />
     <Compile Include="Mentor.cs" />
     <Compile Include="MentorEmbeddedWrapper.cs" />
     <Compile Include="MainPage.xaml.cs">

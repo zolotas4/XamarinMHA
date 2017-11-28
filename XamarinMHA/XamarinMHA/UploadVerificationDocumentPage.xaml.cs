@@ -18,6 +18,8 @@ namespace HelloWorld
     {
         MediaFile file;
         Person user;
+        string sContentType = "application/json";
+
         public UploadVerificationDocumentPage()
         {
             InitializeComponent();
@@ -51,6 +53,22 @@ namespace HelloWorld
             MultipartFormDataContent form = new MultipartFormDataContent();
             form.Add(new StreamContent(file.GetStream()), "file", file.Path);
             HttpResponseMessage response = await client.PostAsync("http://10.0.3.2:8080/photo/upload/" + username + "/", form);
+            if (response.IsSuccessStatusCode)
+            {
+                HttpClient client2 = new HttpClient();
+                var method = new HttpMethod("PATCH");
+                var request = new HttpRequestMessage(method, user._links.self.href)
+                {
+                    Content = new StringContent("{ \"submitted\": \"true\" }", Encoding.UTF8, sContentType)
+                };
+                HttpResponseMessage response2 = await client2.SendAsync(request);
+                if (response2.IsSuccessStatusCode)
+                {
+                    IntroText.Text = "We have received your verification form. We will email you when it has been approved.";
+                    UploadImageButton.IsVisible = false;
+                    SelectImageButton.IsVisible = false;
+                }
+            }
         }
     }
 }

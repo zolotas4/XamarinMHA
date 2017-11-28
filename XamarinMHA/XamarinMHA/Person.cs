@@ -41,5 +41,7 @@ namespace HelloWorld
         public String Approved { get; set; }
         [JsonProperty("submitted")]
         public String Submitted { get; set; }
+        [JsonProperty("_links")]
+        public Link _links { get; set; }
     }
 }
