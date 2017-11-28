@@ -23,6 +23,11 @@ namespace HelloWorld
             await Navigation.PushAsync(new RegisterPage ());
         }
 
+        async void MentorRegisterButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MentorRegisterPage());
+        }
+
         async void LoginButtonClicked(object sender, EventArgs e)
         {
             HttpClient oHttpClient = new HttpClient();

@@ -37,6 +37,7 @@ namespace HelloWorld
             Debug.WriteLine(mentorsList[1].FirstName);
             mentorPicker.ItemsSource = mentorsList;
             mentorPicker.ItemDisplayBinding = new Binding("FirstLastName");
+            mentorPicker.SelectedIndex = 0;
         }
 
         async private void retrieveMentorPhotoAndPopulateImageHolder(String username)

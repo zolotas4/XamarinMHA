@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MentorRegisterPage" Title="Register">
+        <ContentPage.Content>
+            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Image Style="{StaticResource backImage}"/>
+                <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                    <StackLayout>
+                        <Image Source="icon.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" HeightRequest="100">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MentorImageTapped"  />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="First Name" />
+                        <Entry x:Name="firstNameEntry" Placeholder="Enter first name" />
+                        <Label Text="Last Name" />
+                        <Entry x:Name="lastNameEntry" Placeholder="Enter last name" />
+                        <Label Text="Email" />
+                        <Entry x:Name="emailEntry" Placeholder="Enter email" Keyboard="Email"/>
+                        <Label Text="Date of Birth" />
+                        <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy"/>
+                        <Label Text="Phone" />
+                        <Entry x:Name="phoneEntry" Placeholder="Enter phone" Keyboard="Numeric"/>
+                        <Label Text="Username" />
+                        <Entry x:Name="usernameEntry" Placeholder="Enter username" />
+                        <Label Text="Password" />
+                        <Entry x:Name="passwordEntry" Placeholder="Enter password" IsPassword="true" />
+                        <Button Text="Register" Clicked="CompleteMentorRegistrationButtonClicked"/>
+                        <Label x:Name="completeRegistrationButton" />
+                    </StackLayout>
+                </ScrollView>
+            </AbsoluteLayout>
+        </ContentPage.Content>
+    </ContentPage>
