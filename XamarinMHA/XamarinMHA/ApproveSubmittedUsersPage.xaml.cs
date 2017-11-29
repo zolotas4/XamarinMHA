@@ -19,6 +19,11 @@ namespace HelloWorld
         public ApproveSubmittedUsersPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             populateListWithSubmittedButNotApprovedUsers();
         }
 
