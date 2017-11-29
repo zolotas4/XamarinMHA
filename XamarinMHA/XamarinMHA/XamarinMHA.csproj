@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentEmbeddedWrapper.cs" />
     <Compile Include="ApproveSubmittedUsersPage.xaml.cs">
       <DependentUpon>ApproveSubmittedUsersPage.xaml</DependentUpon>
     </Compile>

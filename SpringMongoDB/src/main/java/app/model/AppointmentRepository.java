@@ -8,5 +8,5 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "appointments", path = "appointments")
 public interface AppointmentRepository extends MongoRepository<Appointment, String> {
-    List<Appointment> findByUserId(@Param("userId") String userId);
+    //List<Appointment> findByUserId(@Param("userId") String userId);
 }
