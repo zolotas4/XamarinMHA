@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.UserProfileForApproval">
+        <ContentPage.Content>
+            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Image Style="{StaticResource backImage}"/>
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                    <Image x:Name="imageHolder"></Image>
+                    <Label Text="First Name" />
+                    <Entry x:Name="firstNameEntry" Text="{Binding FirstName}"/>
+                    <Label Text="Last Name" />
+                    <Entry x:Name="lastNameEntry" Text="{Binding LastName}"/>
+                    <Label Text="Email" />
+                    <Entry x:Name="emailEntry" Keyboard="Email" Text="{Binding Email}"/>
+                    <Label Text="Date of Birth" />
+                    <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy" />
+                    <Label Text="Phone" />
+                    <Entry x:Name="phoneEntry" Keyboard="Numeric" Text="{Binding Phone}"/>
+                    <Button x:Name="ApproveButton" Text="Approve" Clicked="ApproveButtonClicked"/>
+                </StackLayout>
+            </AbsoluteLayout>
+        </ContentPage.Content>
+</ContentPage>

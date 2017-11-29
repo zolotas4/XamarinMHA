@@ -38,8 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Link.cs" />
-    <Compile Include="Mentor.cs" />
+    <Compile Include="ApproveSubmittedUsersPage.xaml.cs">
+      <DependentUpon>ApproveSubmittedUsersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MentorEmbeddedWrapper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -62,6 +63,7 @@
     <Compile Include="MentorRegistrationSuccesfulPage.xaml.cs">
       <DependentUpon>MentorRegistrationSuccesfulPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PeopleEmbeddedWrapper.cs" />
     <Compile Include="ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
     </Compile>
@@ -71,14 +73,15 @@
     <Compile Include="UserDetailsPage.xaml.cs">
       <DependentUpon>UserDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserProfileForApproval.xaml.cs">
+      <DependentUpon>UserProfileForApproval.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserProfilePage.xaml.cs">
       <DependentUpon>UserProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserHomePage.xaml.cs">
       <DependentUpon>UserHomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PeopleMessage.cs" />
-    <Compile Include="Person.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UploadVerificationDocumentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ApproveSubmittedUsersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserProfileForApproval.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

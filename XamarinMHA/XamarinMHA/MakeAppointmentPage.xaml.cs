@@ -9,6 +9,8 @@ using System.IO;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PeopleModel;
+using MentorModel;
 
 namespace HelloWorld
 {

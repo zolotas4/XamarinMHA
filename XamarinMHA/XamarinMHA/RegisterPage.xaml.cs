@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using PeopleModel;
 
 namespace HelloWorld
 {

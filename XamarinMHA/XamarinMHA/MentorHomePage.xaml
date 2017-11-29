@@ -3,10 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HelloWorld.MentorHomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <StackLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" FontSize="Large"/>
+                <Grid Padding="20" VerticalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="appointment.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="ApproveUsersImageTapped"  />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="Approve Users" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="resources.png"/>
+                        <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="chat.png"/>
+                        <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="userProfile.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="MyProfileImageTapped"  />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="My Profile" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

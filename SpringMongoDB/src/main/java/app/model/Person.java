@@ -13,6 +13,8 @@ public class Person {
     private String email;
     private String dateOfBirth;
     private String phone;
+    private String submitted;
+    private String approved;
 
     public String getSubmitted() {
         return submitted;
@@ -29,9 +31,6 @@ public class Person {
     public void setApproved(String approved) {
         this.approved = approved;
     }
-
-    private String submitted;
-    private String approved;
 
     public Person() {}
 
