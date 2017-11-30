@@ -3,22 +3,32 @@ package app.model;
 import org.springframework.data.annotation.Id;
 import java.util.Date;
 
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class Appointment {
 
+
     @Id
     private String id;
-    @DBRef
-    private Person person;
-    @DBRef
-    private Mentor mentor;
+    private String person;
+    private String mentor;
     @DateTimeFormat(iso = ISO.DATE_TIME)
     private Date startingDateTime;
     @DateTimeFormat(iso = ISO.DATE_TIME)
     private Date endingDateTime;
+
+    public Appointment(){}
+
+    @PersistenceConstructor
+    public Appointment(String person, String mentor, Date startingDateTime, Date endingDateTime) {
+        this.id = id;
+        this.person = person;
+        this.mentor = mentor;
+        this.startingDateTime = startingDateTime;
+        this.endingDateTime = endingDateTime;
+    }
 
     public Date getEndingDateTime() {
         return endingDateTime;
@@ -36,19 +46,28 @@ public class Appointment {
         this.startingDateTime = startingDateTime;
     }
 
-    public Person getPerson() {
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPerson() {
         return person;
     }
 
-    public void setPerson(Person person) {
+    public void setPerson(String person) {
         this.person = person;
     }
 
-    public Mentor getMentor() {
+    public String getMentor() {
         return mentor;
     }
 
-    public void setMentor(Mentor mentor) {
+    public void setMentor(String mentor) {
         this.mentor = mentor;
     }
 }
