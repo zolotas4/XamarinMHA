@@ -29,7 +29,7 @@ namespace MentorModel
             this.Email = Email;
             this.FirstLastName = FirstName + " " + LastName;
         }
-
+        
         [JsonProperty("firstName")]
         public string FirstName { get; set; }
         [JsonProperty("lastName")]
@@ -42,6 +42,7 @@ namespace MentorModel
         public String Email { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
+        [JsonIgnore]
         public String FirstLastName { get; set; }
     }
 
@@ -49,9 +50,17 @@ namespace MentorModel
     {
         [JsonProperty("self")]
         public Self self { get; set; }
+        [JsonProperty("mentor")]
+        public MentorHref mentorHref { get; set; }
     }
 
     class Self
+    {
+        [JsonProperty("href")]
+        public String href { get; set; }
+    }
+
+    class MentorHref
     {
         [JsonProperty("href")]
         public String href { get; set; }

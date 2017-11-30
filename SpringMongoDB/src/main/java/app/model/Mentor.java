@@ -1,12 +1,12 @@
 package app.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 
 public class Mentor {
 
     @Id
     private String id;
-
     private String firstName;
     private String lastName;
     private String userName;
@@ -15,12 +15,21 @@ public class Mentor {
 
     public Mentor() {}
 
+    @PersistenceConstructor
     public Mentor(String firstName, String lastName, String userName, String password, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getPassword() { return password; }

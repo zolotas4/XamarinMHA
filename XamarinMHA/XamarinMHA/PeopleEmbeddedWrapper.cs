@@ -54,6 +54,7 @@ namespace PeopleModel
         public String Submitted { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
+        [JsonIgnore]
         public String FirstLastName { get; set; }
     }
 
@@ -61,9 +62,17 @@ namespace PeopleModel
     {
         [JsonProperty("self")]
         public Self self { get; set; }
+        [JsonProperty("person")]
+        public PersonHref personHref { get; set; }
     }
 
     class Self
+    {
+        [JsonProperty("href")]
+        public String href { get; set; }
+    }
+
+    class PersonHref
     {
         [JsonProperty("href")]
         public String href { get; set; }

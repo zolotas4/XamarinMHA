@@ -35,19 +35,18 @@ namespace HelloWorld
             string url = "http://10.0.3.2:8080/people/search/findByUserName?username=test";
             var response = await client.GetAsync(url);
             Person thanos = JsonConvert.DeserializeObject<Person>(await response.Content.ReadAsStringAsync());
-            Debug.WriteLine("Person: " + thanos.FirstLastName);
             url = "http://10.0.3.2:8080/mentors/search/findByUserName?username=mentor";
             response = await client.GetAsync(url);
             Mentor theMentor = JsonConvert.DeserializeObject<Mentor>(await response.Content.ReadAsStringAsync());
-            Debug.WriteLine("Mentor: " + theMentor.FirstLastName);
             DateTime start = new DateTime(2017, 11, 1);
             DateTime end = new DateTime(2017, 11, 2);
-            Appointment theAppointment = new Appointment(thanos, theMentor, start, end);
+            Appointment theAppointment = new Appointment(thanos.UserName, theMentor.UserName, start, end);
             string postUrl = "http://10.0.3.2:8080/appointments/";
             string sContentType = "application/json";
             Debug.WriteLine(JsonConvert.SerializeObject(theAppointment));
-            //HttpResponseMessage response2 = await client.PostAsync(url, new StringContent(JsonConvert.SerializeObject(theAppointment), Encoding.UTF8, sContentType));
-            //Debug.WriteLine("Post Result: " + response2);
+            
+            HttpResponseMessage response2 = await client.PostAsync(postUrl, new StringContent(JsonConvert.SerializeObject(theAppointment), Encoding.UTF8, sContentType));
+            Debug.WriteLine("Post Result: " + response2);
             /*
             await CrossMedia.Current.Initialize();
             file = await CrossMedia.Current.PickPhotoAsync(null);

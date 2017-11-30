@@ -25,7 +25,6 @@ namespace HelloWorld
         {
             base.OnBindingContextChanged();
             mentor = (Mentor)BindingContext;
-            Debug.WriteLine(mentor.FirstLastName);
         }
 
         async void MyProfileImageTapped(object sender, EventArgs args)
@@ -46,6 +45,16 @@ namespace HelloWorld
                 BindingContext = mentor
             };
             await Navigation.PushAsync(approveSubmittedUsersPage);
+        }
+
+        async void MyApointmentsImageTapped(object sender, EventArgs args)
+        {
+            var imageSender = (Image)sender;
+            MentorAppointmentsPage mentorAppointmentsPage = new MentorAppointmentsPage
+            {
+                BindingContext = mentor
+            };
+            await Navigation.PushAsync(mentorAppointmentsPage);
         }
     }
 }

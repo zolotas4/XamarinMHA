@@ -26,8 +26,13 @@
                         <Label Text="Approve Users" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="resources.png"/>
-                        <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                        <Image Source="appointment.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="MyApointmentsImageTapped"  />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="My Appointments" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="chat.png"/>
