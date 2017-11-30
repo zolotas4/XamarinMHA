@@ -16,7 +16,7 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
-        string url = "http://10.0.3.2:8080/people/";
+        string url = "http://" + Utilities.LOCALHOST + ":8080/people/";
         string sContentType = "application/json";
 
         public RegisterPage()
@@ -31,7 +31,7 @@ namespace HelloWorld
             HttpResponseMessage response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, sContentType));
             if (response.IsSuccessStatusCode)
             {
-                String sendEmailUrl = "http://10.0.3.2:8080/email/send/" + person.Email + "/" + person.FirstName + "/";
+                String sendEmailUrl = "http://" + Utilities.LOCALHOST + ":8080/email/send/" + person.Email + "/" + person.FirstName + "/";
                 response = await oHttpClient.GetAsync(sendEmailUrl);
                 UploadVerificationDocumentPage page = new UploadVerificationDocumentPage
                 {

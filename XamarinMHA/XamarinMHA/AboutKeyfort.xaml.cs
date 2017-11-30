@@ -19,7 +19,7 @@ namespace HelloWorld
     public partial class AboutKeyfort : ContentPage
     {
         MediaFile file = null;
-        //string url = "http://10.0.3.2:8080/mentors/";
+        //string url = "http://" + Utilities.LOCALHOST + ":8080/mentors/";
         //string sContentType = "application/json";
         public AboutKeyfort()
         {
@@ -32,16 +32,16 @@ namespace HelloWorld
         async void SelectImageButtonClicked(object sender, EventArgs e)
         {
             HttpClient client = new HttpClient();
-            string url = "http://10.0.3.2:8080/people/search/findByUserName?username=test";
+            string url = "http://" + Utilities.LOCALHOST + ":8080/people/search/findByUserName?username=test";
             var response = await client.GetAsync(url);
             Person thanos = JsonConvert.DeserializeObject<Person>(await response.Content.ReadAsStringAsync());
-            url = "http://10.0.3.2:8080/mentors/search/findByUserName?username=mentor";
+            url = "http://" + Utilities.LOCALHOST + ":8080/mentors/search/findByUserName?username=mentor";
             response = await client.GetAsync(url);
             Mentor theMentor = JsonConvert.DeserializeObject<Mentor>(await response.Content.ReadAsStringAsync());
             DateTime start = new DateTime(2017, 11, 1);
             DateTime end = new DateTime(2017, 11, 2);
             Appointment theAppointment = new Appointment(thanos.UserName, theMentor.UserName, start, end);
-            string postUrl = "http://10.0.3.2:8080/appointments/";
+            string postUrl = "http://" + Utilities.LOCALHOST + ":8080/appointments/";
             string sContentType = "application/json";
             Debug.WriteLine(JsonConvert.SerializeObject(theAppointment));
             
@@ -63,7 +63,7 @@ namespace HelloWorld
             HttpClient client = new HttpClient();
             MultipartFormDataContent form = new MultipartFormDataContent();
             form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await client.PostAsync("http://10.0.3.2:8080/photo/upload/" + username + "/", form);
+            HttpResponseMessage response = await client.PostAsync("http://" + Utilities.LOCALHOST + ":8080/photo/upload/" + username + "/", form);
             Debug.WriteLine(response.StatusCode);
             Debug.WriteLine(response.ReasonPhrase);
             Debug.WriteLine(response.ToString());
@@ -77,7 +77,7 @@ namespace HelloWorld
             HttpClient client = new HttpClient();
             //MultipartFormDataContent form = new MultipartFormDataContent();
             //form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await client.GetAsync("http://10.0.3.2:8080/photo/download/" + username + "/");
+            HttpResponseMessage response = await client.GetAsync("http://" + Utilities.LOCALHOST + ":8080/photo/download/" + username + "/");
             Byte[] result = await response.Content.ReadAsByteArrayAsync();
             Debug.WriteLine(response.StatusCode);
             Debug.WriteLine(response.ReasonPhrase);

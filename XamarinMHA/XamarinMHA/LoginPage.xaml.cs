@@ -33,7 +33,8 @@ namespace HelloWorld
         async void LoginButtonClicked(object sender, EventArgs e)
         {
             HttpClient oHttpClient = new HttpClient();
-            string url = "http://10.0.3.2:8080/people/search/findByUserName?username=" + usernameEntry.Text;
+            string url = "http://" + Utilities.LOCALHOST + ":8080/people/search/findByUserName?username=" + usernameEntry.Text;
+            Debug.WriteLine(url);
             var response = await oHttpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
@@ -64,7 +65,7 @@ namespace HelloWorld
                 }
             } else
             {
-                url = "http://10.0.3.2:8080/mentors/search/findByUserName?username=" + usernameEntry.Text;
+                url = "http://" + Utilities.LOCALHOST + ":8080/mentors/search/findByUserName?username=" + usernameEntry.Text;
                 response = await oHttpClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {

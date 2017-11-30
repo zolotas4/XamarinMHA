@@ -15,7 +15,7 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MentorRegisterPage : ContentPage
     {
-        string url = "http://10.0.3.2:8080/mentors/";
+        string url = "http://" + Utilities.LOCALHOST + ":8080/mentors/";
         string sContentType = "application/json";
         MediaFile file = null;
 
@@ -58,7 +58,7 @@ namespace HelloWorld
             var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(mentor), Encoding.UTF8, sContentType));
             MultipartFormDataContent form = new MultipartFormDataContent();
             form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await oHttpClient.PostAsync("http://10.0.3.2:8080/photo/upload/" + usernameEntry.Text + "/", form);
+            HttpResponseMessage response = await oHttpClient.PostAsync("http://" + Utilities.LOCALHOST + ":8080/photo/upload/" + usernameEntry.Text + "/", form);
             if (response.IsSuccessStatusCode)
             {
                 await Navigation.PushAsync(new MentorRegistrationSuccesfulPage());

@@ -41,7 +41,26 @@ namespace HelloWorld
         async void SelectImageButtonClicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
-            file = await CrossMedia.Current.PickPhotoAsync(null);
+            var action = await DisplayActionSheet("Select Method", "Cancel", null, "Gallery", "Camera");
+            if (action == "Gallery")
+            {
+                file = await CrossMedia.Current.PickPhotoAsync(null);
+            }
+            else
+            {
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return;
+                }
+                Debug.WriteLine("Hi!");
+                file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    PhotoSize = PhotoSize.Medium,
+                });
+            }
+            if (file == null)
+                return;
             VerificationFormImageHolder.Source = file.Path;
             VerificationFormImageHolder.IsVisible = true;
             UploadImageButton.IsVisible = true;
@@ -53,7 +72,7 @@ namespace HelloWorld
             HttpClient client = new HttpClient();
             MultipartFormDataContent form = new MultipartFormDataContent();
             form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await client.PostAsync("http://10.0.3.2:8080/photo/upload/" + username + "/", form);
+            HttpResponseMessage response = await client.PostAsync("http://" + Utilities.LOCALHOST + ":8080/photo/upload/" + username + "/", form);
             if (response.IsSuccessStatusCode)
             {
                 HttpClient client2 = new HttpClient();

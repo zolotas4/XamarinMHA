@@ -33,7 +33,7 @@ namespace HelloWorld
         async void retrieveMentors()
         {
             HttpClient oHttpClient = new HttpClient();
-            string url = "http://10.0.3.2:8080/mentors/";
+            string url = "http://" + Utilities.LOCALHOST + ":8080/mentors/";
             var response = await oHttpClient.GetStringAsync(url);
             var mentorsList = JsonConvert.DeserializeObject<MentorEmbeddedWrapper>(response).Embedded.Mentors;
             Debug.WriteLine(mentorsList[1].FirstName);
@@ -47,7 +47,7 @@ namespace HelloWorld
             HttpClient client = new HttpClient();
             //MultipartFormDataContent form = new MultipartFormDataContent();
             //form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await client.GetAsync("http://10.0.3.2:8080/photo/download/" + username + "/");
+            HttpResponseMessage response = await client.GetAsync("http://" + Utilities.LOCALHOST + ":8080/photo/download/" + username + "/");
             Byte[] result = await response.Content.ReadAsByteArrayAsync();
             MentorPic.Source = ImageSource.FromStream(() => new MemoryStream(result));
         }

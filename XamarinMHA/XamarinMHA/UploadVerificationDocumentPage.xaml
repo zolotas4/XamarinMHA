@@ -5,12 +5,14 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
-            <StackLayout>
-                <Label x:Name="IntroText" Text="An email was sent to the provided email adress containg instructions on how to verify your subscription. Please use the following button to upload the required proof." />
-                <Button x:Name="SelectImageButton"  Text="Select Image" Clicked="SelectImageButtonClicked"/>
-                <Image x:Name="VerificationFormImageHolder" IsVisible="False"></Image>
-                <Button x:Name="UploadImageButton" Text="Upload Image" Clicked="UploadImageButtonClicked" IsVisible="False"/>
-            </StackLayout>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <StackLayout>
+                    <Label x:Name="IntroText" Text="An email was sent to the provided email adress containg instructions on how to verify your subscription. Please use the following button to upload the required proof." />
+                    <Button x:Name="SelectImageButton"  Text="Select Image" Clicked="SelectImageButtonClicked"/>
+                    <Image x:Name="VerificationFormImageHolder" IsVisible="False"></Image>
+                    <Button x:Name="UploadImageButton" Text="Upload Image" Clicked="UploadImageButtonClicked" IsVisible="False"/>
+                </StackLayout>
+            </ScrollView>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
