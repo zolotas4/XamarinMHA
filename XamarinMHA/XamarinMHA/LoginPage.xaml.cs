@@ -35,7 +35,9 @@ namespace HelloWorld
             HttpClient oHttpClient = new HttpClient();
             string url = "http://" + Utilities.LOCALHOST + ":8080/people/search/findByUserName?username=" + usernameEntry.Text;
             Debug.WriteLine(url);
+            Utilities.toggleSpinner(spinner);
             var response = await oHttpClient.GetAsync(url);
+            Utilities.toggleSpinner(spinner);
             if (response.IsSuccessStatusCode)
             {
                 // Username found in users' DB.
