@@ -23,8 +23,7 @@
                             <x:String>2 Hours</x:String>
                         </Picker.Items>
                     </Picker>
-                        <Button Text="Find Slot"/>
-                    <Label x:Name="completeRegistrationButton" />
+                    <Button x:Name="findSlotButton"  Text="Find Slot" Clicked="findSlotButtonClicked"/>
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

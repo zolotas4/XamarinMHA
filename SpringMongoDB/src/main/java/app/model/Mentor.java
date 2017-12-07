@@ -12,16 +12,36 @@ public class Mentor {
     private String userName;
     private String password;
     private String email;
+    private int startSlot;
+    private int endSlot;
 
     public Mentor() {}
 
+    public int getStartSlot() {
+        return startSlot;
+    }
+
+    public void setStartSlot(int startSlot) {
+        this.startSlot = startSlot;
+    }
+
+    public int getEndSlot() {
+        return endSlot;
+    }
+
+    public void setEndSlot(int endSlot) {
+        this.endSlot = endSlot;
+    }
+
     @PersistenceConstructor
-    public Mentor(String firstName, String lastName, String userName, String password, String email) {
+    public Mentor(String firstName, String lastName, String userName, String password, String email, int startSlot, int endSlot) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.email = email;
+        this.startSlot = startSlot;
+        this.endSlot = endSlot;
     }
 
     public String getId() {

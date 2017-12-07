@@ -5,45 +5,44 @@ import java.util.Date;
 
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class Appointment {
-
 
     @Id
     private String id;
     private String person;
     private String mentor;
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    private Date startingDateTime;
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    private Date endingDateTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date date;
+    private int slotNumber;
+
+    public int getSlotNumber() {
+        return slotNumber;
+    }
+
+    public void setSlotNumber(int slotNumber) {
+        this.slotNumber = slotNumber;
+    }
+
 
     public Appointment(){}
 
     @PersistenceConstructor
-    public Appointment(String person, String mentor, Date startingDateTime, Date endingDateTime) {
+    public Appointment(String person, String mentor, Date date, int slotNumber) {
         this.id = id;
         this.person = person;
         this.mentor = mentor;
-        this.startingDateTime = startingDateTime;
-        this.endingDateTime = endingDateTime;
+        this.date = date;
+        this.slotNumber = slotNumber;
     }
 
-    public Date getEndingDateTime() {
-        return endingDateTime;
+
+    public Date getDate() {
+        return date;
     }
 
-    public void setEndingDateTime(Date endingDateTime) {
-        this.endingDateTime = endingDateTime;
-    }
-
-    public Date getStartingDateTime() {
-        return startingDateTime;
-    }
-
-    public void setStartingDateTime(Date startingDateTime) {
-        this.startingDateTime = startingDateTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
 

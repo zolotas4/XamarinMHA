@@ -20,16 +20,18 @@ namespace MentorModel
     [JsonObject("mentors")]
     class Mentor
     {
-        public Mentor(string FirstName, string LastName, string UserName, string Password, string Email)
+        public Mentor(string FirstName, string LastName, string UserName, string Password, string Email, int startSlot, int endSlot)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.UserName = UserName;
             this.Password = Password;
             this.Email = Email;
+            this.startSlot = startSlot;
+            this.endSlot = endSlot;
             this.FirstLastName = FirstName + " " + LastName;
         }
-        
+
         [JsonProperty("firstName")]
         public string FirstName { get; set; }
         [JsonProperty("lastName")]
@@ -40,6 +42,10 @@ namespace MentorModel
         public String Password { get; set; }
         [JsonProperty("email")]
         public String Email { get; set; }
+        [JsonProperty("startSlot")]
+        public int startSlot { get; set; }
+        [JsonProperty("endSlot")]
+        public int endSlot { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
         [JsonIgnore]

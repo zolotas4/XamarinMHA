@@ -11,6 +11,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PeopleModel;
 using MentorModel;
+using AppointmentModel;
 
 namespace HelloWorld
 {
@@ -56,6 +57,34 @@ namespace HelloWorld
         {
             String selectedMentorUsername = ((Mentor) mentorPicker.SelectedItem).UserName;
             retrieveMentorPhotoAndPopulateImageHolder(selectedMentorUsername);
+        }
+
+        async private void findSlotButtonClicked(object sender, EventArgs e)
+        {
+            Mentor selectedMentor = (Mentor)mentorPicker.SelectedItem;
+
+            HttpClient oHttpClient = new HttpClient();
+
+            string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/search/findByMentorAndDate?mentor=" + selectedMentor.UserName +
+                "&date=" + dateEntry.Date.ToString("yyyy-MM-dd");
+            Debug.WriteLine("URL: " + url);
+            HttpResponseMessage response = await oHttpClient.GetAsync(url);
+            Debug.WriteLine(response.StatusCode);
+            List<Appointment> appointmentsList = new List<Appointment>();
+            if (response.IsSuccessStatusCode)
+            {
+                appointmentsList = JsonConvert.DeserializeObject<AppointmentEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Appointments;
+            }
+            List<int> availableSlots = new List<int>(Enumerable.Range(selectedMentor.startSlot, selectedMentor.endSlot - selectedMentor.startSlot + 1));
+            foreach (Appointment appointment in appointmentsList)
+            {
+                availableSlots.Remove(appointment.slotNumber);
+            }
+            int duration = slotDurationPicker.SelectedIndex;
+            foreach (int slot in Utilities.filterAvailableSlotsBasedOnDuration(availableSlots, duration))
+            {
+                Debug.WriteLine("Real slots: " + slot);
+            }
         }
     }
 }

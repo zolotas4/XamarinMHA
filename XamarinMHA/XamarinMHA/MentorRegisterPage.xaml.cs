@@ -53,7 +53,7 @@ namespace HelloWorld
 
         async void CompleteMentorRegistrationButtonClicked(object sender, EventArgs e)
         {
-            Mentor mentor = new Mentor(firstNameEntry.Text, lastNameEntry.Text, usernameEntry.Text, passwordEntry.Text, emailEntry.Text);
+            Mentor mentor = new Mentor(firstNameEntry.Text, lastNameEntry.Text, usernameEntry.Text, passwordEntry.Text, emailEntry.Text, 9, 33);
             HttpClient oHttpClient = new HttpClient();
             var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(mentor), Encoding.UTF8, sContentType));
             MultipartFormDataContent form = new MultipartFormDataContent();

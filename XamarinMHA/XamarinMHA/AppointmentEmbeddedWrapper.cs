@@ -24,12 +24,12 @@ namespace AppointmentModel
     [JsonObject("appointments")]
     class Appointment
     {
-        public Appointment(String person, String mentor, DateTime startingDateTime, DateTime endingDateTime)
+        public Appointment(String person, String mentor, DateTime date, int slotNumber)
         {
             this.Person = person;
             this.Mentor = mentor;
-            this.StartingDateTime = startingDateTime;
-            this.EndingDateTime = endingDateTime;
+            this.date = date;
+            this.slotNumber = slotNumber;
         }
 
         [JsonProperty("person")]
@@ -37,9 +37,9 @@ namespace AppointmentModel
         [JsonProperty("mentor")]
         public String Mentor { get; set; }
         [JsonProperty("startingDateTime")]
-        public DateTime StartingDateTime { get; set; }
+        public DateTime date { get; set; }
         [JsonProperty("endingDateTime")]
-        public DateTime EndingDateTime { get; set; }
+        public int slotNumber { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
     }

@@ -9,8 +9,8 @@ namespace HelloWorld
 {
     public static class Utilities
     {
-        public static String LOCALHOST = "192.168.1.120";
-        //public static String LOCALHOST = "10.0.3.2";
+        //public static String LOCALHOST = "192.168.1.120";
+        public static String LOCALHOST = "10.0.3.2";
         public static void toggleSpinner (ActivityIndicator spinner) {
             spinner.IsVisible = !spinner.IsVisible;
             spinner.IsRunning = !spinner.IsRunning;
