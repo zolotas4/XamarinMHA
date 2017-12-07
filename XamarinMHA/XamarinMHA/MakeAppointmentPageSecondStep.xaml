@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MakeAppointmentPageSecondStep">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <StackLayout>
+                    <Label x:Name="titleLabel" />
+                    <ListView x:Name="mentorAvailableSlotsList"></ListView>
+                    <Button x:Name="bookAppointment"  Text="Book Appointment" Clicked="bookAppointmentButtonClicked"/>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

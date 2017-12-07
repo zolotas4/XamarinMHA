@@ -42,8 +42,24 @@ namespace HelloWorld
             }
             else
             {
-                return (slotNumber / 2) + ":30";
+                if (slotNumber / 2 < 10)
+                {
+                    return "0" + (slotNumber / 2) + ":30";
+                }
+                else
+                {
+                    return (slotNumber / 2) + ":30";
+                }
             }
+        }
+
+        public static int FindSlotNumberBasedOnTime(String time)
+        {
+            int hour = Int16.Parse(time.Split(':')[0]);
+            var minutes = Int16.Parse(time.Split(':')[1]);
+            var slot = hour * 2;
+            if (minutes == 30) slot++;
+            return slot;
         }
 
         public static List<int> filterAvailableSlotsBasedOnDuration(List<int> allAvailableSlots, int duration)

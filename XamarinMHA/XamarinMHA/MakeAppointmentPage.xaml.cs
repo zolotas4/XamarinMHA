@@ -61,7 +61,8 @@ namespace HelloWorld
 
         async private void findSlotButtonClicked(object sender, EventArgs e)
         {
-            Mentor selectedMentor = (Mentor)mentorPicker.SelectedItem;
+            Utilities.toggleSpinner(spinner);
+            Mentor selectedMentor = (Mentor) mentorPicker.SelectedItem;
 
             HttpClient oHttpClient = new HttpClient();
 
@@ -81,10 +82,13 @@ namespace HelloWorld
                 availableSlots.Remove(appointment.slotNumber);
             }
             int duration = slotDurationPicker.SelectedIndex;
-            foreach (int slot in Utilities.filterAvailableSlotsBasedOnDuration(availableSlots, duration))
+            List<int> filteredAvailableSlots = Utilities.filterAvailableSlotsBasedOnDuration(availableSlots, duration);
+            MakeAppointmentPageSecondStep makeAppointmentPageSecondStep = new MakeAppointmentPageSecondStep
             {
-                Debug.WriteLine("Real slots: " + slot);
-            }
+                BindingContext = filteredAvailableSlots
+            };
+            Utilities.toggleSpinner(spinner);
+            await Navigation.PushAsync(makeAppointmentPageSecondStep);
         }
     }
 }

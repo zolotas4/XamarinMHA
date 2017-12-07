@@ -24,6 +24,7 @@ namespace HelloWorld
         public AboutKeyfort()
         {
             InitializeComponent();
+            //Debug.WriteLine(Utilities.FindSlotNumberBasedOnTime("17:00"));
             //Mentor mentor = new Mentor("John", "Doe", "john.doe", "test", "j.d@test.com");
             //HttpClient oHttpClient = new HttpClient();
             //var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(mentor), Encoding.UTF8, sContentType));
