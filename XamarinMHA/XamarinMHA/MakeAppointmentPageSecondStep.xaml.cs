@@ -1,8 +1,13 @@
-﻿using DLToolkit.Forms.Controls;
+﻿using AppointmentModel;
+using DLToolkit.Forms.Controls;
+using MentorModel;
+using Newtonsoft.Json;
 using PeopleModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,12 +18,19 @@ namespace HelloWorld
     {
         Label previousTappedItem;
         Person user;
+        Mentor mentor;
+        DateTime date;
+        int duration;
+        string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/";
+        string sContentType = "application/json";
 
-        public MakeAppointmentPageSecondStep(Person user)
+        public MakeAppointmentPageSecondStep(Person user, Mentor mentor, DateTime date, int duration)
         {
             InitializeComponent();
             this.user = user;
-            Debug.WriteLine(user.LastName);
+            this.mentor = mentor;
+            this.date = date;
+            this.duration = duration;
         }
 
         protected override void OnBindingContextChanged()
@@ -36,8 +48,31 @@ namespace HelloWorld
 
         async private void bookAppointmentButtonClicked(object sender, EventArgs e)
         {
-            DisplayAlert("Item Selected", ((TempSlot)mentorAvailableSlotsListFlow.FlowLastTappedItem).Time.ToString(), "Ok");
-
+            String selectedSlot = ((TempSlot)mentorAvailableSlotsListFlow.FlowLastTappedItem).Time.ToString();
+            var answer = await DisplayAlert("Are you sure?", user.FirstName + ", you're about to book an appointment with " + mentor.FirstLastName 
+                + " for " + date.Date.ToString("dd-MM-yyyy") + " @ " + selectedSlot + ". Do you want to proceed?", "Yes", "No");
+            if (answer == true)
+            {
+                BookAppointmentPage bookAppointmentPage = new BookAppointmentPage(user, mentor, date);
+                Utilities.toggleSpinner(spinner);
+                HttpClient oHttpClient = new HttpClient();
+                HttpResponseMessage response = new HttpResponseMessage();
+                for (int i = 0; i <= duration; i++)
+                {
+                    Appointment appointment = new Appointment(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)+i);
+                    Debug.WriteLine(JsonConvert.SerializeObject(appointment));
+                    response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(appointment), Encoding.UTF8, sContentType));
+                }
+                /*
+                if (response.IsSuccessStatusCode)
+                {
+                    String sendEmailUrl = "http://" + Utilities.LOCALHOST + ":8080/email/send/" + user.Email + "/" + user.FirstName + "/";
+                    response = await oHttpClient.GetAsync(sendEmailUrl);
+                }
+                */
+                Utilities.toggleSpinner(spinner);
+                await Navigation.PushAsync(bookAppointmentPage);
+            }
         }
 
         private void mentorAvailableSlotsListFlow_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -5,20 +5,20 @@ using Newtonsoft.Json;
 
 namespace MentorModel
 {
-    class MentorEmbeddedWrapper
+    public class MentorEmbeddedWrapper
     {
         [JsonProperty("_embedded")]
         public Embedded Embedded { get; set; }
     }
 
-    class Embedded
+    public class Embedded
     {
         [JsonProperty("mentors")]
         public List<Mentor> Mentors { get; set; }
     }
 
     [JsonObject("mentors")]
-    class Mentor
+    public class Mentor
     {
         public Mentor(string FirstName, string LastName, string UserName, string Password, string Email, int startSlot, int endSlot)
         {
@@ -52,7 +52,7 @@ namespace MentorModel
         public String FirstLastName { get; set; }
     }
 
-    class Link
+    public class Link
     {
         [JsonProperty("self")]
         public Self self { get; set; }
@@ -60,13 +60,13 @@ namespace MentorModel
         public MentorHref mentorHref { get; set; }
     }
 
-    class Self
+    public class Self
     {
         [JsonProperty("href")]
         public String href { get; set; }
     }
 
-    class MentorHref
+    public class MentorHref
     {
         [JsonProperty("href")]
         public String href { get; set; }

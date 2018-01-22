@@ -70,7 +70,6 @@ namespace HelloWorld
                 "&date=" + dateEntry.Date.ToString("yyyy-MM-dd");
             Debug.WriteLine("URL: " + url);
             HttpResponseMessage response = await oHttpClient.GetAsync(url);
-            Debug.WriteLine(response.StatusCode);
             List<Appointment> appointmentsList = new List<Appointment>();
             if (response.IsSuccessStatusCode)
             {
@@ -87,7 +86,7 @@ namespace HelloWorld
                 duration++;
             }
             List<int> filteredAvailableSlots = Utilities.filterAvailableSlotsBasedOnDuration(availableSlots, duration);
-            MakeAppointmentPageSecondStep makeAppointmentPageSecondStep = new MakeAppointmentPageSecondStep(user)
+            MakeAppointmentPageSecondStep makeAppointmentPageSecondStep = new MakeAppointmentPageSecondStep(user, selectedMentor, dateEntry.Date, duration)
             {
                 BindingContext = filteredAvailableSlots
             };

@@ -22,6 +22,7 @@
                             <x:String>1 Hour</x:String>
                             <x:String>2 Hours</x:String>
                         </Picker.Items>
+                        <Picker.SelectedIndex>0</Picker.SelectedIndex>
                     </Picker>
                     <Button x:Name="findSlotButton"  Text="Find Slot" Clicked="findSlotButtonClicked" StyleClass="Success"/>
                 </StackLayout>

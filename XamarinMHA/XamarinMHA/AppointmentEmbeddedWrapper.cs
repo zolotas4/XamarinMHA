@@ -36,9 +36,9 @@ namespace AppointmentModel
         public String Person { get; set; }
         [JsonProperty("mentor")]
         public String Mentor { get; set; }
-        [JsonProperty("startingDateTime")]
+        [JsonProperty("date")]
         public DateTime date { get; set; }
-        [JsonProperty("endingDateTime")]
+        [JsonProperty("slotNumber")]
         public int slotNumber { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
