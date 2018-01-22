@@ -23,6 +23,9 @@ namespace HelloWorld.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+            var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
+            x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
+            x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
         }
 
         //public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)

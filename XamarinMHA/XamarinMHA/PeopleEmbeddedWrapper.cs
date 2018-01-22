@@ -5,20 +5,20 @@ using System.Collections.Generic;
 
 namespace PeopleModel
 {
-    class PeopleEmbeddedWrapper
+    public class PeopleEmbeddedWrapper
     {
         [JsonProperty("_embedded")]
         public Embedded Embedded { get; set; }
     }
 
-    class Embedded
+    public class Embedded
     {
         [JsonProperty("people")]
         public List<Person> People { get; set; }
     }
 
     [JsonObject("people")]
-    class Person
+    public class Person
     {
         public Person(string FirstName, string LastName, string UserName, string Password, string Email, string Phone, string DateOfBirth, string Approved, string Submitted)
         {
@@ -58,7 +58,7 @@ namespace PeopleModel
         public String FirstLastName { get; set; }
     }
 
-    class Link
+    public class Link
     {
         [JsonProperty("self")]
         public Self self { get; set; }
@@ -66,13 +66,13 @@ namespace PeopleModel
         public PersonHref personHref { get; set; }
     }
 
-    class Self
+    public class Self
     {
         [JsonProperty("href")]
         public String href { get; set; }
     }
 
-    class PersonHref
+    public class PersonHref
     {
         [JsonProperty("href")]
         public String href { get; set; }

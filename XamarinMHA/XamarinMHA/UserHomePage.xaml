@@ -24,15 +24,15 @@
                                 Tapped="MakeAnAppointmentImageTapped"  />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="Make an Appointment" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                        <Label Text="Make an Appointment" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="resources.png"/>
-                        <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                        <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="chat.png"/>
-                        <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                        <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="userProfile.png">
@@ -41,7 +41,7 @@
                                 Tapped="MyProfileImageTapped"  />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="My Profile" HorizontalTextAlignment="Center" Style="{StaticResource greyLargeFonts}"/>
+                        <Label Text="My Profile" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>

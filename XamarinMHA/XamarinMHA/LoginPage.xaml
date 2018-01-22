@@ -10,12 +10,12 @@
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
             <StackLayout x:Name="LoginPageLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <Label Text="Username" Style="{StaticResource greyLargeFonts}"/>
+                <Label Text="Username" Style="{StaticResource whiteLargeFonts}"/>
                 <Entry x:Name="usernameEntry" Placeholder="username" />
-                <Label Text="Password" Style="{StaticResource greyLargeFonts}"/>
+                <Label Text="Password" Style="{StaticResource whiteLargeFonts}"/>
                 <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
-                <Button Text="Login" Clicked="LoginButtonClicked"/>
-                <Label x:Name="loginButton" Style="{StaticResource greyLargeFonts}"/>
+                <Button Text="Login" Clicked="LoginButtonClicked" StyleClass="Success"/>
+                <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
                 <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>

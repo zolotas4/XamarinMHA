@@ -82,8 +82,12 @@ namespace HelloWorld
                 availableSlots.Remove(appointment.slotNumber);
             }
             int duration = slotDurationPicker.SelectedIndex;
+            if(duration == 2)
+            {
+                duration++;
+            }
             List<int> filteredAvailableSlots = Utilities.filterAvailableSlotsBasedOnDuration(availableSlots, duration);
-            MakeAppointmentPageSecondStep makeAppointmentPageSecondStep = new MakeAppointmentPageSecondStep
+            MakeAppointmentPageSecondStep makeAppointmentPageSecondStep = new MakeAppointmentPageSecondStep(user)
             {
                 BindingContext = filteredAvailableSlots
             };

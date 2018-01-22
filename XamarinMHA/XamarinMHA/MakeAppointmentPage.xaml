@@ -8,22 +8,22 @@
             <Image Style="{StaticResource backImage}"/>
             <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <StackLayout>
-                    <Label Text="Select Date" />
-                    <DatePicker x:Name="dateEntry" Format="dd-MM-yyyy"/>
-                    <Label Text="Select Mentor" />
+                    <Label Text="Select Date" Style="{StaticResource whiteLargeFonts}"/>
+                    <DatePicker x:Name="dateEntry" Format="dd-MM-yyyy" TextColor="White"/>
+                    <Label Text="Select Mentor" Style="{StaticResource whiteLargeFonts}"/>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="icon.png" x:Name="MentorPic"></Image>
-                        <Picker x:Name="mentorPicker" HorizontalOptions="FillAndExpand" SelectedIndexChanged="mentorPickerSelectedIndexChanged"></Picker>
+                        <Picker x:Name="mentorPicker" HorizontalOptions="FillAndExpand" SelectedIndexChanged="mentorPickerSelectedIndexChanged" TextColor="White"></Picker>
                     </StackLayout>
-                    <Label Text="Select Slot Duration"/>
-                    <Picker x:Name="slotDurationPicker" HorizontalOptions="FillAndExpand">
+                    <Label Text="Select Slot Duration" Style="{StaticResource whiteLargeFonts}"/>
+                    <Picker x:Name="slotDurationPicker" HorizontalOptions="FillAndExpand" TextColor="White">
                         <Picker.Items>
                             <x:String>30 Minutes</x:String>
                             <x:String>1 Hour</x:String>
                             <x:String>2 Hours</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Button x:Name="findSlotButton"  Text="Find Slot" Clicked="findSlotButtonClicked"/>
+                    <Button x:Name="findSlotButton"  Text="Find Slot" Clicked="findSlotButtonClicked" StyleClass="Success"/>
                 </StackLayout>
             </ScrollView>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>

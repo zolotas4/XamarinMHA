@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld.App">
+             x:Class="HelloWorld.App"
+             xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark">
 	<Application.Resources>
-        <ResourceDictionary>
+        <ResourceDictionary MergedWith="dark:DarkThemeResources">
             <Style x:Key="backImage" TargetType="Image">
                 <Setter Property="Source" Value="uoy.png" />
                 <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
@@ -12,9 +13,24 @@
                 <Setter Property="Opacity" Value="0.3" />
             </Style>
             <OnPlatform x:Key="FontFamilyName" x:TypeArguments="x:String" iOS="MarkerFelt-Thin" Android="OpenSans" WinPhone="Segoe UI" />
-            <Style x:Key="greyLargeFonts" TargetType="Label">
+            <Style x:Key="blueLargeFonts" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="TextColor" Value="#1976D2"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+            </Style>
+            <Style x:Key="pinkLargeFonts" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="#EB004C"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+            </Style>
+            <Style x:Key="whiteLargeFonts" TargetType="Label">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+            </Style>
+            <Style x:Key="whiteTextFonts" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
                 <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
             </Style>
         </ResourceDictionary>

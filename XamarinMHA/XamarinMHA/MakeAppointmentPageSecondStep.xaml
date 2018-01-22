@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld.MakeAppointmentPageSecondStep">
+             x:Class="HelloWorld.MakeAppointmentPageSecondStep"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
             <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <StackLayout>
                     <Label x:Name="titleLabel" />
-                    <ListView x:Name="mentorAvailableSlotsList"></ListView>
-                    <Button x:Name="bookAppointment"  Text="Book Appointment" Clicked="bookAppointmentButtonClicked"/>
+                    <flv:FlowListView x:Name="mentorAvailableSlotsListFlow" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="false" FlowItemTapped="mentorAvailableSlotsListFlow_ItemSelected">
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <Label HorizontalOptions="Fill" VerticalOptions="Fill" XAlign="Center" YAlign="Center" Text="{Binding Time}" TextColor="White"/>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+                    </flv:FlowListView>
+                    <Button x:Name="bookAppointment"  Text="Book Appointment" Clicked="bookAppointmentButtonClicked" StyleClass="Success" IsEnabled="False"/>
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>
