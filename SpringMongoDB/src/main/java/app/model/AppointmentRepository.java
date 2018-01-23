@@ -17,6 +17,8 @@ public interface AppointmentRepository extends MongoRepository<Appointment, Stri
     List<Appointment> findByMentorAndDate(@Param("mentor") String mentor, @Param("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date);
     List<Appointment> findByMentorOrderByDateAsc(@Param("mentor") String mentor);
     List<Appointment> findByPerson(@Param("person") String person);
-    @Query("{ 'mentor' : ?0 , 'startingDateTime' : {$gt: ?1}}")
+    @Query("{ 'mentor' : ?0 , 'date' : {$gt: ?1}}")
     List<Appointment> findAppointmentsFromNowOn(@Param("mentor") String mentor, @Param("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date);
+    @Query("{ 'person' : ?0 , 'date' : {$gt: ?1}}")
+    List<Appointment> findByPersonGreaterThanOrderByDateDesc(@Param("person") String person, @Param("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date);
 }

@@ -15,6 +15,7 @@ namespace MentorModel
     {
         [JsonProperty("mentors")]
         public List<Mentor> Mentors { get; set; }
+        public Mentor Mentor { get; internal set; }
     }
 
     [JsonObject("mentors")]

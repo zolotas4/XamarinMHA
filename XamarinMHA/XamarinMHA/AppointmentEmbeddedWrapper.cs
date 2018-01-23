@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace AppointmentModel
 {
-    class AppointmentEmbeddedWrapper
+    public class AppointmentEmbeddedWrapper
     {
         [JsonProperty("_embedded")]
         public Embedded Embedded { get; set; }
     }
 
-    class Embedded
+    public class Embedded
     {
         [JsonProperty("appointments")]
         public List<Appointment> Appointments { get; set; }
     }
 
     [JsonObject("appointments")]
-    class Appointment
+    public class Appointment
     {
         public Appointment(String person, String mentor, DateTime date, int slotNumber)
         {
@@ -44,7 +44,7 @@ namespace AppointmentModel
         public Link _links { get; set; }
     }
 
-    class Link
+    public class Link
     {
         [JsonProperty("self")]
         public Self self { get; set; }
@@ -52,13 +52,13 @@ namespace AppointmentModel
         public AppointmentHref appointmentHref { get; set; }
     }
 
-    class Self
+    public class Self
     {
         [JsonProperty("href")]
         public String href { get; set; }
     }
 
-    class AppointmentHref
+    public class AppointmentHref
     {
         [JsonProperty("href")]
         public String href { get; set; }

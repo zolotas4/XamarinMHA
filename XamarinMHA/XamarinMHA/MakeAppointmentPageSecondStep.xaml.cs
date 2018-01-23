@@ -60,7 +60,6 @@ namespace HelloWorld
                 for (int i = 0; i <= duration; i++)
                 {
                     Appointment appointment = new Appointment(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)+i);
-                    Debug.WriteLine(JsonConvert.SerializeObject(appointment));
                     response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(appointment), Encoding.UTF8, sContentType));
                 }
                 /*
