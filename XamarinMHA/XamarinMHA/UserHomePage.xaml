@@ -7,7 +7,7 @@
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
             <StackLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" FontSize="Large"/>
+                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center"/>
                 <Grid Padding="20" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
