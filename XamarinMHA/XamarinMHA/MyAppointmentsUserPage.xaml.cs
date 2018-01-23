@@ -14,8 +14,6 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyAppointmentsUserPage : ContentPage
     {
-        string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/";
-        string sContentType = "application/json";
 
         public MyAppointmentsUserPage()
         {

@@ -6,13 +6,13 @@
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
             <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <StackLayout>
+                <StackLayout Padding="10,0">
                     <Label Style="{StaticResource whiteLargeFonts}">About Us</Label>
                     <Label LineBreakMode="WordWrap" Style="{StaticResource whiteTextFonts}">Formerly known as Neuro Partners, KEYFORT began trading in 2006 with a focus on providing specialist support to individuals with brain injuries in the community. Over the years our expertise and support provision expanded to working in partnership with students with a variety of conditions at colleges and universities. KEYFORT specialise in the individuals we work with rather than any one condition and provide bespoke, person-centred support that meets their needs, whether that is in a community, education, nursing, employment or training environment. To find out more about our support please see our services pages.</Label>
                     <Label Style="{StaticResource whiteLargeFonts}">Mission Statement</Label>
                     <Label LineBreakMode="WordWrap" Style="{StaticResource whiteTextFonts}">Passionate about working together to provide specialist services. Real people providing real support to make a real difference.</Label>
                     <Label Style="{StaticResource whiteLargeFonts}">Core Values</Label>
-                    <Image Source="coreValues.png"></Image>
+                    <Image Source="coreValuesTransparent.png"></Image>
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

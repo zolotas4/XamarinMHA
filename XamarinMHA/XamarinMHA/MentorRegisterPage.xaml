@@ -12,19 +12,19 @@
                                 <TapGestureRecognizer Tapped="MentorImageTapped"  />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="First Name" />
+                        <Label Text="First Name" Style="{StaticResource whiteLargeFonts}"/>
                         <Entry x:Name="firstNameEntry" Placeholder="Enter first name" />
-                        <Label Text="Last Name" />
+                    <Label Text="Last Name" Style="{StaticResource whiteLargeFonts}"/>
                         <Entry x:Name="lastNameEntry" Placeholder="Enter last name" />
-                        <Label Text="Email" />
+                    <Label Text="Email" Style="{StaticResource whiteLargeFonts}"/>
                         <Entry x:Name="emailEntry" Placeholder="Enter email" Keyboard="Email"/>
-                        <Label Text="Date of Birth" />
+                    <Label Text="Date of Birth" Style="{StaticResource whiteLargeFonts}"/>
                         <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy"/>
-                        <Label Text="Phone" />
+                    <Label Text="Phone" Style="{StaticResource whiteLargeFonts}"/>
                         <Entry x:Name="phoneEntry" Placeholder="Enter phone" Keyboard="Numeric"/>
-                        <Label Text="Username" />
+                    <Label Text="Username" Style="{StaticResource whiteLargeFonts}"/>
                         <Entry x:Name="usernameEntry" Placeholder="Enter username" />
-                        <Label Text="Password" />
+                    <Label Text="Password" Style="{StaticResource whiteLargeFonts}"/>
                         <Entry x:Name="passwordEntry" Placeholder="Enter password" IsPassword="true" />
                         <Button Text="Register" Clicked="CompleteMentorRegistrationButtonClicked" StyleClass="Success"/>
                         <Label x:Name="completeRegistrationButton" />

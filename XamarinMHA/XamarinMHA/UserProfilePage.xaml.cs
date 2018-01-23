@@ -54,6 +54,7 @@ namespace HelloWorld
             {
                 appointmentsList = JsonConvert.DeserializeObject<AppointmentEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Appointments;
             }
+            List<Appointment> concatenatedList = Utilities.concatenateBackToBackAppointments(appointmentsList);
             List<TempAppointment> formattedAppointmentsList = new List<TempAppointment>();
             
             foreach (Appointment appointment in appointmentsList)

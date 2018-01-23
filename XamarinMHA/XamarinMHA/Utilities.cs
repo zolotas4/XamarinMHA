@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AppointmentModel;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,5 +83,30 @@ namespace HelloWorld
             }
             return filteredSlots;
         }
+
+        public static List<Appointment> concatenateBackToBackAppointments(List<Appointment> allAppointments)
+        {
+            List<Appointment> concatenatedAppointmentsList = new List<Appointment>();
+            List<Appointment> sortedAppointmentsList = allAppointments.OrderBy(o => o.date).ThenBy(o => o.slotNumber).ToList();
+
+            for (int i = 0; i < sortedAppointmentsList.Count; i++)
+            {
+               for (int y = i+1; y < sortedAppointmentsList.Count; y++)
+                {
+                    //Debug.WriteLine(sortedAppointmentsList[i].date + " " + sortedAppointmentsList[y].date + " " + (sortedAppointmentsList[i].date == sortedAppointmentsList[y].date));
+                    //Debug.WriteLine("y: " + y + " " + sortedAppointmentsList[i].slotNumber + " " + sortedAppointmentsList[y].slotNumber + " " + (sortedAppointmentsList[y].slotNumber == (sortedAppointmentsList[i].slotNumber + y)));
+                    if (sortedAppointmentsList[i].date == sortedAppointmentsList[y].date && sortedAppointmentsList[y].slotNumber == (sortedAppointmentsList[i].slotNumber+y))
+                    {
+                        //Debug.WriteLine("Hi!");
+                        sortedAppointmentsList.Remove(sortedAppointmentsList[y]);
+                    }
+                }
+            }
+               foreach (Appointment appointment in sortedAppointmentsList)
+            {
+                //Debug.WriteLine(appointment.date + " " + appointment.slotNumber);
+            }
+            return sortedAppointmentsList;
+        } 
     }
 }
