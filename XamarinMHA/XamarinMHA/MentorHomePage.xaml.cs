@@ -1,8 +1,12 @@
 ﻿using MentorModel;
+using Newtonsoft.Json;
+using PeopleModel;
+using SessionModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +41,17 @@ namespace HelloWorld
             await Navigation.PushAsync(userProfile);
         }
 
+        async void LogSessionsImageTapped(object sender, EventArgs args)
+        {
+           
+            var imageSender = (Image)sender;
+            MentorAllSessionsListPage allSessionsListPage = new MentorAllSessionsListPage
+            {
+                BindingContext = mentor
+            };
+            await Navigation.PushAsync(allSessionsListPage);
+        }
+
         async void ApproveUsersImageTapped(object sender, EventArgs args)
         {
             var imageSender = (Image)sender;
@@ -55,6 +70,22 @@ namespace HelloWorld
                 BindingContext = mentor
             };
             await Navigation.PushAsync(mentorAppointmentsPage);
+        }
+
+        public class TempSession
+        {
+            public TempSession(String personFirstLastName, String date, String time, Session session)
+            {
+                this.PersonFirstLastName = personFirstLastName;
+                this.Date = date;
+                this.Time = time;
+                this.Session = session;
+            }
+
+            public string PersonFirstLastName { get; set; }
+            public string Date { get; set; }
+            public string Time { get; set; }
+            internal Session Session { get; set; }
         }
     }
 }

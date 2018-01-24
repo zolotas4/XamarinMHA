@@ -35,8 +35,13 @@
                         <Label Text="My Appointments" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="chat.png"/>
-                        <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
+                        <Image Source="chat.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="LogSessionsImageTapped"  />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="Log Sessions" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="userProfile.png">
@@ -49,6 +54,7 @@
                     </StackLayout>
                 </Grid>
             </StackLayout>
+            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

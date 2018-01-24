@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MentorLogSessionPage">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <StackLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Label x:Name="titleLabel" Text="Session Details" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
+                <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                <Label Text="Comments" Style="{StaticResource whiteLargeFonts}"/>
+                <Editor x:Name="commentsEditor" Text="Enter comments here..." VerticalOptions="FillAndExpand"/>
+                <Button x:Name="logSessionButton" Text="Log Session" StyleClass="Success" Clicked="logSessionButtonClicked"/>
+            </StackLayout>
+            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

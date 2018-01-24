@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MentorAllSessionsListPage">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Style="{StaticResource backImage}"/>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <StackLayout>
+                    <Label x:Name="openSessionsLabel" Text="Open Sessions" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center"/>
+                        <ListView x:Name="OpenSessionsList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="SessionItemTapped" VerticalOptions="FillAndExpand" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1">
+                                            <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
+                                            <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                                            <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    <Label x:Name="loggedSessionsLabel" Text="Logged Sessions" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center"/>
+                        <ListView x:Name="LoggedSessionsList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="SessionItemTapped" VerticalOptions="FillAndExpand">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1">
+                                            <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
+                                            <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                                            <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                </StackLayout>
+            </ScrollView>
+            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

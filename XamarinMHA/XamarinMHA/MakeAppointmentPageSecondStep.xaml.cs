@@ -3,6 +3,7 @@ using DLToolkit.Forms.Controls;
 using MentorModel;
 using Newtonsoft.Json;
 using PeopleModel;
+using SessionModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,6 +23,7 @@ namespace HelloWorld
         DateTime date;
         int duration;
         string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/";
+        string sessionUrl = "http://" + Utilities.LOCALHOST + ":8080/sessions/";
         string sContentType = "application/json";
 
         public MakeAppointmentPageSecondStep(Person user, Mentor mentor, DateTime date, int duration)
@@ -62,6 +64,8 @@ namespace HelloWorld
                     Appointment appointment = new Appointment(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)+i);
                     response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(appointment), Encoding.UTF8, sContentType));
                 }
+                Session session = new Session(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot), duration);
+                response = await oHttpClient.PostAsync(sessionUrl, new StringContent(JsonConvert.SerializeObject(session), Encoding.UTF8, sContentType));
                 /*
                 if (response.IsSuccessStatusCode)
                 {
