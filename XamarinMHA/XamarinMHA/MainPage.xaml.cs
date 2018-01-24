@@ -40,5 +40,10 @@ namespace HelloWorld
             var imageSender = (Image)sender;
             await Navigation.PushAsync(new ContactUsPage());
         }
+
+        async void SosButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SosPage());
+        }
     }
 }

@@ -55,4 +55,9 @@
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="sos" Order="Primary" Icon="sosWithTextBottomWhite.png" Clicked="SosButtonClicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
 </ContentPage>

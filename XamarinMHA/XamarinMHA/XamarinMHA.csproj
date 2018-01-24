@@ -90,6 +90,9 @@
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SessionEmbeddedWrapper.cs" />
+    <Compile Include="SosPage.xaml.cs">
+      <DependentUpon>SosPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UploadVerificationDocumentPage.xaml.cs">
       <DependentUpon>UploadVerificationDocumentPage.xaml</DependentUpon>
     </Compile>
@@ -294,6 +297,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MentorLogSessionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
