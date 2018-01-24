@@ -17,6 +17,16 @@ public class Session {
     private Date date;
     private int startingSlotNumber;
     private int duration;
+
+    public int getActualDuration() {
+        return actualDuration;
+    }
+
+    public void setActualDuration(int actualDuration) {
+        this.actualDuration = actualDuration;
+    }
+
+    private int actualDuration;
     private boolean logged;
     private String comments;
 
@@ -66,6 +76,7 @@ public class Session {
         this.duration = duration;
         this.logged = false;
         this.comments = "";
+        this.actualDuration = 0;
     }
 
 

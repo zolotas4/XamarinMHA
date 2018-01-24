@@ -32,6 +32,7 @@ namespace SessionModel
             this.duration = duration;
             this.logged = false;
             this.comments = "";
+            this.actualDuration = 0;
         }
 
         [JsonProperty("person")]
@@ -48,6 +49,8 @@ namespace SessionModel
         public Boolean logged { get; set; }
         [JsonProperty("comments")]
         public String comments { get; set; }
+        [JsonProperty("actualDuration")]
+        public int actualDuration { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
     }

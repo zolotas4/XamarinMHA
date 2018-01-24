@@ -10,6 +10,13 @@
                 <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
                 <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
                 <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Duration: " VerticalTextAlignment="Center" Style="{StaticResource whiteTextFonts}"/>
+                    <Entry x:Name="durationHoursEntry" Placeholder="hours" Keyboard="Numeric" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="End"/>
+                    <Label Text="h" Style="{StaticResource whiteTextFonts}" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="durationMinsEntry" Placeholder="mins" Keyboard="Numeric" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="End"/>
+                    <Label Text="m" Style="{StaticResource whiteTextFonts}" VerticalTextAlignment="Center"/>
+                </StackLayout>
                 <Label Text="Comments" Style="{StaticResource whiteLargeFonts}"/>
                 <Editor x:Name="commentsEditor" Text="Enter comments here..." VerticalOptions="FillAndExpand"/>
                 <Button x:Name="logSessionButton" Text="Log Session" StyleClass="Success" Clicked="logSessionButtonClicked"/>
