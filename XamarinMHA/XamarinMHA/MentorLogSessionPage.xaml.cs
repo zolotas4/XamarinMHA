@@ -61,6 +61,6 @@ namespace HelloWorld
                 }
             }
         }
-        //TODO: Time left is for user is not shown.
+        //TODO: Time left for user is not shown.
     }
 }

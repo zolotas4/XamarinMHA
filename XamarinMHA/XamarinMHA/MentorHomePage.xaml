@@ -35,7 +35,7 @@
                         <Label Text="My Appointments" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="chat.png">
+                        <Image Source="logSession.png">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer
                                 Tapped="LogSessionsImageTapped"  />
