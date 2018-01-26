@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ResourceModel
 {
@@ -30,6 +27,8 @@ namespace ResourceModel
             this.filetype = filetype;
         }
 
+        [JsonProperty("id")]
+        public String id { get; set; }
         [JsonProperty("title")]
         public String title { get; set; }
         [JsonProperty("shortDescription")]

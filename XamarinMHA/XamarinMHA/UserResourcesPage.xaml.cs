@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using PeopleModel;
 using ResourceModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -15,33 +17,44 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserResourcesPage : TabbedPage
     {
+        string sContentType = "application/json";
+
+        Person user;
         ResourceEmbeddedWrapper allResources = new ResourceEmbeddedWrapper();
         public UserResourcesPage()
         {
             InitializeComponent();
         }
 
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+            user = (Person)BindingContext;
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //populateListWithFavoriteResources();
             Utilities.toggleSpinner(spinner);
+            populateListWithFavoriteResources();
             populateListWithAllResources();
             Utilities.toggleSpinner(spinner);
         }
 
         async void populateListWithFavoriteResources()
         {
-            ResourceEmbeddedWrapper favoriteResources = new ResourceEmbeddedWrapper();
+            List<Resource> favoriteResources = new List<Resource>();
             HttpClient oHttpClient = new HttpClient();
-            //TODO: Add correct REST url
-            string url = Utilities.LOCALHOST + "resources/search/";
-            var response = await oHttpClient.GetAsync(url);
-            if (response.IsSuccessStatusCode)
+            foreach (String resourceId in user.FavoriteResources)
             {
-                favoriteResources = JsonConvert.DeserializeObject<ResourceEmbeddedWrapper>(await response.Content.ReadAsStringAsync());
+                string url = Utilities.LOCALHOST + "resources/search/findById?id=" + resourceId;
+                var response = await oHttpClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    favoriteResources.Add(JsonConvert.DeserializeObject<Resource>(await response.Content.ReadAsStringAsync()));
+                }
             }
-            favoriteResourcesList.ItemsSource = favoriteResources.Embedded.Resources;
+            favoriteResourcesList.ItemsSource = favoriteResources;
         }
 
         async void populateListWithAllResources()
@@ -57,22 +70,27 @@ namespace HelloWorld
             allResourcesList.ItemsSource = allResources.Embedded.Resources;
         }
 
-        private void ResourceItemTapped(object sender, ItemTappedEventArgs e)
+        private async Task ResourceItemTapped(object sender, ItemTappedEventArgs e)
         {
+            String resourceId = ((Resource)e.Item).id;
 
+            HttpClient oHttpClient = new HttpClient();
+            String updateFavoriesUrl = Utilities.LOCALHOST + "person/updateFavorites/" + user.UserName + "/" + resourceId + "/";
+            HttpResponseMessage response = await oHttpClient.GetAsync(updateFavoriesUrl);
+            if (response.IsSuccessStatusCode)
+            {
+                DisplayAlert("Success", "Added to Favorites", "OK");
+            }
         }
 
         private void searchAllOnTextChanged(object sender, TextChangedEventArgs e)
         {
             allResourcesList.BeginRefresh();
-
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
                 allResourcesList.ItemsSource = allResources.Embedded.Resources;
             else
                 allResourcesList.ItemsSource = allResources.Embedded.Resources.Where(i => i.title.ToLower().Contains(e.NewTextValue.ToLower()) || i.shortDescription.ToLower().Contains(e.NewTextValue.ToLower()));
-
             allResourcesList.EndRefresh();
         }
     }
-
 }

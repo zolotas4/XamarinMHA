@@ -32,6 +32,8 @@ namespace PeopleModel
             this.Approved = Approved;
             this.Submitted = Submitted;
             this.FirstLastName = FirstName + " " + LastName;
+            this.FavoriteResources = new List<String>();
+            this.SuggestedResources = new List<String>();
         }
 
         [JsonProperty("firstName")]
@@ -52,6 +54,10 @@ namespace PeopleModel
         public String Approved { get; set; }
         [JsonProperty("submitted")]
         public String Submitted { get; set; }
+        [JsonProperty("suggestedResources")]
+        public List<String> SuggestedResources { get; set; }
+        [JsonProperty("favoriteResources")]
+        public List<String> FavoriteResources { get; set; }
         [JsonProperty("_links")]
         public Link _links { get; set; }
         [JsonIgnore]
