@@ -22,8 +22,8 @@ namespace HelloWorld
         Mentor mentor;
         DateTime date;
         int duration;
-        string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/";
-        string sessionUrl = "http://" + Utilities.LOCALHOST + ":8080/sessions/";
+        string url = Utilities.LOCALHOST + "appointments/";
+        string sessionUrl = Utilities.LOCALHOST + "sessions/";
         string sContentType = "application/json";
 
         public MakeAppointmentPageSecondStep(Person user, Mentor mentor, DateTime date, int duration)
@@ -69,7 +69,7 @@ namespace HelloWorld
                 /*
                 if (response.IsSuccessStatusCode)
                 {
-                    String sendEmailUrl = "http://" + Utilities.LOCALHOST + ":8080/email/send/" + user.Email + "/" + user.FirstName + "/";
+                    String sendEmailUrl = Utilities.LOCALHOST + "email/send/" + user.Email + "/" + user.FirstName + "/";
                     response = await oHttpClient.GetAsync(sendEmailUrl);
                 }
                 */

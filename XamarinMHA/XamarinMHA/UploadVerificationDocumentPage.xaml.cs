@@ -72,7 +72,7 @@ namespace HelloWorld
             HttpClient client = new HttpClient();
             MultipartFormDataContent form = new MultipartFormDataContent();
             form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await client.PostAsync("http://" + Utilities.LOCALHOST + ":8080/photo/upload/" + username + "/", form);
+            HttpResponseMessage response = await client.PostAsync(Utilities.LOCALHOST + "photo/upload/" + username + "/", form);
             if (response.IsSuccessStatusCode)
             {
                 HttpClient client2 = new HttpClient();

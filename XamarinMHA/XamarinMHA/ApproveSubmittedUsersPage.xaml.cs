@@ -31,7 +31,7 @@ namespace HelloWorld
         {
             PeopleEmbeddedWrapper submittedButNotApprovedUsersList = new PeopleEmbeddedWrapper();
             HttpClient oHttpClient = new HttpClient();
-            string url = "http://" + Utilities.LOCALHOST + ":8080/people/search/findByApprovedAndSubmitted?approved=false&submitted=true";
+            string url = Utilities.LOCALHOST + "people/search/findByApprovedAndSubmitted?approved=false&submitted=true";
             var response = await oHttpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {

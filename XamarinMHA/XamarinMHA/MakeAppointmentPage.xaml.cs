@@ -34,7 +34,7 @@ namespace HelloWorld
         async void retrieveMentors()
         {
             HttpClient oHttpClient = new HttpClient();
-            string url = "http://" + Utilities.LOCALHOST + ":8080/mentors/";
+            string url = Utilities.LOCALHOST + "mentors/";
             var response = await oHttpClient.GetStringAsync(url);
             var mentorsList = JsonConvert.DeserializeObject<MentorEmbeddedWrapper>(response).Embedded.Mentors;
             Debug.WriteLine(mentorsList[1].FirstName);
@@ -48,7 +48,7 @@ namespace HelloWorld
             HttpClient client = new HttpClient();
             //MultipartFormDataContent form = new MultipartFormDataContent();
             //form.Add(new StreamContent(file.GetStream()), "file", file.Path);
-            HttpResponseMessage response = await client.GetAsync("http://" + Utilities.LOCALHOST + ":8080/photo/download/" + username + "/");
+            HttpResponseMessage response = await client.GetAsync(Utilities.LOCALHOST + "photo/download/" + username + "/");
             Byte[] result = await response.Content.ReadAsByteArrayAsync();
             MentorPic.Source = ImageSource.FromStream(() => new MemoryStream(result));
         }
@@ -66,7 +66,7 @@ namespace HelloWorld
 
             HttpClient oHttpClient = new HttpClient();
 
-            string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/search/findByMentorAndDate?mentor=" + selectedMentor.UserName +
+            string url = Utilities.LOCALHOST + "appointments/search/findByMentorAndDate?mentor=" + selectedMentor.UserName +
                 "&date=" + dateEntry.Date.ToString("yyyy-MM-dd");
             Debug.WriteLine("URL: " + url);
             HttpResponseMessage response = await oHttpClient.GetAsync(url);

@@ -34,7 +34,7 @@ namespace HelloWorld
             if (answer == true)
             {
                 HttpClient oHttpClient = new HttpClient();
-                string url = "http://" + Utilities.LOCALHOST + ":8080/people/search/findByUserName?username=" + tempAppointment.Appointment.Person;
+                string url = Utilities.LOCALHOST + "people/search/findByUserName?username=" + tempAppointment.Appointment.Person;
                 Utilities.toggleSpinner(spinner);
                 var response = await oHttpClient.GetAsync(url);
                 Utilities.toggleSpinner(spinner);

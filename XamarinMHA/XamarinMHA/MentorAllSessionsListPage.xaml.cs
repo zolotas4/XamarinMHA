@@ -35,7 +35,7 @@ namespace HelloWorld
             Utilities.toggleSpinner(spinner);
             HttpClient oHttpClient = new HttpClient();
             HttpResponseMessage response = new HttpResponseMessage();
-            string url = "http://" + Utilities.LOCALHOST + ":8080/sessions/search/findSessionsBeforeToday?mentor=" + mentor.UserName +
+            string url = Utilities.LOCALHOST + "sessions/search/findSessionsBeforeToday?mentor=" + mentor.UserName +
                "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
 
             response = await oHttpClient.GetAsync(url);
@@ -50,7 +50,7 @@ namespace HelloWorld
             foreach (Session session in sessionsList)
             {
                 HttpClient oHttpClient2 = new HttpClient();
-                string url2 = "http://" + Utilities.LOCALHOST + ":8080/people/search/findByUserName?username=" + session.Person;
+                string url2 = Utilities.LOCALHOST + "people/search/findByUserName?username=" + session.Person;
                 HttpResponseMessage response2 = await oHttpClient.GetAsync(url2);
                 Person person = JsonConvert.DeserializeObject<Person>(await response2.Content.ReadAsStringAsync());
                 TempSession tempSession = new TempSession(person.FirstLastName, session.date.ToString("dd-MM-yyyy"), Utilities.FindTimeBaseOnSlotNumber(session.startingSlotNumber), session);

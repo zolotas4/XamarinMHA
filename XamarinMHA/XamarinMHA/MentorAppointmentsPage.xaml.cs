@@ -39,7 +39,7 @@ namespace HelloWorld
         {
             AppointmentEmbeddedWrapper appointmentsList = new AppointmentEmbeddedWrapper();
             HttpClient oHttpClient = new HttpClient();
-            string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/search/findByMentorOrderByStartingDateTimeAsc?mentor=" + mentor.UserName;
+            string url = Utilities.LOCALHOST + "appointments/search/findByMentorOrderByStartingDateTimeAsc?mentor=" + mentor.UserName;
             var response = await oHttpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {

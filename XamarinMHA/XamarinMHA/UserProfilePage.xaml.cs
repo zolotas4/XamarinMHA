@@ -46,7 +46,7 @@ namespace HelloWorld
 
             HttpClient oHttpClient = new HttpClient();
 
-            string url = "http://" + Utilities.LOCALHOST + ":8080/appointments/search/findByPersonGreaterThanOrderByDateDesc?person=" + user.UserName +
+            string url = Utilities.LOCALHOST + "appointments/search/findByPersonGreaterThanOrderByDateDesc?person=" + user.UserName +
                 "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
             HttpResponseMessage response = await oHttpClient.GetAsync(url);
             List<Appointment> appointmentsList = new List<Appointment>();
@@ -61,7 +61,7 @@ namespace HelloWorld
             {
                 HttpClient oHttpClient2 = new HttpClient();
 
-                string url2 = "http://" + Utilities.LOCALHOST + ":8080/mentors/search/findByUserName?username=" + appointment.Mentor;
+                string url2 = Utilities.LOCALHOST + "mentors/search/findByUserName?username=" + appointment.Mentor;
                 HttpResponseMessage response2 = await oHttpClient.GetAsync(url2);
                 Mentor mentor = JsonConvert.DeserializeObject<Mentor>(await response2.Content.ReadAsStringAsync());
                 TempAppointment tempAppointment = new TempAppointment(mentor.FirstLastName, appointment.date.ToString("dd-MM-yyyy"), Utilities.FindTimeBaseOnSlotNumber(appointment.slotNumber), appointment);
