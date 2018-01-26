@@ -27,9 +27,9 @@
         </StackLayout>
     </ContentPage>
     <ContentPage Title="All">
-           <StackLayout>
-                <Entry x:Name="searchAllResourcesEntry"/>
-                <ListView x:Name="allResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped" >
+        <StackLayout  Padding="20,5">
+            <SearchBar x:Name="searchAllResourcesSearchBar" TextChanged="searchAllOnTextChanged"/>
+                <ListView x:Name="allResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

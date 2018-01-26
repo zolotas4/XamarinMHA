@@ -15,6 +15,7 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserResourcesPage : TabbedPage
     {
+        ResourceEmbeddedWrapper allResources = new ResourceEmbeddedWrapper();
         public UserResourcesPage()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace HelloWorld
 
         async void populateListWithAllResources()
         {
-            ResourceEmbeddedWrapper allResources = new ResourceEmbeddedWrapper();
+            
             HttpClient oHttpClient = new HttpClient();
             string url = Utilities.LOCALHOST + "resources/";
             var response = await oHttpClient.GetAsync(url);
@@ -59,6 +60,18 @@ namespace HelloWorld
         private void ResourceItemTapped(object sender, ItemTappedEventArgs e)
         {
 
+        }
+
+        private void searchAllOnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            allResourcesList.BeginRefresh();
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                allResourcesList.ItemsSource = allResources.Embedded.Resources;
+            else
+                allResourcesList.ItemsSource = allResources.Embedded.Resources.Where(i => i.title.ToLower().Contains(e.NewTextValue.ToLower()) || i.shortDescription.ToLower().Contains(e.NewTextValue.ToLower()));
+
+            allResourcesList.EndRefresh();
         }
     }
 
