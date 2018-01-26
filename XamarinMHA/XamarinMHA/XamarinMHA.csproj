@@ -86,6 +86,9 @@
       <DependentUpon>MyAppointmentsUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PeopleEmbeddedWrapper.cs" />
+    <Compile Include="ResourceDetailsPage.xaml.cs">
+      <DependentUpon>ResourceDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ResourceEmbeddedWrapper.cs" />
     <Compile Include="ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
@@ -313,6 +316,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UserResourcesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ResourceDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

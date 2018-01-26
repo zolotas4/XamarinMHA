@@ -73,15 +73,9 @@ namespace HelloWorld
 
         private async Task ResourceItemTapped(object sender, ItemTappedEventArgs e)
         {
-            String resourceId = ((Resource)e.Item).id;
-
-            HttpClient oHttpClient = new HttpClient();
-            String updateFavoriesUrl = Utilities.LOCALHOST + "person/updateFavorites/" + user.UserName + "/" + resourceId + "/";
-            HttpResponseMessage response = await oHttpClient.GetAsync(updateFavoriesUrl);
-            if (response.IsSuccessStatusCode)
-            {
-                DisplayAlert("Success", "Added to Favorites", "OK");
-            }
+            ResourceDetailsPage resourceDetailsPage = new ResourceDetailsPage(user);
+            resourceDetailsPage.BindingContext = (Resource)e.Item; 
+            await Navigation.PushAsync(resourceDetailsPage);
         }
 
         private void searchAllOnTextChanged(object sender, TextChangedEventArgs e)
@@ -106,6 +100,20 @@ namespace HelloWorld
             
         }
 
-        
+        async void AddToFavoritesImageTapped(object sender, EventArgs args)
+        {
+            var imageSender = (Image)sender;
+            Debug.WriteLine("Args: " + args);
+            /*
+            String resourceId = ((Resource)e.Item).id;
+            HttpClient oHttpClient = new HttpClient();
+            String updateFavoriesUrl = Utilities.LOCALHOST + "person/updateFavorites/" + user.UserName + "/" + resourceId + "/";
+            HttpResponseMessage response = await oHttpClient.GetAsync(updateFavoriesUrl);
+            if (response.IsSuccessStatusCode)
+            {
+                DisplayAlert("Success", "Added to Favorites", "OK");
+            }
+            */
+        }
     }
 }

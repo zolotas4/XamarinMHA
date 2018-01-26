@@ -120,4 +120,8 @@ namespace HelloWorld
     //TODO: Multiple pictures upload for user registration
     //TODO: Super user (admin) creation
     //TODO: Admin verifies users (not the mentor) and mentors
+    //TODO: Favorites list is not updated when a new favorite is added. User has to login again. This is because binding context is not updated.
+    //TODO: Add description and author to Resource model (Xamarin and Spring)
+    //TODO: Implement download resource button functionality
+    //TODO: Include add functionality to favorites icon to the list view of resources. Check for CommandParameter parameter of Xamarin form elements.
 }

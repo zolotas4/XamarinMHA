@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.ResourceDetailsPage"
+             Title="{Binding title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
+            <Label x:Name="Author" Text="Author:"  Style="{StaticResource whiteTextFonts}" />
+            <Label x:Name="Description" Text="{Binding title, StringFormat='Description: {0:N}'}}"  Style="{StaticResource whiteTextFonts}" />
+            <Button Text="Login" Clicked="DownloadButtonClicked" StyleClass="Success"/>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="favIconItem" Text="favorite" Order="Primary" Icon="favEmpty.png" Clicked="FavoriteButtonClicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>
