@@ -110,4 +110,14 @@ namespace HelloWorld
             return sortedAppointmentsList;
         } 
     }
+
+    //TODO: Notifications
+    //TODO: Suggest resources in session logging
+    //TODO: Resources tabbed page with favs, all, suggested
+    //TODO: List fav resources
+    //TODO: List suggested resources
+    //TODO: Main page free resources
+    //TODO: Multiple pictures upload for user registration
+    //TODO: Super user (admin) creation
+    //TODO: Admin verifies users (not the mentor) and mentors
 }
