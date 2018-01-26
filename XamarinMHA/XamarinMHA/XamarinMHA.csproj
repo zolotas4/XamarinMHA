@@ -86,6 +86,7 @@
       <DependentUpon>MyAppointmentsUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PeopleEmbeddedWrapper.cs" />
+    <Compile Include="ResourceEmbeddedWrapper.cs" />
     <Compile Include="ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
     </Compile>

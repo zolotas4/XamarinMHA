@@ -48,5 +48,15 @@ namespace HelloWorld
             };
             await Navigation.PushAsync(makeAppointmentPage);
         }
+
+        async void ResourcesImageTapped(object sender, EventArgs args)
+        {
+            //var imageSender = (Image)sender;
+            UserResourcesPage userResourcesPage = new UserResourcesPage
+            {
+                BindingContext = user
+            };
+            await Navigation.PushAsync(userResourcesPage);
+        }
     }
 }

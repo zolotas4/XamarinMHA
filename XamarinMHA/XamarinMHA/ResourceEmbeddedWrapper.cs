@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ResourceModel
 {
-    class ResourceEmbeddedWrapped
+    class ResourceEmbeddedWrapper
     {
         [JsonProperty("_embedded")]
         public Embedded Embedded { get; set; }
@@ -19,7 +19,7 @@ namespace ResourceModel
         public List<Resource> Resources { get; set; }
     }
 
-    [JsonObject("resource")]
+    [JsonObject("resources")]
     public class Resource
     {
         public Resource(String title, String shortDescription, String filename, String filetype)

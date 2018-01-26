@@ -28,6 +28,10 @@
                     </StackLayout>
                     <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
                         <Image Source="resources.png"/>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ResourcesImageTapped"  />
+                        </Image.GestureRecognizers>
                         <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource whiteLargeFonts}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
