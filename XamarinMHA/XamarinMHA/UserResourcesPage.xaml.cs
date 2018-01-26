@@ -21,6 +21,7 @@ namespace HelloWorld
 
         Person user;
         ResourceEmbeddedWrapper allResources = new ResourceEmbeddedWrapper();
+        List<Resource> favoriteResources = new List<Resource>();
         public UserResourcesPage()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace HelloWorld
 
         async void populateListWithFavoriteResources()
         {
-            List<Resource> favoriteResources = new List<Resource>();
+            
             HttpClient oHttpClient = new HttpClient();
             foreach (String resourceId in user.FavoriteResources)
             {
@@ -92,5 +93,19 @@ namespace HelloWorld
                 allResourcesList.ItemsSource = allResources.Embedded.Resources.Where(i => i.title.ToLower().Contains(e.NewTextValue.ToLower()) || i.shortDescription.ToLower().Contains(e.NewTextValue.ToLower()));
             allResourcesList.EndRefresh();
         }
+
+        private void searchFavoriteOnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            favoriteResourcesList.BeginRefresh();
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                favoriteResourcesList.ItemsSource = favoriteResources;
+            else
+                favoriteResourcesList.ItemsSource = favoriteResources.Where(i => i.title.ToLower().Contains(e.NewTextValue.ToLower()) || i.shortDescription.ToLower().Contains(e.NewTextValue.ToLower()));
+            favoriteResourcesList.EndRefresh();
+            
+        }
+
+        
     }
 }
