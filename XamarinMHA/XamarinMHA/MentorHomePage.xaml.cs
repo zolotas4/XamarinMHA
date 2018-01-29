@@ -45,7 +45,7 @@ namespace HelloWorld
         {
            
             var imageSender = (Image)sender;
-            MentorAllSessionsListPage allSessionsListPage = new MentorAllSessionsListPage
+            MentorAllSessionsListPage allSessionsListPage = new MentorAllSessionsListPage()
             {
                 BindingContext = mentor
             };

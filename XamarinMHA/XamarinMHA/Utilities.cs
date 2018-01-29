@@ -12,8 +12,8 @@ namespace HelloWorld
     public static class Utilities
     {
         //public static String LOCALHOST = "http://192.168.1.120:8080/";
-        //public static String LOCALHOST = "http://10.0.3.2:8080/";
-        public static String LOCALHOST = "https://keyfort.herokuapp.com/";
+        public static String LOCALHOST = "http://10.0.3.2:8080/";
+        //public static String LOCALHOST = "https://keyfort.herokuapp.com/";
         public static void toggleSpinner (ActivityIndicator spinner) {
             spinner.IsVisible = !spinner.IsVisible;
             spinner.IsRunning = !spinner.IsRunning;
@@ -120,7 +120,6 @@ namespace HelloWorld
     //TODO: Admin verifies users (not the mentor) and mentors
     //TODO: Add description and author to Resource model (Xamarin and Spring)
     //TODO: Implement download resource button functionality
-    //TODO: Fill in contact us static page
     //TODO: Add button send to email in resources details page
     //TODO: Populate SOS page
     //TODO: Text alignment full in static pages

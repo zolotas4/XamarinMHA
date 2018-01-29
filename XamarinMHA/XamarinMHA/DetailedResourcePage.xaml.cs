@@ -43,9 +43,8 @@ namespace HelloWorld
             HttpClient oHttpClient = new HttpClient();
             if (user.FavoriteResources.Contains(resourceId))
             {
-                Debug.WriteLine("Hi!");
-                String removeFavoriesUrl = Utilities.LOCALHOST + "person/updateFavorites/remove/" + user.UserName + "/" + resourceId + "/";
-                HttpResponseMessage response = await oHttpClient.GetAsync(removeFavoriesUrl);
+                String removeFavoritesUrl = Utilities.LOCALHOST + "person/updateResources/favorites/remove/" + user.UserName + "/" + resourceId + "/";
+                HttpResponseMessage response = await oHttpClient.GetAsync(removeFavoritesUrl);
                 if (response.IsSuccessStatusCode)
                 {
                     favIconItem.Icon = "favEmpty.png";
@@ -53,8 +52,8 @@ namespace HelloWorld
                     DisplayAlert("Success", "Removed from Favorites", "OK");
                 }
             } else {
-                String updateFavoriesUrl = Utilities.LOCALHOST + "person/updateFavorites/add/" + user.UserName + "/" + resourceId + "/";
-                HttpResponseMessage response = await oHttpClient.GetAsync(updateFavoriesUrl);
+                String updateFavoritesUrl = Utilities.LOCALHOST + "person/updateResources/favorites/add/" + user.UserName + "/" + resourceId + "/";
+                HttpResponseMessage response = await oHttpClient.GetAsync(updateFavoritesUrl);
                 if (response.IsSuccessStatusCode)
                 {
                     favIconItem.Icon = "favFilled.png";
