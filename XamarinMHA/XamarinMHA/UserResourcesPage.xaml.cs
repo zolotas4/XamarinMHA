@@ -21,6 +21,7 @@ namespace HelloWorld
 
         Person user;
         ResourceEmbeddedWrapper allResources = new ResourceEmbeddedWrapper();
+        List<Resource> suggestedResources = new List<Resource>();
         ObservableCollection<Resource> favoriteResources = new ObservableCollection<Resource>();
         public UserResourcesPage()
         {
@@ -33,6 +34,7 @@ namespace HelloWorld
             user = (Person)BindingContext;
             Utilities.toggleSpinner(spinner);
             populateListWithFavoriteResources();
+            populateListWithSuggestedResources();
             populateListWithAllResources();
             Utilities.toggleSpinner(spinner);
         }
@@ -98,6 +100,31 @@ namespace HelloWorld
             allResourcesList.ItemsSource = allResources.Embedded.Resources;
         }
 
+        async void populateListWithSuggestedResources()
+        {
+
+            HttpClient oHttpClient = new HttpClient();
+            string url = Utilities.LOCALHOST + "people/search/findByUserName?username=" + user.UserName;
+            Utilities.toggleSpinner(spinner);
+            var response = await oHttpClient.GetAsync(url);
+            Utilities.toggleSpinner(spinner);
+            if (response.IsSuccessStatusCode)
+            {
+                user = JsonConvert.DeserializeObject<Person>(await response.Content.ReadAsStringAsync());
+            }
+
+            foreach (String resourceId in user.SuggestedResources)
+            {
+                url = Utilities.LOCALHOST + "resources/search/findById?id=" + resourceId;
+                response = await oHttpClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    suggestedResources.Add(JsonConvert.DeserializeObject<Resource>(await response.Content.ReadAsStringAsync()));
+                }
+            }
+            suggestedResourcesList.ItemsSource = suggestedResources;
+        }
+
         private async Task ResourceItemTapped(object sender, ItemTappedEventArgs e)
         {
 
@@ -127,6 +154,16 @@ namespace HelloWorld
                 favoriteResourcesList.ItemsSource = favoriteResources.Where(i => i.title.ToLower().Contains(e.NewTextValue.ToLower()) || i.shortDescription.ToLower().Contains(e.NewTextValue.ToLower()));
             favoriteResourcesList.EndRefresh();
             
+        }
+
+        private void searchSuggestedOnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            suggestedResourcesList.BeginRefresh();
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                suggestedResourcesList.ItemsSource = suggestedResources;
+            else
+                suggestedResourcesList.ItemsSource = suggestedResources.Where(i => i.title.ToLower().Contains(e.NewTextValue.ToLower()) || i.shortDescription.ToLower().Contains(e.NewTextValue.ToLower()));
+            suggestedResourcesList.EndRefresh();
         }
 
         private async Task FavoriteResourcesListRefreshing(object sender, EventArgs e)

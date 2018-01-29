@@ -22,8 +22,20 @@
         </StackLayout>
     </ContentPage>
     <ContentPage Title="Suggested">
-        <StackLayout>
-            
+        <StackLayout  Padding="20,5">
+            <SearchBar x:Name="searchSuggestedResourcesSearchBar" TextChanged="searchSuggestedOnTextChanged"/>
+            <ListView x:Name="suggestedResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
+                                    <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
+                                </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage>
     <ContentPage Title="All">
