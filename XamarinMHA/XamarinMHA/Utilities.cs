@@ -113,15 +113,15 @@ namespace HelloWorld
 
     //TODO: Notifications
     //TODO: Suggest resources in session logging
-    //TODO: Resources tabbed page with favs, all, suggested
-    //TODO: List fav resources
     //TODO: List suggested resources
     //TODO: Main page free resources
     //TODO: Multiple pictures upload for user registration
     //TODO: Super user (admin) creation
     //TODO: Admin verifies users (not the mentor) and mentors
-    //TODO: Favorites list is not updated when a new favorite is added. User has to login again. This is because binding context is not updated.
     //TODO: Add description and author to Resource model (Xamarin and Spring)
     //TODO: Implement download resource button functionality
-    //TODO: Include add functionality to favorites icon to the list view of resources. Check for CommandParameter parameter of Xamarin form elements.
+    //TODO: Fill in contact us static page
+    //TODO: Add button send to email in resources details page
+    //TODO: Populate SOS page
+    //TODO: Text alignment full in static pages
 }

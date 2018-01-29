@@ -5,11 +5,22 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image Style="{StaticResource backImage}"/>
-            <StackLayout>
-                <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            </StackLayout>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <StackLayout Padding="30,30">
+                    <Image Source="contactUsInside.png"/>
+                    <Label Text="Head Office" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <Label Text="2 Earls Court&#10;5th Avenue Business Park&#10;Team Valley&#10;NE11 0HF&#10;T: (0191) 491 1735" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <BoxView HeightRequest="3" BackgroundColor="#449D44" HorizontalOptions="FillAndExpand" />
+                    <Label Text="Yorkshire - York" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <Label Text="The Raylor Centre&#10;James Street&#10;York&#10;YO10 3DW&#10;T: (01904) 848 283" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <BoxView HeightRequest="3" BackgroundColor="#449D44" HorizontalOptions="FillAndExpand" />
+                    <Label Text="North West - Cumbria" FontAttributes="Bold"  Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <Label Text="Warwick Mill Business Village&#10;Warwick Bridge&#10;Carlisle, Cumbria&#10;CA4 8RR&#10;T: (01228) 564512" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <BoxView HeightRequest="3" BackgroundColor="#449D44" HorizontalOptions="FillAndExpand" />
+                    <Label Text="Email" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                    <Label Text="enquiries@keyfortgroup.co.uk" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </ScrollView>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
