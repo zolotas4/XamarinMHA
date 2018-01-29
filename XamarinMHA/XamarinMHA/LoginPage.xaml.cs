@@ -34,7 +34,6 @@ namespace HelloWorld
         {
             HttpClient oHttpClient = new HttpClient();
             string url = Utilities.LOCALHOST + "people/search/findByUserName?username=" + usernameEntry.Text;
-            Debug.WriteLine(url);
             Utilities.toggleSpinner(spinner);
             var response = await oHttpClient.GetAsync(url);
             Utilities.toggleSpinner(spinner);

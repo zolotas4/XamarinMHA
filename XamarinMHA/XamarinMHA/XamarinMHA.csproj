@@ -48,6 +48,9 @@
     <Compile Include="BookAppointmentPage.xaml.cs">
       <DependentUpon>BookAppointmentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetailedResourcePage.xaml.cs">
+      <DependentUpon>DetailedResourcePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MakeAppointmentPageSecondStep.xaml.cs">
       <DependentUpon>MakeAppointmentPageSecondStep.xaml</DependentUpon>
     </Compile>
@@ -86,9 +89,6 @@
       <DependentUpon>MyAppointmentsUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PeopleEmbeddedWrapper.cs" />
-    <Compile Include="ResourceDetailsPage.xaml.cs">
-      <DependentUpon>ResourceDetailsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ResourceEmbeddedWrapper.cs" />
     <Compile Include="ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
@@ -321,7 +321,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ResourceDetailsPage.xaml">
+    <EmbeddedResource Include="DetailedResourcePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

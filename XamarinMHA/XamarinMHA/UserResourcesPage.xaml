@@ -7,7 +7,7 @@
     <ContentPage Title="Favorites">
         <StackLayout Padding="20,5">
             <SearchBar x:Name="searchFavoriteResourcesSearchBar" TextChanged="searchFavoriteOnTextChanged"/>
-            <ListView x:Name="favoriteResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped" >
+            <ListView x:Name="favoriteResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped" IsPullToRefreshEnabled="True" Refreshing="FavoriteResourcesListRefreshing">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
