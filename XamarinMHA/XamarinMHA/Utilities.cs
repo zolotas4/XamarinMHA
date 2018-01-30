@@ -100,17 +100,14 @@ namespace HelloWorld
         }
     }
 
-    //TODO: Delete notifications
-    //TODO: Delete appointments
     //TODO: Suggest resources in session logging
-    //TODO: Main page free resources
     //TODO: Multiple pictures upload for user registration
     //TODO: Super user (admin) creation
     //TODO: Admin verifies users (not the mentor) and mentors
-    //TODO: Add description and author to Resource model (Xamarin and Spring)
     //TODO: Implement download resource button functionality
     //TODO: Add button send to email in resources details page
     //TODO: Populate SOS page
     //TODO: Search in favorite resources is broken
     //TODO: Send email when appointment is set that includes pdfs regarding cancelation policy etc.
+    //TODO: Display description in detailed resources (both free and user)
 }

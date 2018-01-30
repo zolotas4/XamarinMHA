@@ -50,11 +50,7 @@
                                     <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
                                     <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
                                 </StackLayout>
-                                <Image Source="favFilled.png" VerticalOptions="Center" HorizontalOptions="End" Margin="10,0">
-                                    <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="AddToFavoritesImageTapped" />
-                                    </Image.GestureRecognizers>
-                                </Image>
+                               
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -19,20 +19,29 @@ namespace ResourceModel
     [JsonObject("resources")]
     public class Resource
     {
-        public Resource(String title, String shortDescription, String filename, String filetype)
+        public Resource(String title, String shortDescription, String filename, String filetype, String free, String description, String author)
         {
             this.title = title;
             this.shortDescription = shortDescription;
             this.filename = filename;
             this.filetype = filetype;
+            this.description = description;
+            this.author = author;
+            this.free = free;
         }
 
         [JsonProperty("id")]
         public String id { get; set; }
         [JsonProperty("title")]
         public String title { get; set; }
+        [JsonProperty("free")]
+        public String free { get; set; }
         [JsonProperty("shortDescription")]
         public String shortDescription { get; set; }
+        [JsonProperty("author")]
+        public String author { get; set; }
+        [JsonProperty("description")]
+        public String description { get; set; }
         [JsonProperty("filename")]
         public String filename { get; set; }
         [JsonProperty("filetype")]
