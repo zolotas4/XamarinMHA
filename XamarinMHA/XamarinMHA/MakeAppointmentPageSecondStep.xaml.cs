@@ -60,11 +60,14 @@ namespace HelloWorld
                 Utilities.toggleSpinner(spinner);
                 HttpClient oHttpClient = new HttpClient();
                 HttpResponseMessage response = new HttpResponseMessage();
+                //We don't need to have duplicate info (both appointments and sessions). We can infer the first by having the second. Commented out so we don't save appointments.
+                /*
                 for (int i = 0; i <= duration; i++)
                 {
                     Appointment appointment = new Appointment(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)+i);
                     response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(appointment), Encoding.UTF8, sContentType));
                 }
+                */
                 Session session = new Session(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot), duration);
                 response = await oHttpClient.PostAsync(sessionUrl, new StringContent(JsonConvert.SerializeObject(session), Encoding.UTF8, sContentType));
                 //Set notifications

@@ -32,6 +32,8 @@ namespace AppointmentModel
             this.slotNumber = slotNumber;
         }
 
+        [JsonProperty("id")]
+        public String id { get; set; }
         [JsonProperty("person")]
         public String Person { get; set; }
         [JsonProperty("mentor")]

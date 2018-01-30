@@ -12,8 +12,9 @@ namespace HelloWorld
     public static class Utilities
     {
         //public static String LOCALHOST = "http://192.168.1.120:8080/";
-        public static String LOCALHOST = "http://10.0.3.2:8080/";
-        //public static String LOCALHOST = "https://keyfort.herokuapp.com/";
+        //public static String LOCALHOST = "http://10.0.3.2:8080/";
+        public static String LOCALHOST = "https://keyfort.herokuapp.com/";
+
         public static void toggleSpinner (ActivityIndicator spinner) {
             spinner.IsVisible = !spinner.IsVisible;
             spinner.IsRunning = !spinner.IsRunning;
@@ -84,31 +85,6 @@ namespace HelloWorld
             }
             return filteredSlots;
         }
-
-        public static List<Appointment> concatenateBackToBackAppointments(List<Appointment> allAppointments)
-        {
-            List<Appointment> concatenatedAppointmentsList = new List<Appointment>();
-            List<Appointment> sortedAppointmentsList = allAppointments.OrderBy(o => o.date).ThenBy(o => o.slotNumber).ToList();
-
-            for (int i = 0; i < sortedAppointmentsList.Count; i++)
-            {
-               for (int y = i+1; y < sortedAppointmentsList.Count; y++)
-                {
-                    //Debug.WriteLine(sortedAppointmentsList[i].date + " " + sortedAppointmentsList[y].date + " " + (sortedAppointmentsList[i].date == sortedAppointmentsList[y].date));
-                    //Debug.WriteLine("y: " + y + " " + sortedAppointmentsList[i].slotNumber + " " + sortedAppointmentsList[y].slotNumber + " " + (sortedAppointmentsList[y].slotNumber == (sortedAppointmentsList[i].slotNumber + y)));
-                    if (sortedAppointmentsList[i].date == sortedAppointmentsList[y].date && sortedAppointmentsList[y].slotNumber == (sortedAppointmentsList[i].slotNumber+y))
-                    {
-                        //Debug.WriteLine("Hi!");
-                        sortedAppointmentsList.Remove(sortedAppointmentsList[y]);
-                    }
-                }
-            }
-               foreach (Appointment appointment in sortedAppointmentsList)
-            {
-                //Debug.WriteLine(appointment.date + " " + appointment.slotNumber);
-            }
-            return sortedAppointmentsList;
-        } 
 
         public static String createNotificationIdFromDateAndSlot(DateTime date, int slotNumber)
         {

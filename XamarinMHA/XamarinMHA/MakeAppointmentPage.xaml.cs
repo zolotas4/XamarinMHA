@@ -12,6 +12,7 @@ using Xamarin.Forms.Xaml;
 using PeopleModel;
 using MentorModel;
 using AppointmentModel;
+using SessionModel;
 
 namespace HelloWorld
 {
@@ -66,19 +67,22 @@ namespace HelloWorld
 
             HttpClient oHttpClient = new HttpClient();
 
-            string url = Utilities.LOCALHOST + "appointments/search/findByMentorAndDate?mentor=" + selectedMentor.UserName +
+            string url = Utilities.LOCALHOST + "sessions/search/findByMentorAndDate?mentor=" + selectedMentor.UserName +
                 "&date=" + dateEntry.Date.ToString("yyyy-MM-dd");
             Debug.WriteLine("URL: " + url);
             HttpResponseMessage response = await oHttpClient.GetAsync(url);
-            List<Appointment> appointmentsList = new List<Appointment>();
+            List<Session> sessionsList = new List<Session>();
             if (response.IsSuccessStatusCode)
             {
-                appointmentsList = JsonConvert.DeserializeObject<AppointmentEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Appointments;
+                sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Sessions;
             }
             List<int> availableSlots = new List<int>(Enumerable.Range(selectedMentor.startSlot, selectedMentor.endSlot - selectedMentor.startSlot + 1));
-            foreach (Appointment appointment in appointmentsList)
+            foreach (Session session in sessionsList)
             {
-                availableSlots.Remove(appointment.slotNumber);
+                for (int i = session.startingSlotNumber; i <= session.startingSlotNumber + session.duration; i++)
+                {
+                    availableSlots.Remove(i);
+                }
             }
             int duration = slotDurationPicker.SelectedIndex;
             if(duration == 2)
