@@ -2,6 +2,7 @@
 using MentorModel;
 using Newtonsoft.Json;
 using PeopleModel;
+using SessionModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static HelloWorld.MentorHomePage;
 
 namespace HelloWorld
 {
@@ -46,49 +48,48 @@ namespace HelloWorld
 
             HttpClient oHttpClient = new HttpClient();
 
-            string url = Utilities.LOCALHOST + "appointments/search/findByPersonGreaterThanOrderByDateDesc?person=" + user.UserName +
+            string url = Utilities.LOCALHOST + "sessions/search/findByPersonGreaterThanOrderByDateDesc?person=" + user.UserName +
                 "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
             HttpResponseMessage response = await oHttpClient.GetAsync(url);
-            List<Appointment> appointmentsList = new List<Appointment>();
+            List<Session> sessionsList = new List<Session>();
             if (response.IsSuccessStatusCode)
             {
-                appointmentsList = JsonConvert.DeserializeObject<AppointmentEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Appointments;
+                sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Sessions;
             }
-            List<Appointment> concatenatedList = Utilities.concatenateBackToBackAppointments(appointmentsList);
-            List<TempAppointment> formattedAppointmentsList = new List<TempAppointment>();
+            List<TempSessionMentor> formattedSessionsList = new List<TempSessionMentor>();
             
-            foreach (Appointment appointment in appointmentsList)
+            foreach (Session session in sessionsList)
             {
                 HttpClient oHttpClient2 = new HttpClient();
 
-                string url2 = Utilities.LOCALHOST + "mentors/search/findByUserName?username=" + appointment.Mentor;
+                string url2 = Utilities.LOCALHOST + "mentors/search/findByUserName?username=" + session.Mentor;
                 HttpResponseMessage response2 = await oHttpClient.GetAsync(url2);
                 Mentor mentor = JsonConvert.DeserializeObject<Mentor>(await response2.Content.ReadAsStringAsync());
-                TempAppointment tempAppointment = new TempAppointment(mentor.FirstLastName, appointment.date.ToString("dd-MM-yyyy"), Utilities.FindTimeBaseOnSlotNumber(appointment.slotNumber), appointment);
-                formattedAppointmentsList.Add(tempAppointment);
+                TempSessionMentor tempSession = new TempSessionMentor(mentor.FirstLastName, session.date.ToString("dd-MM-yyyy"), Utilities.FindTimeBaseOnSlotNumber(session.startingSlotNumber), session);
+                formattedSessionsList.Add(tempSession);
             }
             MyAppointmentsUserPage myAppointments = new MyAppointmentsUserPage
             {
-                BindingContext = formattedAppointmentsList
+                BindingContext = formattedSessionsList
             };
             Utilities.toggleSpinner(spinner);
             await Navigation.PushAsync(myAppointments);
         }
 
-        public class TempAppointment
+        public class TempSessionMentor
         {
-            public TempAppointment(String mentorFirstLastName, String date, String time, Appointment appointment)
+            public TempSessionMentor(String mentorFirstLastName, String date, String time, Session session)
             {
                 this.MentorFirstLastName = mentorFirstLastName;
                 this.Date = date;
                 this.Time = time;
-                this.Appointment = appointment;
+                this.Session = session;
             }
 
             public string MentorFirstLastName { get; set; }
             public string Date { get; set; }
             public string Time { get; set; }
-            internal Appointment Appointment { get; set; }
+            internal Session Session { get; set; }
         }
     }
 }

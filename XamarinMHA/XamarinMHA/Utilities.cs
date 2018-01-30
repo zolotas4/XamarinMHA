@@ -12,8 +12,8 @@ namespace HelloWorld
     public static class Utilities
     {
         //public static String LOCALHOST = "http://192.168.1.120:8080/";
-        //public static String LOCALHOST = "http://10.0.3.2:8080/";
-        public static String LOCALHOST = "https://keyfort.herokuapp.com/";
+        public static String LOCALHOST = "http://10.0.3.2:8080/";
+        //public static String LOCALHOST = "https://keyfort.herokuapp.com/";
         public static void toggleSpinner (ActivityIndicator spinner) {
             spinner.IsVisible = !spinner.IsVisible;
             spinner.IsRunning = !spinner.IsRunning;
@@ -124,7 +124,8 @@ namespace HelloWorld
         }
     }
 
-    //TODO: Notifications
+    //TODO: Delete notifications
+    //TODO: Delete appointments
     //TODO: Suggest resources in session logging
     //TODO: Main page free resources
     //TODO: Multiple pictures upload for user registration
@@ -134,6 +135,6 @@ namespace HelloWorld
     //TODO: Implement download resource button functionality
     //TODO: Add button send to email in resources details page
     //TODO: Populate SOS page
-    //TODO: Text alignment full in static pages
     //TODO: Search in favorite resources is broken
+    //TODO: Send email when appointment is set that includes pdfs regarding cancelation policy etc.
 }

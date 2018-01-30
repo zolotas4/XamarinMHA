@@ -23,7 +23,7 @@ namespace HelloWorld
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-            List<TempAppointment> appointments = (List<TempAppointment>) BindingContext;
+            List<TempSessionMentor> appointments = (List<TempSessionMentor>) BindingContext;
             AppointmentsList.ItemsSource = appointments;
         }
 
@@ -31,7 +31,7 @@ namespace HelloWorld
         {
             AppointmentDetailsPage appointmentPage = new AppointmentDetailsPage
             {
-                BindingContext = (TempAppointment) e.Item
+                BindingContext = (TempSessionMentor) e.Item
             };
             await Navigation.PushAsync(appointmentPage);
         }

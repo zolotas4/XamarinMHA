@@ -16,7 +16,7 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppointmentDetailsPage : ContentPage
     {
-        TempAppointment tempAppointment;
+        TempSessionMentor tempAppointment;
         public AppointmentDetailsPage()
         {
             InitializeComponent();
@@ -25,22 +25,21 @@ namespace HelloWorld
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-            tempAppointment = (TempAppointment) BindingContext;
+            tempAppointment = (TempSessionMentor) BindingContext;
         }
 
-            async private void cancelAppointmentButtonClicked(object sender, EventArgs e)
+        async private void cancelAppointmentButtonClicked(object sender, EventArgs e)
         {
             var answer = await DisplayAlert("Are you sure?", "You're about to cancel the appointment. Do you want to proceed?", "Yes", "No");
             if (answer == true)
             {
                 HttpClient oHttpClient = new HttpClient();
-                string url = Utilities.LOCALHOST + "people/search/findByUserName?username=" + tempAppointment.Appointment.Person;
+                string url = Utilities.LOCALHOST + "people/search/findByUserName?username=" + tempAppointment.Session.Person;
                 Utilities.toggleSpinner(spinner);
                 var response = await oHttpClient.GetAsync(url);
                 Utilities.toggleSpinner(spinner);
                 if (response.IsSuccessStatusCode)
                 {
-                    // Username found in users' DB.
                     Person user = JsonConvert.DeserializeObject<Person>(await response.Content.ReadAsStringAsync());
                     UserHomePage uh = new UserHomePage
                     {
