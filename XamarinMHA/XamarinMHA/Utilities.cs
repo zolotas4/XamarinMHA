@@ -109,6 +109,19 @@ namespace HelloWorld
             }
             return sortedAppointmentsList;
         } 
+
+        public static String createNotificationIdFromDateAndSlot(DateTime date, int slotNumber)
+        {
+            return date.Year.ToString() + date.Month.ToString() + date.Day.ToString() + slotNumber.ToString();
+        }
+
+        public static DateTime createDateTimeFromDateAndSlotNumber(DateTime date, int slotNumber)
+        {
+            String time = Utilities.FindTimeBaseOnSlotNumber(slotNumber);
+            int hour = Int16.Parse(time.Split(':')[0]);
+            var minutes = Int16.Parse(time.Split(':')[1]);
+            return date.AddHours(hour).AddMinutes(minutes);
+        }
     }
 
     //TODO: Notifications

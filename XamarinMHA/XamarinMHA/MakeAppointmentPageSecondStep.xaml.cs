@@ -3,6 +3,7 @@ using DLToolkit.Forms.Controls;
 using MentorModel;
 using Newtonsoft.Json;
 using PeopleModel;
+using Plugin.LocalNotifications;
 using SessionModel;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,12 @@ namespace HelloWorld
                 }
                 Session session = new Session(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot), duration);
                 response = await oHttpClient.PostAsync(sessionUrl, new StringContent(JsonConvert.SerializeObject(session), Encoding.UTF8, sContentType));
+                //Set notifications
+                int notificationIdOne = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "1");
+                int notificationIdTwo = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "2");
+
+                CrossLocalNotifications.Current.Show("Appointment Notification", "You have an appointment scheduled for tomorrow.", notificationIdOne, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)).AddDays(-1));
+                CrossLocalNotifications.Current.Show("Appointment Notification", "You have an appointment strating in an hour.", notificationIdTwo, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)).AddMinutes(-60));
                 /*
                 if (response.IsSuccessStatusCode)
                 {
