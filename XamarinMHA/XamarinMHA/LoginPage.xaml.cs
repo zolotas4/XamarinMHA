@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using PeopleModel;
 using MentorModel;
+using AdminModel;
 
 namespace HelloWorld
 {
@@ -86,7 +87,29 @@ namespace HelloWorld
                     }
                 } else
                 {
-                    await DisplayAlert("Error", "Something went wrong: no user found or access to DB is not possible.", "OK");
+                    url = Utilities.LOCALHOST + "admins/search/findByUserName?username=" + usernameEntry.Text;
+                    response = await oHttpClient.GetAsync(url);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Username found in admins' DB.
+                        Admin admin = JsonConvert.DeserializeObject<Admin>(await response.Content.ReadAsStringAsync());
+                        if (String.Equals(passwordEntry.Text, admin.Password))
+                        {
+                            AdminHomePage ah = new AdminHomePage
+                            {
+                                BindingContext = admin
+                            };
+                            await Navigation.PushAsync(ah);
+                        }
+                        else
+                        {
+                            invalidPasswordLabel.IsVisible = true;
+                        }
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Something went wrong: no user found or access to DB is not possible.", "OK");
+                    }
                 }
             }
         }

@@ -1,12 +1,8 @@
-﻿using MentorModel;
-using Newtonsoft.Json;
-using PeopleModel;
+﻿using AdminModel;
 using SessionModel;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,11 +12,10 @@ using Xamarin.Forms.Xaml;
 namespace HelloWorld
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MentorHomePage : ContentPage
+    public partial class AdminHomePage : ContentPage
     {
-        Mentor mentor;
-
-        public MentorHomePage()
+        Admin admin;
+        public AdminHomePage()
         {
             InitializeComponent();
         }
@@ -28,7 +23,7 @@ namespace HelloWorld
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-            mentor = (Mentor)BindingContext;
+            admin = (Admin)BindingContext;
         }
 
         async void MyProfileImageTapped(object sender, EventArgs args)
@@ -36,35 +31,30 @@ namespace HelloWorld
             var imageSender = (Image)sender;
             UserProfilePage userProfile = new UserProfilePage
             {
-                BindingContext = mentor
+                BindingContext = admin
             };
             await Navigation.PushAsync(userProfile);
         }
 
         async void LogSessionsImageTapped(object sender, EventArgs args)
         {
-           
+
             var imageSender = (Image)sender;
-            MentorAllSessionsListPage allSessionsListPage = new MentorAllSessionsListPage()
-            {
-                BindingContext = mentor
-            };
-            await Navigation.PushAsync(allSessionsListPage);
         }
 
         async void ApproveUsersImageTapped(object sender, EventArgs args)
         {
             var imageSender = (Image)sender;
+            ApproveSubmittedUsersPage approveSubmittedUsersPage = new ApproveSubmittedUsersPage
+            {
+                BindingContext = admin
+            };
+            await Navigation.PushAsync(approveSubmittedUsersPage);
         }
 
         async void MyApointmentsImageTapped(object sender, EventArgs args)
         {
             var imageSender = (Image)sender;
-            MentorAppointmentsPage mentorAppointmentsPage = new MentorAppointmentsPage
-            {
-                BindingContext = mentor
-            };
-            await Navigation.PushAsync(mentorAppointmentsPage);
         }
 
         public class TempSession
