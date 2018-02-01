@@ -50,18 +50,21 @@ namespace XamarinMHA
 
             string url = Utilities.LOCALHOST + "sessions/search/findByPersonGreaterThanOrderByDateDesc?person=" + user.UserName +
                 "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
+            Debug.WriteLine("Url: " + url);
             HttpResponseMessage response = await oHttpClient.GetAsync(url);
             List<Session> sessionsList = new List<Session>();
             if (response.IsSuccessStatusCode)
             {
+                Debug.WriteLine("Hi!");
                 sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Sessions;
             }
             List<TempSessionMentor> formattedSessionsList = new List<TempSessionMentor>();
-            
+
+            Debug.WriteLine("Size: " + sessionsList.Count());
             foreach (Session session in sessionsList)
             {
                 HttpClient oHttpClient2 = new HttpClient();
-
+                
                 string url2 = Utilities.LOCALHOST + "mentors/search/findByUserName?username=" + session.Mentor;
                 HttpResponseMessage response2 = await oHttpClient.GetAsync(url2);
                 Mentor mentor = JsonConvert.DeserializeObject<Mentor>(await response2.Content.ReadAsStringAsync());

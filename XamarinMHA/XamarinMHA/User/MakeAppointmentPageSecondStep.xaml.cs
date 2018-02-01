@@ -68,7 +68,7 @@ namespace XamarinMHA
                     response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(appointment), Encoding.UTF8, sContentType));
                 }
                 */
-                Session session = new Session(user.UserName, mentor.UserName, date, Utilities.FindSlotNumberBasedOnTime(selectedSlot), duration);
+                Session session = new Session(user.UserName, mentor.UserName, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)), Utilities.FindSlotNumberBasedOnTime(selectedSlot), duration);
                 response = await oHttpClient.PostAsync(sessionUrl, new StringContent(JsonConvert.SerializeObject(session), Encoding.UTF8, sContentType));
                 //Set notifications
                 int notificationIdOne = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "1");
