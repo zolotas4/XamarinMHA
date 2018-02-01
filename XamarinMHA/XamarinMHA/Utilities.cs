@@ -103,7 +103,7 @@ namespace XamarinMHA
     //TODO: Suggest resources in session logging
     //TODO: Multiple pictures upload for user registration
     //TODO: Implement download resource button functionality
-    //TODO: Add button send to email in resources details page
+    //TODO: Resources detail page needs better layout
     //TODO: Populate SOS page
     //TODO: Search in favorite resources is broken
     //TODO: Send email when appointment is set that includes pdfs regarding cancelation policy etc.

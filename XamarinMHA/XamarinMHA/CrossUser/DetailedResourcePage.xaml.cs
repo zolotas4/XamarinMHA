@@ -68,7 +68,23 @@ namespace XamarinMHA
         {
 
         }
-        
+
+        private async void SendToEmailButtonClicked(object sender, EventArgs e)
+        {
+            String resourceFilepath = resource.filename;
+            Utilities.toggleSpinner(spinner);
+            HttpClient oHttpClient = new HttpClient();
+            String sendEmailUrl = Utilities.LOCALHOST + "email/sendResource/" + user.Email + "/" + user.FirstName + "/" + resourceFilepath + "/";
+            Debug.WriteLine("sendEmailUrl: " + sendEmailUrl);
+            HttpResponseMessage response = await oHttpClient.GetAsync(sendEmailUrl);
+            Utilities.toggleSpinner(spinner);
+
+            if (response.IsSuccessStatusCode)
+            {
+                DisplayAlert("Success", "Resource file sent to your email address.", "OK");
+            }
+        }
+
     }
 }
 
