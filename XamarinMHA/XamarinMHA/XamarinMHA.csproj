@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AdminEmbeddedWrapper.cs" />
-    <Compile Include="AdminHomePage.xaml.cs">
+    <Compile Include="Admin\AdminEmbeddedWrapper.cs" />
+    <Compile Include="Admin\AdminHomePage.xaml.cs">
       <DependentUpon>AdminHomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -45,94 +45,94 @@
     <Compile Include="AppointmentDetailsPage.xaml.cs">
       <DependentUpon>AppointmentDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppointmentEmbeddedWrapper.cs" />
-    <Compile Include="ApproveSubmittedUsersPage.xaml.cs">
+    <Compile Include="CrossUser\AppointmentEmbeddedWrapper.cs" />
+    <Compile Include="Admin\ApproveSubmittedUsersPage.xaml.cs">
       <DependentUpon>ApproveSubmittedUsersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BookAppointmentPage.xaml.cs">
+    <Compile Include="User\BookAppointmentPage.xaml.cs">
       <DependentUpon>BookAppointmentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailedFreeResourcePage.xaml.cs">
+    <Compile Include="CrossUser\DetailedFreeResourcePage.xaml.cs">
       <DependentUpon>DetailedFreeResourcePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailedResourcePage.xaml.cs">
+    <Compile Include="CrossUser\DetailedResourcePage.xaml.cs">
       <DependentUpon>DetailedResourcePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MakeAppointmentPageSecondStep.xaml.cs">
+    <Compile Include="User\MakeAppointmentPageSecondStep.xaml.cs">
       <DependentUpon>MakeAppointmentPageSecondStep.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorAllSessionsListPage.xaml.cs">
+    <Compile Include="Mentor\MentorAllSessionsListPage.xaml.cs">
       <DependentUpon>MentorAllSessionsListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorAppointmentsPage.xaml.cs">
+    <Compile Include="Mentor\MentorAppointmentsPage.xaml.cs">
       <DependentUpon>MentorAppointmentsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorEmbeddedWrapper.cs" />
+    <Compile Include="Mentor\MentorEmbeddedWrapper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AboutKeyfort.xaml.cs">
+    <Compile Include="CrossUser\AboutKeyfort.xaml.cs">
       <DependentUpon>AboutKeyfort.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContactUsPage.xaml.cs">
+    <Compile Include="CrossUser\ContactUsPage.xaml.cs">
       <DependentUpon>ContactUsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MakeAppointmentPage.xaml.cs">
+    <Compile Include="User\MakeAppointmentPage.xaml.cs">
       <DependentUpon>MakeAppointmentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorHomePage.xaml.cs">
+    <Compile Include="Mentor\MentorHomePage.xaml.cs">
       <DependentUpon>MentorHomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorLogSessionPage.xaml.cs">
+    <Compile Include="Mentor\MentorLogSessionPage.xaml.cs">
       <DependentUpon>MentorLogSessionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorRegisterPage.xaml.cs">
+    <Compile Include="Mentor\MentorRegisterPage.xaml.cs">
       <DependentUpon>MentorRegisterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MentorRegistrationSuccesfulPage.xaml.cs">
+    <Compile Include="Mentor\MentorRegistrationSuccesfulPage.xaml.cs">
       <DependentUpon>MentorRegistrationSuccesfulPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyAppointmentsUserPage.xaml.cs">
+    <Compile Include="User\MyAppointmentsUserPage.xaml.cs">
       <DependentUpon>MyAppointmentsUserPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PeopleEmbeddedWrapper.cs" />
-    <Compile Include="ResourceEmbeddedWrapper.cs" />
-    <Compile Include="ResourcesPage.xaml.cs">
+    <Compile Include="User\PeopleEmbeddedWrapper.cs" />
+    <Compile Include="CrossUser\ResourceEmbeddedWrapper.cs" />
+    <Compile Include="CrossUser\ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SessionEmbeddedWrapper.cs" />
-    <Compile Include="SosPage.xaml.cs">
+    <Compile Include="CrossUser\SessionEmbeddedWrapper.cs" />
+    <Compile Include="CrossUser\SosPage.xaml.cs">
       <DependentUpon>SosPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UploadVerificationDocumentPage.xaml.cs">
+    <Compile Include="User\UploadVerificationDocumentPage.xaml.cs">
       <DependentUpon>UploadVerificationDocumentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserDetailsPage.xaml.cs">
+    <Compile Include="User\UserDetailsPage.xaml.cs">
       <DependentUpon>UserDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserProfileForApproval.xaml.cs">
+    <Compile Include="User\UserProfileForApproval.xaml.cs">
       <DependentUpon>UserProfileForApproval.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserProfilePage.xaml.cs">
+    <Compile Include="User\UserProfilePage.xaml.cs">
       <DependentUpon>UserProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserHomePage.xaml.cs">
+    <Compile Include="User\UserHomePage.xaml.cs">
       <DependentUpon>UserHomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.xaml.cs">
+    <Compile Include="CrossUser\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegisterPage.xaml.cs">
+    <Compile Include="CrossUser\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserResourcesPage.xaml.cs">
+    <Compile Include="User\UserResourcesPage.xaml.cs">
       <DependentUpon>UserResourcesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginPage.xaml">
+    <EmbeddedResource Include="CrossUser\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -190,25 +190,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="RegisterPage.xaml">
+    <EmbeddedResource Include="CrossUser\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserHomePage.xaml">
+    <EmbeddedResource Include="User\UserHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserProfilePage.xaml">
+    <EmbeddedResource Include="User\UserProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserDetailsPage.xaml">
+    <EmbeddedResource Include="User\UserDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -220,85 +220,85 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AboutKeyfort.xaml">
+    <EmbeddedResource Include="CrossUser\AboutKeyfort.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ResourcesPage.xaml">
+    <EmbeddedResource Include="CrossUser\ResourcesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ContactUsPage.xaml">
+    <EmbeddedResource Include="CrossUser\ContactUsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MakeAppointmentPage.xaml">
+    <EmbeddedResource Include="User\MakeAppointmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MentorRegisterPage.xaml">
+    <EmbeddedResource Include="Mentor\MentorRegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MentorRegistrationSuccesfulPage.xaml">
+    <EmbeddedResource Include="Mentor\MentorRegistrationSuccesfulPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MentorHomePage.xaml">
+    <EmbeddedResource Include="Mentor\MentorHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UploadVerificationDocumentPage.xaml">
+    <EmbeddedResource Include="User\UploadVerificationDocumentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ApproveSubmittedUsersPage.xaml">
+    <EmbeddedResource Include="Admin\ApproveSubmittedUsersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserProfileForApproval.xaml">
+    <EmbeddedResource Include="User\UserProfileForApproval.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MentorAppointmentsPage.xaml">
+    <EmbeddedResource Include="Mentor\MentorAppointmentsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MakeAppointmentPageSecondStep.xaml">
+    <EmbeddedResource Include="User\MakeAppointmentPageSecondStep.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BookAppointmentPage.xaml">
+    <EmbeddedResource Include="User\BookAppointmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyAppointmentsUserPage.xaml">
+    <EmbeddedResource Include="User\MyAppointmentsUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -310,47 +310,48 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MentorAllSessionsListPage.xaml">
+    <EmbeddedResource Include="Mentor\MentorAllSessionsListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MentorLogSessionPage.xaml">
+    <EmbeddedResource Include="Mentor\MentorLogSessionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SosPage.xaml">
+    <EmbeddedResource Include="CrossUser\SosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserResourcesPage.xaml">
+    <EmbeddedResource Include="User\UserResourcesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DetailedResourcePage.xaml">
+    <EmbeddedResource Include="CrossUser\DetailedResourcePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DetailedFreeResourcePage.xaml">
+    <EmbeddedResource Include="CrossUser\DetailedFreeResourcePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdminHomePage.xaml">
+    <EmbeddedResource Include="Admin\AdminHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

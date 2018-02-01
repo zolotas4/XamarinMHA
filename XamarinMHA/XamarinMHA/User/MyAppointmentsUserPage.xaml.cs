@@ -29,7 +29,7 @@ namespace HelloWorld
 
         private async Task AppointmentItemTapped(object sender, ItemTappedEventArgs e)
         {
-            AppointmentDetailsPage appointmentPage = new AppointmentDetailsPage
+            UserAppointmentDetailsPage appointmentPage = new UserAppointmentDetailsPage
             {
                 BindingContext = (TempSessionMentor) e.Item
             };

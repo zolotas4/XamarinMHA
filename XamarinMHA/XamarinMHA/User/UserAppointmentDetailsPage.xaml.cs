@@ -15,10 +15,10 @@ using static HelloWorld.UserProfilePage;
 namespace HelloWorld
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AppointmentDetailsPage : ContentPage
+    public partial class UserAppointmentDetailsPage : ContentPage
     {
         TempSessionMentor tempSession;
-        public AppointmentDetailsPage()
+        public UserAppointmentDetailsPage()
         {
             InitializeComponent();
         }
