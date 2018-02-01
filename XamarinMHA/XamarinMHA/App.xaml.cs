@@ -6,7 +6,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     public partial class App : Application
     {
@@ -14,7 +14,7 @@ namespace HelloWorld
         {
             InitializeComponent();
             FlowListView.Init();
-            MainPage = new NavigationPage(new HelloWorld.MainPage());
+            MainPage = new NavigationPage(new XamarinMHA.MainPage());
         }
 
         protected override void OnStart()

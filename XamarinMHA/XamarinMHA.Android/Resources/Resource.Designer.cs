@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("HelloWorld.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("XamarinMHA.Droid.Resource", IsApplication=true)]
 
-namespace HelloWorld.Droid
+namespace XamarinMHA.Droid
 {
 	
 	
@@ -26,9 +26,9 @@ namespace HelloWorld.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::ModernHttpClient.Resource.String.library_name = global::HelloWorld.Droid.Resource.String.library_name;
-			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::HelloWorld.Droid.Resource.Drawable.plugin_lc_smallicon;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::HelloWorld.Droid.Resource.Attribute.actionBarSize;
+			global::ModernHttpClient.Resource.String.library_name = global::XamarinMHA.Droid.Resource.String.library_name;
+			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::XamarinMHA.Droid.Resource.Drawable.plugin_lc_smallicon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::XamarinMHA.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

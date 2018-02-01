@@ -11,7 +11,7 @@ using PeopleModel;
 using MentorModel;
 using AdminModel;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     public partial class LoginPage : ContentPage
     {

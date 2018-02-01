@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static HelloWorld.MentorHomePage;
+using static XamarinMHA.MentorHomePage;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MentorLogSessionPage : TabbedPage

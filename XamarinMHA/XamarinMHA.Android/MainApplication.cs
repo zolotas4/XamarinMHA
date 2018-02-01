@@ -5,7 +5,7 @@ using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
 
-namespace HelloWorld.Droid
+namespace XamarinMHA.Droid
 {
 	//You can specify additional application information in this attribute
     [Application]

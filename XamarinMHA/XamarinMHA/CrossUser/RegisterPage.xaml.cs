@@ -11,7 +11,7 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using PeopleModel;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage

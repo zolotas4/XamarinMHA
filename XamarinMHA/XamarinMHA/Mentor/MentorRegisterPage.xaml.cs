@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using System.Text;
 using MentorModel;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MentorRegisterPage : ContentPage

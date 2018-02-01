@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ApproveSubmittedUsersPage : ContentPage

@@ -14,7 +14,7 @@ using MentorModel;
 using AppointmentModel;
 using SessionModel;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MakeAppointmentPage : ContentPage

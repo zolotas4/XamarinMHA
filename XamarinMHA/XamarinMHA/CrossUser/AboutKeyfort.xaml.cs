@@ -14,7 +14,7 @@ using AppointmentModel;
 using System.Text;
 using Plugin.LocalNotifications;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutKeyfort : ContentPage

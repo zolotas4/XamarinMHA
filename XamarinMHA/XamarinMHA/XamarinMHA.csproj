@@ -8,8 +8,8 @@
     <ProjectGuid>{1F9DE3CA-FBD2-4F0B-BAFB-C4446243D242}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloWorld</RootNamespace>
-    <AssemblyName>HelloWorld</AssemblyName>
+    <RootNamespace>XamarinMHA</RootNamespace>
+    <AssemblyName>Mobile Health Apps</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
@@ -42,8 +42,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppointmentDetailsPage.xaml.cs">
-      <DependentUpon>AppointmentDetailsPage.xaml</DependentUpon>
+    <Compile Include="User\UserAppointmentDetailsPage.xaml.cs">
+      <DependentUpon>UserAppointmentDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="CrossUser\AppointmentEmbeddedWrapper.cs" />
     <Compile Include="Admin\ApproveSubmittedUsersPage.xaml.cs">
@@ -110,7 +110,7 @@
     <Compile Include="User\UserDetailsPage.xaml.cs">
       <DependentUpon>UserDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User\UserProfileForApproval.xaml.cs">
+    <Compile Include="Mentor\UserProfileForApproval.xaml.cs">
       <DependentUpon>UserProfileForApproval.xaml</DependentUpon>
     </Compile>
     <Compile Include="User\UserProfilePage.xaml.cs">
@@ -274,7 +274,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="User\UserProfileForApproval.xaml">
+    <EmbeddedResource Include="Mentor\UserProfileForApproval.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -304,7 +304,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AppointmentDetailsPage.xaml">
+    <EmbeddedResource Include="User\UserAppointmentDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

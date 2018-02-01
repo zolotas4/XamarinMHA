@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace HelloWorld.iOS
+namespace XamarinMHA.iOS
 {
     public class Application
     {

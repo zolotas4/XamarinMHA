@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static HelloWorld.UserProfilePage;
+using static XamarinMHA.UserProfilePage;
 
-namespace HelloWorld
+namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyAppointmentsUserPage : ContentPage
