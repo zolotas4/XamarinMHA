@@ -70,19 +70,22 @@ namespace XamarinMHA
                 */
                 Session session = new Session(user.UserName, mentor.UserName, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)), Utilities.FindSlotNumberBasedOnTime(selectedSlot), duration);
                 response = await oHttpClient.PostAsync(sessionUrl, new StringContent(JsonConvert.SerializeObject(session), Encoding.UTF8, sContentType));
-                //Set notifications
-                int notificationIdOne = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "1");
-                int notificationIdTwo = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "2");
 
-                CrossLocalNotifications.Current.Show("Appointment Notification", "You have an appointment scheduled for tomorrow.", notificationIdOne, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)).AddDays(-1));
-                CrossLocalNotifications.Current.Show("Appointment Notification", "You have an appointment strating in an hour.", notificationIdTwo, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)).AddMinutes(-60));
-                /*
                 if (response.IsSuccessStatusCode)
                 {
-                    String sendEmailUrl = Utilities.LOCALHOST + "email/send/" + user.Email + "/" + user.FirstName + "/";
+                    //Set notifications
+                    int notificationIdOne = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "1");
+                    int notificationIdTwo = Int32.Parse(Utilities.createNotificationIdFromDateAndSlot(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)) + "2");
+
+                    CrossLocalNotifications.Current.Show("Appointment Notification", "You have an appointment scheduled for tomorrow.", notificationIdOne, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)).AddDays(-1));
+                    CrossLocalNotifications.Current.Show("Appointment Notification", "You have an appointment strating in an hour.", notificationIdTwo, Utilities.createDateTimeFromDateAndSlotNumber(date, Utilities.FindSlotNumberBasedOnTime(selectedSlot)).AddMinutes(-60));
+
+                    // Send Email
+                    String sendEmailUrl = Utilities.LOCALHOST + "email/sendAppointmentConfirmation/" + user.Email + "/" + user.FirstName + "/" + mentor.FirstLastName
+                + "%20for%20" + date.Date.ToString("dd-MM-yyyy") + "%20@%20" + selectedSlot + "/";
+                    Debug.WriteLine(sendEmailUrl);
                     response = await oHttpClient.GetAsync(sendEmailUrl);
                 }
-                */
                 Utilities.toggleSpinner(spinner);
                 await Navigation.PushAsync(bookAppointmentPage);
             }
