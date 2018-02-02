@@ -10,8 +10,8 @@
                 <StackLayout>
                     <Label Text="Select Date" Style="{StaticResource whiteLargeFonts}"/>
                     <DatePicker x:Name="dateEntry" Format="dd-MM-yyyy" TextColor="White"/>
-                    <Label Text="Select Mentor" Style="{StaticResource whiteLargeFonts}"/>
-                    <StackLayout Orientation="Horizontal">
+                    <Label Text="Select Mentor" Style="{StaticResource whiteLargeFonts}" x:Name="selectMentorLabel"/>
+                    <StackLayout Orientation="Horizontal" x:Name="mentorSelectionContainer">
                         <Image Source="icon.png" x:Name="MentorPic"></Image>
                         <Picker x:Name="mentorPicker" HorizontalOptions="FillAndExpand" SelectedIndexChanged="mentorPickerSelectedIndexChanged" TextColor="White"></Picker>
                     </StackLayout>

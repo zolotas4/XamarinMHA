@@ -1,8 +1,11 @@
-﻿using PeopleModel;
+﻿using Newtonsoft.Json;
+using PeopleModel;
+using SessionModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,10 +45,14 @@ namespace XamarinMHA
         async void MakeAnAppointmentImageTapped(object sender, EventArgs args)
         {
             var imageSender = (Image)sender;
-            MakeAppointmentPage makeAppointmentPage = new MakeAppointmentPage
-            {
-                BindingContext = user
-            };
+            HttpClient oHttpClient = new HttpClient();
+            string url = Utilities.LOCALHOST + "sessions/search/findByPerson?person=" + user.UserName;
+            var response = await oHttpClient.GetStringAsync(url);
+            var sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(response).Embedded.Sessions;
+            var isTheFirstAppoinment = sessionsList.Count == 0;
+            Debug.WriteLine("isTheFirst: " + isTheFirstAppoinment);
+            MakeAppointmentPage makeAppointmentPage = new MakeAppointmentPage(isTheFirstAppoinment);
+            makeAppointmentPage.BindingContext = user;
             await Navigation.PushAsync(makeAppointmentPage);
         }
 
