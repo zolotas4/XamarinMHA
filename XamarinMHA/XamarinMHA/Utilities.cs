@@ -106,7 +106,6 @@ namespace XamarinMHA
     //TODO: Resources detail page needs better layout
     //TODO: Populate SOS page
     //TODO: Search in favorite resources is broken
-    //TODO: Send email when appointment is set that includes pdfs regarding cancelation policy etc.
     //TODO: Display description in detailed resources (both free and user)
     //TODO: Mentor and Admin profile is using UserProfilePage which is wrong. Create 2 almost identical pages to show profiles of mentors & admins
     //TODO: My appointments for mentor implementation

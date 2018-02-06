@@ -34,7 +34,6 @@ namespace XamarinMHA
 
         async void MyProfileImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             UserProfilePage userProfile = new UserProfilePage
             {
                 BindingContext = user
@@ -44,7 +43,6 @@ namespace XamarinMHA
 
         async void MakeAnAppointmentImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             HttpClient oHttpClient = new HttpClient();
             string url = Utilities.LOCALHOST + "sessions/search/findByPerson?person=" + user.UserName;
             var response = await oHttpClient.GetStringAsync(url);
@@ -58,12 +56,16 @@ namespace XamarinMHA
 
         async void ResourcesImageTapped(object sender, EventArgs args)
         {
-            //var imageSender = (Image)sender;
             UserResourcesPage userResourcesPage = new UserResourcesPage
             {
                 BindingContext = user
             };
             await Navigation.PushAsync(userResourcesPage);
+        }
+
+        async void ChatImageTapped(object sender, EventArgs args)
+        {
+            
         }
     }
 }

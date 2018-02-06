@@ -19,25 +19,21 @@ namespace XamarinMHA
 
         async void aboutUsImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             await Navigation.PushAsync(new AboutKeyfort());
         }
 
         async void loginImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             await Navigation.PushAsync(new LoginPage());
         }
 
         async void resourcesImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             await Navigation.PushAsync(new ResourcesPage());
         }
 
         async void contactUsImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             await Navigation.PushAsync(new ContactUsPage());
         }
 

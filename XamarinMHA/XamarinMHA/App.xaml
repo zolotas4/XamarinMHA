@@ -33,6 +33,16 @@
                 <Setter Property="TextColor" Value="#FFFFFF"/>
                 <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
             </Style>
+            <OnPlatform x:Key="FontAwesomeString" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="FontAwesome" />
+                <On Platform="Android" Value="FontAwesome.otf#FontAwesome" />
+                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/FontAwesome.otf#FontAwesome" />
+            </OnPlatform>
+            <Style x:Key="FontAwesome" TargetType="Label">
+                <Setter Property="FontSize" Value="50"/>
+                <Setter Property="TextColor" Value="#EB004C"/>
+                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeString}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
