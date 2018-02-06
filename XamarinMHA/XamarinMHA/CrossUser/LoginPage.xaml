@@ -7,17 +7,26 @@
         <ToolbarItem Text="Mentor Sign Up" Clicked="MentorRegisterButtonClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <StackLayout x:Name="LoginPageLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <Label Text="Username" Style="{StaticResource whiteLargeFonts}"/>
-                <Entry x:Name="usernameEntry" Placeholder="username" />
-                <Label Text="Password" Style="{StaticResource whiteLargeFonts}"/>
-                <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
-                <Button Text="Login" Clicked="LoginButtonClicked" StyleClass="Success"/>
-                <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
-                <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Grid RowSpacing="0" ColumnSpacing="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Source="uoyWide.png" Aspect="AspectFill"/>
+                <StackLayout Grid.Row="1" Grid.Column="0" x:Name="LoginPageLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="60,20,60,20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C"/>
+                    <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand"/>
+                    <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" HorizontalOptions="FillAndExpand"/>
+                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C" Margin="0,0,0,20"/>
+                    <Button Text="Login" Clicked="LoginButtonClicked" StyleClass="Success"/>
+                    <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
+                    <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Grid>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>
     </ContentPage.Content>

@@ -3,33 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinMHA.MentorRegisterPage" Title="Register">
         <ContentPage.Content>
-            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Image Style="{StaticResource backImage}"/>
-                <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                    <StackLayout>
+            <ScrollView Padding="20,20,20,20" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Please fill in the following details and click the register button when ready" TextColor="#EB004C" FontSize="Large" HorizontalTextAlignment="Center"/>
+                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C" Margin="0,0,0,20"/>
+                    <StackLayout Orientation="Vertical">
                         <Image Source="icon.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" HeightRequest="100">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="MentorImageTapped"  />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Label Text="First Name" Style="{StaticResource whiteLargeFonts}"/>
-                        <Entry x:Name="firstNameEntry" Placeholder="Enter first name" />
-                    <Label Text="Last Name" Style="{StaticResource whiteLargeFonts}"/>
-                        <Entry x:Name="lastNameEntry" Placeholder="Enter last name" />
-                    <Label Text="Email" Style="{StaticResource whiteLargeFonts}"/>
-                        <Entry x:Name="emailEntry" Placeholder="Enter email" Keyboard="Email"/>
-                    <Label Text="Date of Birth" Style="{StaticResource whiteLargeFonts}"/>
-                        <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy"/>
-                    <Label Text="Phone" Style="{StaticResource whiteLargeFonts}"/>
-                        <Entry x:Name="phoneEntry" Placeholder="Enter phone" Keyboard="Numeric"/>
-                    <Label Text="Username" Style="{StaticResource whiteLargeFonts}"/>
-                        <Entry x:Name="usernameEntry" Placeholder="Enter username" />
-                    <Label Text="Password" Style="{StaticResource whiteLargeFonts}"/>
-                        <Entry x:Name="passwordEntry" Placeholder="Enter password" IsPassword="true" />
-                        <Button Text="Register" Clicked="CompleteMentorRegistrationButtonClicked" StyleClass="Success"/>
-                        <Label x:Name="completeRegistrationButton" />
+                        <Label Text="Upload your photo" HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                </ScrollView>
-            </AbsoluteLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="First Name" Style="{StaticResource pinkLargeFonts}" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="firstNameEntry" Placeholder="Enter first name" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="Last Name" Style="{StaticResource pinkLargeFonts}"  VerticalTextAlignment="Center"/>
+                        <Entry x:Name="lastNameEntry" Placeholder="Enter last name" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="Date of Birth" Style="{StaticResource pinkLargeFonts}"  VerticalTextAlignment="Center"/>
+                        <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="Email" Style="{StaticResource pinkLargeFonts}"  VerticalTextAlignment="Center"/>
+                        <Entry x:Name="emailEntry" Placeholder="Enter email" Keyboard="Email" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="Phone" Style="{StaticResource pinkLargeFonts}"  VerticalTextAlignment="Center"/>
+                        <Entry x:Name="phoneEntry" Placeholder="Enter phone" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="Username" Style="{StaticResource pinkLargeFonts}"  VerticalTextAlignment="Center"/>
+                        <Entry x:Name="usernameEntry" Placeholder="Enter username" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" Margin="0,0,0,1">
+                        <Label Text="Password" Style="{StaticResource pinkLargeFonts}"  VerticalTextAlignment="Center"/>
+                        <Entry x:Name="passwordEntry" Placeholder="Enter password" IsPassword="true" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <Button Text="Register" Clicked="CompleteMentorRegistrationButtonClicked" StyleClass="Success"/>
+                </StackLayout>
+            </ScrollView>
         </ContentPage.Content>
     </ContentPage>

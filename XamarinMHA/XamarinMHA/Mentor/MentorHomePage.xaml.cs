@@ -33,7 +33,6 @@ namespace XamarinMHA
 
         async void MyProfileImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             UserProfilePage userProfile = new UserProfilePage
             {
                 BindingContext = mentor
@@ -44,7 +43,6 @@ namespace XamarinMHA
         async void LogSessionsImageTapped(object sender, EventArgs args)
         {
            
-            var imageSender = (Image)sender;
             MentorAllSessionsListPage allSessionsListPage = new MentorAllSessionsListPage()
             {
                 BindingContext = mentor
@@ -54,12 +52,10 @@ namespace XamarinMHA
 
         async void ApproveUsersImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
         }
 
         async void MyApointmentsImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             MentorAppointmentsPage mentorAppointmentsPage = new MentorAppointmentsPage
             {
                 BindingContext = mentor
