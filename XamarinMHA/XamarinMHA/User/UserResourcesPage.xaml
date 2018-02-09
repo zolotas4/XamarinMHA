@@ -4,16 +4,16 @@
              x:Class="XamarinMHA.UserResourcesPage"
             Title="Resources">
   <!--Pages can be added as references or inline-->
-    <ContentPage Title="Favorites">
+    <ContentPage Title="Favorites" BackgroundColor="White">
         <StackLayout Padding="20,5">
             <SearchBar x:Name="searchFavoriteResourcesSearchBar" TextChanged="searchFavoriteOnTextChanged"/>
-            <ListView x:Name="favoriteResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped" IsPullToRefreshEnabled="True" Refreshing="FavoriteResourcesListRefreshing">
+            <ListView x:Name="favoriteResourcesList" HasUnevenRows="True" SeparatorColor="#EB004C" ItemTapped="ResourceItemTapped" IsPullToRefreshEnabled="True" Refreshing="FavoriteResourcesListRefreshing">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
-                                <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                                <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
+                                <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
+                                <Label Text="{Binding shortDescription}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -21,16 +21,16 @@
             </ListView>
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Suggested">
+    <ContentPage Title="Suggested" BackgroundColor="White">
         <StackLayout  Padding="20,5">
             <SearchBar x:Name="searchSuggestedResourcesSearchBar" TextChanged="searchSuggestedOnTextChanged"/>
-            <ListView x:Name="suggestedResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped">
+            <ListView x:Name="suggestedResourcesList" HasUnevenRows="True" SeparatorColor="#EB004C" ItemTapped="ResourceItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                                 <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
-                                    <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                                    <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
+                                    <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding shortDescription}"/>
                                 </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -38,17 +38,17 @@
             </ListView>
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="All">
+    <ContentPage Title="All" BackgroundColor="White">
         <StackLayout  Padding="20,5">
             <SearchBar x:Name="searchAllResourcesSearchBar" TextChanged="searchAllOnTextChanged"/>
-            <ListView x:Name="allResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped">
+            <ListView x:Name="allResourcesList" HasUnevenRows="True" SeparatorColor="#EB004C" ItemTapped="ResourceItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
-                                    <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                                    <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
+                                    <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding shortDescription}"/>
                                 </StackLayout>
                                
                             </StackLayout>

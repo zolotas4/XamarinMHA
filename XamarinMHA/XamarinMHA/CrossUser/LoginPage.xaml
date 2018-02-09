@@ -18,11 +18,15 @@
                 </Grid.ColumnDefinitions>
                 <Image Grid.Row="0" Grid.Column="0" Source="uoyWide.png" Aspect="AspectFill"/>
                 <StackLayout Grid.Row="1" Grid.Column="0" x:Name="LoginPageLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="60,20,60,20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C"/>
-                    <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand"/>
-                    <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" HorizontalOptions="FillAndExpand"/>
-                    <BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#EB004C" Margin="0,0,0,20"/>
-                    <Button Text="Login" Clicked="LoginButtonClicked" StyleClass="Success"/>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="Username:" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Password:" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <Button Text="Login" Clicked="LoginButtonClicked" BackgroundColor="#EB004C" TextColor="White" VerticalOptions="Center"/>
                     <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
                     <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>

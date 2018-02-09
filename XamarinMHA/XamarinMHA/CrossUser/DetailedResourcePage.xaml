@@ -7,19 +7,17 @@
         <ToolbarItem x:Name="favIconItem" Text="favorite" Order="Primary" Icon="favEmpty.png" Clicked="FavoriteButtonClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-            <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-            <Label x:Name="Author" Text="Author:"  Style="{StaticResource whiteTextFonts}" />
-            <Label x:Name="Description" Text="{Binding title, StringFormat='Description: {0:N}'}}"  Style="{StaticResource whiteTextFonts}" />
-            <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="FillAndExpand">
-                <Button Text="Download" Clicked="DownloadButtonClicked" StyleClass="Success"/>
-                <Button Text="Send To Email" Clicked="SendToEmailButtonClicked" StyleClass="Success"/>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20,20,20,20">
+                <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
+                <Label x:Name="Author" Text="Author:" />
+                <Label x:Name="Description" Text="{Binding title, StringFormat='Description: {0:N}'}}" />
+                <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="FillAndExpand">
+                    <Button Text="Download" Clicked="DownloadButtonClicked" StyleClass="Success"/>
+                    <Button Text="Send To Email" Clicked="SendToEmailButtonClicked" StyleClass="Success"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>
     </ContentPage.Content>
-
 </ContentPage>
