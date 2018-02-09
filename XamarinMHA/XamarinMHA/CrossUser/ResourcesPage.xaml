@@ -3,25 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinMHA.ResourcesPage" Title="Resources">
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-                <StackLayout  Padding="20,5">
-                    <SearchBar x:Name="searchAllResourcesSearchBar" TextChanged="searchAllOnTextChanged"/>
-                    <ListView x:Name="resourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout Orientation="Horizontal">
-                                        <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
-                                            <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                                            <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
-                                        </StackLayout>
+        <AbsoluteLayout  BackgroundColor="White">
+            <StackLayout Padding="20,20,20,20">
+                <SearchBar x:Name="searchAllResourcesSearchBar" TextChanged="searchAllOnTextChanged"/>
+                <ListView x:Name="resourcesList" HasUnevenRows="True" SeparatorColor="#EB004C" ItemTapped="ResourceItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical"  Margin="0,10,20,0" Spacing="1">
+                                        <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding shortDescription}" />
                                     </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>
     </ContentPage.Content>

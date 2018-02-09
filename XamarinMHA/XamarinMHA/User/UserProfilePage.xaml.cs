@@ -1,4 +1,5 @@
 ﻿using AppointmentModel;
+using FundingModel;
 using MentorModel;
 using Newtonsoft.Json;
 using PeopleModel;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinMHA.User;
 using static XamarinMHA.MentorHomePage;
 
 namespace XamarinMHA
@@ -40,6 +42,43 @@ namespace XamarinMHA
                 BindingContext = user
             };
             await Navigation.PushAsync(userDetails);
+        }
+
+        async void TimeLeftImageTapped(object sender, EventArgs args)
+        {
+            Utilities.toggleSpinner(spinner);
+
+            HttpClient oHttpClient = new HttpClient();
+
+            string url = Utilities.LOCALHOST + "funding/search/findByPerson?person=" + user.UserName;
+            Debug.WriteLine("Url: " + url);
+            HttpResponseMessage response = await oHttpClient.GetAsync(url);
+            List<Funding> fundingList = new List<Funding>();
+            if (response.IsSuccessStatusCode)
+            {
+                fundingList = JsonConvert.DeserializeObject<FundingEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Funding;
+            }
+            int totalFunding = 0;
+            foreach (Funding funding in fundingList)
+            {
+                totalFunding = totalFunding + funding.Time;
+                
+            }
+            HttpClient oHttpClient2 = new HttpClient();
+
+            string url2 = Utilities.LOCALHOST + "sessions/search/findByPersonAndLogged?person=" + user.UserName + "&logged=true";
+            HttpResponseMessage response2 = await oHttpClient.GetAsync(url2);
+            List<Session> sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response2.Content.ReadAsStringAsync()).Embedded.Sessions;
+            int timeConsumed = 0;
+            foreach (Session session in sessionsList)
+            {
+                timeConsumed = timeConsumed + session.actualDuration;
+            }
+            Utilities.toggleSpinner(spinner);
+
+            TimeLeftPage timeLeftPage = new TimeLeftPage(totalFunding, timeConsumed);
+            timeLeftPage.BindingContext = user;
+            await Navigation.PushAsync(timeLeftPage);
         }
 
         async void MyAppointmentsImageTapped(object sender, EventArgs args)

@@ -67,5 +67,10 @@ namespace XamarinMHA
         {
             
         }
+
+        private void LogoutButtonClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
