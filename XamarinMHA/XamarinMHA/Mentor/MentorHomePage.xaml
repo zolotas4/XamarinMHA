@@ -4,7 +4,7 @@
              x:Class="XamarinMHA.MentorHomePage">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid BackgroundColor="#EB004C" RowSpacing="0" ColumnSpacing="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid Style="{StaticResource gridMenu}" RowSpacing="0" ColumnSpacing="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>

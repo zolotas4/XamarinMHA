@@ -42,11 +42,23 @@
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
                 <Setter Property="FontFamily" Value="{StaticResource FontAwesomeString}" />
             </Style>
-            <Style x:Key="buttonStyle" TargetType="Label">
+            <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="{DynamicResource appColor}" />
             </Style>
+            <Style x:Key="gridMenu" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{DynamicResource appColor}" />
+            </Style>
+            <Style x:Key="loginFrame" TargetType="Frame">
+                <Setter Property="OutlineColor" Value="{DynamicResource appColor}"/>
+            </Style>
+            <Style x:Key="labelFont" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+            </Style>
             <x:String x:Key="appColor">#EB004C</x:String>
+            <x:String x:Key="textColor">#454343</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

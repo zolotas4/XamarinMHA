@@ -4,7 +4,7 @@
              x:Class="XamarinMHA.UserHomePage"
              Title="User Home">
     <ContentPage.Content>
-            <Grid BackgroundColor="#EB004C" RowSpacing="0" ColumnSpacing="0">
+            <Grid Style="{StaticResource gridMenu}" RowSpacing="0" ColumnSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>
@@ -15,7 +15,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Image  Source="uoyWide.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0"/>
                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf073;" HorizontalTextAlignment="Center" />
