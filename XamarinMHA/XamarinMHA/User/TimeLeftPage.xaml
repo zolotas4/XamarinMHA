@@ -8,21 +8,21 @@
             <Image Style="{StaticResource backImage}"/>
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20,20,20,20" VerticalOptions="Center" HorizontalOptions="Center">
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,20" VerticalOptions="Center">
-                    <Label Text="&#xf251;" Style="{StaticResource FontAwesome}" VerticalTextAlignment="Center"/>
+                    <Label Text="&#xf251;" Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center"/>
                     <StackLayout Orientation="Vertical">
                         <Label Text="Total Allowance:" Style="{StaticResource whiteLargeFonts}" />
                         <Label x:Name="totalAllowanceLabel" Style="{StaticResource whiteLargeFonts}" />
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,20" VerticalOptions="Center">
-                    <Label Text="&#xf252;" Style="{StaticResource FontAwesome}" VerticalTextAlignment="Center"/>
+                    <Label Text="&#xf252;" Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center"/>
                     <StackLayout Orientation="Vertical">
                         <Label Text="Allowance used: " Style="{StaticResource whiteLargeFonts}" />
                         <Label x:Name="usedAllownaceLabel" Style="{StaticResource whiteLargeFonts}" />
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                    <Label Text="&#xf253;" Style="{StaticResource FontAwesome}" VerticalTextAlignment="Center"/>
+                    <Label Text="&#xf253;" Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center"/>
                     <StackLayout Orientation="Vertical">
                         <Label Text="Time Left:" Style="{StaticResource whiteLargeFonts}" />
                         <Label x:Name="timeLeftLabel" Style="{StaticResource whiteLargeFonts}" />

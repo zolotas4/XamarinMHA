@@ -16,7 +16,7 @@
                 <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="uoyWide.png" Aspect="AspectFill"/>
                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf05a;" HorizontalTextAlignment="Center" />
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf05a;" HorizontalTextAlignment="Center" />
                         <Label Text="About Us" Style="{StaticResource appLargeFonts}" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
@@ -25,7 +25,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf2f6;" HorizontalTextAlignment="Center"/>
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf2f6;" HorizontalTextAlignment="Center"/>
                         <Label Text="Login/Register" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
@@ -34,7 +34,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,0">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf02d;" HorizontalTextAlignment="Center"/>
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf02d;" HorizontalTextAlignment="Center"/>
                         <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
@@ -43,7 +43,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf098;" HorizontalTextAlignment="Center"/>
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf098;" HorizontalTextAlignment="Center"/>
                         <Label Text="Contact Us" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>

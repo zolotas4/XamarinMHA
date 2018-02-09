@@ -7,9 +7,9 @@
             <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
                 <StackLayout Padding="30,30">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Margin="0,0,0,15">
-                        <Label Text="@ " Style="{StaticResource FontAwesomeLarge}"/>
-                        <Label Text=" &#xf095; " Style="{StaticResource FontAwesomeLarge}"/>
-                        <Label Text=" &#xf0e0;" Style="{StaticResource FontAwesomeLarge}"/>
+                        <Label Text="@" Style="{StaticResource fontAwesomeLarge}"/>
+                        <Label Text=" &#xf095; " Style="{StaticResource fontAwesomeLarge}"/>
+                        <Label Text="&#xf0e0;" Style="{StaticResource fontAwesomeLarge}"/>
                     </StackLayout>
                     <Frame Margin="0,0,0,20">
                         <Label Text="Head Office" FontAttributes="Bold" Style="{StaticResource textFont}" HorizontalTextAlignment="Center"/>

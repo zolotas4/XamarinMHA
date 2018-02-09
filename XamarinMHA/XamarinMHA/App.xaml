@@ -11,41 +11,41 @@
                 <Setter Property="Aspect" Value="AspectFill" />
                 <Setter Property="Opacity" Value="0.3" />
             </Style>
-            <OnPlatform x:Key="FontFamilyName" x:TypeArguments="x:String" iOS="MarkerFelt-Thin" Android="OpenSans" WinPhone="Segoe UI" />
+            <OnPlatform x:Key="fontFamilyName" x:TypeArguments="x:String" iOS="MarkerFelt-Thin" Android="OpenSans" WinPhone="Segoe UI" />
             <Style x:Key="blueLargeFonts" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="TextColor" Value="#1976D2"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
             <Style x:Key="appLargeFonts" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
             <Style x:Key="whiteLargeFonts" TargetType="Label">
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="TextColor" Value="#FFFFFF"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
             <Style x:Key="whiteTextFonts" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="#FFFFFF"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
-            <OnPlatform x:Key="FontAwesomeString" x:TypeArguments="x:String">
+            <OnPlatform x:Key="fontAwesomeString" x:TypeArguments="x:String">
                 <On Platform="iOS" Value="FontAwesome" />
                 <On Platform="Android" Value="FontAwesome.otf#FontAwesome" />
                 <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/FontAwesome.otf#FontAwesome" />
             </OnPlatform>
-            <Style x:Key="FontAwesome" TargetType="Label">
+            <Style x:Key="fontAwesome" TargetType="Label">
                 <Setter Property="FontSize" Value="50"/>
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
-                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeString}" />
+                <Setter Property="FontFamily" Value="{StaticResource fontAwesomeString}" />
             </Style>
-            <Style x:Key="FontAwesomeLarge" TargetType="Label">
+            <Style x:Key="fontAwesomeLarge" TargetType="Label">
                 <Setter Property="FontSize" Value="80"/>
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
-                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeString}" />
+                <Setter Property="FontFamily" Value="{StaticResource fontAwesomeString}" />
             </Style>
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="TextColor" Value="White"/>
@@ -60,12 +60,12 @@
             <Style x:Key="labelFont" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
             <Style x:Key="textFont" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
             <x:String x:Key="appColor">#EB004C</x:String>
             <x:String x:Key="textColor">#454343</x:String>

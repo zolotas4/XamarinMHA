@@ -18,7 +18,7 @@
                 <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0"/>
                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf073;" HorizontalTextAlignment="Center" />
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf073;" HorizontalTextAlignment="Center" />
                         <Label Text="Make an Appointment" Style="{StaticResource appLargeFonts}" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
@@ -27,7 +27,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf02d;" HorizontalTextAlignment="Center"/>
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf02d;" HorizontalTextAlignment="Center"/>
                         <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
@@ -36,7 +36,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,0">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf10d; &#xf10e;" HorizontalTextAlignment="Center"/>
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf10d; &#xf10e;" HorizontalTextAlignment="Center"/>
                         <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
@@ -45,7 +45,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Style="{StaticResource FontAwesome}" Text="&#xf2bd;" HorizontalTextAlignment="Center"/>
+                        <Label Style="{StaticResource fontAwesome}" Text="&#xf2bd;" HorizontalTextAlignment="Center"/>
                         <Label Text="My Profile" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
