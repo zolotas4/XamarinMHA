@@ -20,7 +20,7 @@
                 </StackLayout>
                 <Label Text="Comments" Style="{StaticResource whiteLargeFonts}"/>
                 <Editor x:Name="commentsEditor" Text="Enter comments here..." VerticalOptions="FillAndExpand"/>
-                <Button x:Name="logSessionButton" Text="Log Session" StyleClass="Success" Clicked="logSessionButtonClicked"/>
+                <Button x:Name="logSessionButton" Text="Log Session" Style="{StaticResource buttonStyle}" Clicked="logSessionButtonClicked"/>
             </StackLayout>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>

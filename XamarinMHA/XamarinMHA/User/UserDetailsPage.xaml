@@ -21,7 +21,7 @@
                 <Entry x:Name="usernameEntry" Text="{Binding UserName}"/>
                 <Label Text="Password" />
                 <Entry x:Name="passwordEntry" IsPassword="true" />
-                <Button Text="Save" />
+                <Button Text="Save" Style="{StaticResource buttonStyle}"/>
                 <Label x:Name="SaveDetailsButton" />
             </StackLayout>
         </AbsoluteLayout>

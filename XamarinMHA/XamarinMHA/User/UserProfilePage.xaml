@@ -19,7 +19,7 @@
                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf274;" HorizontalTextAlignment="Center" />
-                        <Label Text="My Appointments" Style="{StaticResource pinkLargeFonts}" HorizontalTextAlignment="Center"/>
+                        <Label Text="My Appointments" Style="{StaticResource appLargeFonts}" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="MyAppointmentsImageTapped" />
@@ -28,7 +28,7 @@
                 <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf007;" HorizontalTextAlignment="Center"/>
-                        <Label Text="My Details" HorizontalTextAlignment="Center" Style="{StaticResource pinkLargeFonts}"/>
+                        <Label Text="My Details" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="MyDetailsImageTapped" />
@@ -37,13 +37,13 @@
                 <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,0">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf2b9;" HorizontalTextAlignment="Center"/>
-                    <Label Text="Accounts" HorizontalTextAlignment="Center" Style="{StaticResource pinkLargeFonts}"/>
+                    <Label Text="Accounts" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf252;" HorizontalTextAlignment="Center"/>
-                        <Label Text="Time Left" HorizontalTextAlignment="Center" Style="{StaticResource pinkLargeFonts}"/>
+                        <Label Text="Time Left" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TimeLeftImageTapped" />

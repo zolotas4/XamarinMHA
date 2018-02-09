@@ -19,7 +19,7 @@
                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf073;" HorizontalTextAlignment="Center" />
-                        <Label Text="Make an Appointment" Style="{StaticResource pinkLargeFonts}" HorizontalTextAlignment="Center"/>
+                        <Label Text="Make an Appointment" Style="{StaticResource appLargeFonts}" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="MakeAnAppointmentImageTapped" />
@@ -28,7 +28,7 @@
                 <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf02d;" HorizontalTextAlignment="Center"/>
-                        <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource pinkLargeFonts}"/>
+                        <Label Text="Resources" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="ResourcesImageTapped" />
@@ -37,7 +37,7 @@
                 <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,0">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf10d; &#xf10e;" HorizontalTextAlignment="Center"/>
-                        <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource pinkLargeFonts}"/>
+                        <Label Text="Chat" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="ChatImageTapped" />
@@ -46,7 +46,7 @@
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource FontAwesome}" Text="&#xf2bd;" HorizontalTextAlignment="Center"/>
-                        <Label Text="My Profile" HorizontalTextAlignment="Center" Style="{StaticResource pinkLargeFonts}"/>
+                        <Label Text="My Profile" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="MyProfileImageTapped" />

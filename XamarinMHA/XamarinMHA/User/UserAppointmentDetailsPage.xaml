@@ -12,7 +12,7 @@
                     <Label Text="{Binding MentorFirstLastName, StringFormat='Mentor: {0:N}'}}" Style="{StaticResource whiteTextFonts}"/>
                     <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
                     <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
-                    <Button x:Name="cancelAppointment"  Text="Cancel Appointment" Clicked="cancelAppointmentButtonClicked" StyleClass="Danger"/>
+                    <Button x:Name="cancelAppointment"  Text="Cancel Appointment" Clicked="cancelAppointmentButtonClicked" Style="{StaticResource buttonStyle}"/>
                 </StackLayout>
             </ScrollView>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>

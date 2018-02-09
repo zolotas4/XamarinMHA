@@ -26,7 +26,7 @@
                         <Label Text="Password:" VerticalTextAlignment="Center"/>
                         <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
-                    <Button Text="Login" Clicked="LoginButtonClicked" BackgroundColor="#EB004C" TextColor="White" VerticalOptions="Center"/>
+                    <Button Text="Login" Clicked="LoginButtonClicked" Style="{StaticResource buttonStyle}" VerticalOptions="Center"/>
                     <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
                     <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>

@@ -59,7 +59,7 @@
     <Compile Include="CrossUser\DetailedFreeResourcePage.xaml.cs">
       <DependentUpon>DetailedFreeResourcePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CrossUser\DetailedResourcePage.xaml.cs">
+    <Compile Include="User\DetailedResourcePage.xaml.cs">
       <DependentUpon>DetailedResourcePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="User\MakeAppointmentPageSecondStep.xaml.cs">
@@ -338,7 +338,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CrossUser\DetailedResourcePage.xaml">
+    <EmbeddedResource Include="User\DetailedResourcePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

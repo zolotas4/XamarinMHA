@@ -17,9 +17,9 @@
                 <Setter Property="TextColor" Value="#1976D2"/>
                 <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
             </Style>
-            <Style x:Key="pinkLargeFonts" TargetType="Label">
+            <Style x:Key="appLargeFonts" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
-                <Setter Property="TextColor" Value="#EB004C"/>
+                <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
                 <Setter Property="FontFamily" Value="{DynamicResource FontFamilyName}" />
             </Style>
             <Style x:Key="whiteLargeFonts" TargetType="Label">
@@ -39,9 +39,14 @@
             </OnPlatform>
             <Style x:Key="FontAwesome" TargetType="Label">
                 <Setter Property="FontSize" Value="50"/>
-                <Setter Property="TextColor" Value="#EB004C"/>
+                <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
                 <Setter Property="FontFamily" Value="{StaticResource FontAwesomeString}" />
             </Style>
+            <Style x:Key="buttonStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource appColor}" />
+            </Style>
+            <x:String x:Key="appColor">#EB004C</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -8,8 +8,8 @@
             <Label x:Name="Author" Text="Author:"  Style="{StaticResource whiteTextFonts}" />
             <Label x:Name="Description" Text="{Binding title, StringFormat='Description: {0:N}'}}"/>
             <StackLayout Orientation="Horizontal" Margin="0,30,0,0" HorizontalOptions="FillAndExpand">
-                <Button Text="Download" Clicked="DownloadButtonClicked" BackgroundColor="#EB004C" TextColor="White" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Send Email" Clicked="DownloadButtonClicked" BackgroundColor="#EB004C" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Download" Clicked="DownloadButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Send Email" Clicked="DownloadButtonClicked"  Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

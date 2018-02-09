@@ -10,7 +10,7 @@
                     <Label x:Name="titleLabel" />
                     <Image Source="tick.png"></Image>
                     <Label x:Name="confirmationText" Style="{StaticResource whiteLargeFonts}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center"></Label>
-                    <Button x:Name="backToHomeButton"  Text="Home" Clicked="backToHomeButtonClicked" StyleClass="Success"/>
+                    <Button x:Name="backToHomeButton"  Text="Home" Clicked="backToHomeButtonClicked" Style="{StaticResource buttonStyle}"/>
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

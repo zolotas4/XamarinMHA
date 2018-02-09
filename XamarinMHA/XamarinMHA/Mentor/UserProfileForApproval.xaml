@@ -17,7 +17,7 @@
                     <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy" />
                     <Label Text="Phone" />
                     <Entry x:Name="phoneEntry" Keyboard="Numeric" Text="{Binding Phone}"/>
-                    <Button x:Name="ApproveButton" Text="Approve" Clicked="ApproveButtonClicked" StyleClass="Success"/>
+                <Button x:Name="ApproveButton" Text="Approve" Clicked="ApproveButtonClicked" Style="{StaticResource buttonStyle}"/>
                 </StackLayout>
             </AbsoluteLayout>
         </ContentPage.Content>
