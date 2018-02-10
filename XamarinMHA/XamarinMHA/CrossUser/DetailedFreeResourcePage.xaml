@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinMHA.DetailedFreeResourcePage">
+             x:Class="XamarinMHA.DetailedFreeResourcePage"
+             Title="{Binding title}">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" Padding="20,20,20,20">
-            <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
-            <Label x:Name="Author" Text="Author:"  Style="{StaticResource whiteTextFonts}" />
-            <Label x:Name="Description" Text="{Binding title, StringFormat='Description: {0:N}'}}"/>
-            <StackLayout Orientation="Horizontal" Margin="0,30,0,0" HorizontalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="20">
+            <Label x:Name="Author" Text="{Binding author, StringFormat='Author: {0:N}'}}" FontAttributes="Bold"  Style="{StaticResource textFont}" />
+            <Label x:Name="Description" Text="{Binding description, StringFormat='Description: {0:N}'}}" Style="{StaticResource textFont}"/>
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="FillAndExpand">
                 <Button Text="Download" Clicked="DownloadButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
                 <Button Text="Send Email" Clicked="DownloadButtonClicked"  Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
             </StackLayout>

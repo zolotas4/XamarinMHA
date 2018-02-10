@@ -67,6 +67,11 @@
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
                 <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
+            <Style x:Key="textLargeFont" TargetType="Label">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
+            </Style>
             <x:String x:Key="appColor">#EB004C</x:String>
             <x:String x:Key="textColor">#454343</x:String>
         </ResourceDictionary>
