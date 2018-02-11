@@ -57,6 +57,12 @@
             <Style x:Key="loginFrame" TargetType="Frame">
                 <Setter Property="OutlineColor" Value="{DynamicResource appColor}"/>
             </Style>
+            <Style x:Key="legendBoxViewAppColor" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource appColor}"/>
+            </Style>
+            <Style x:Key="legendBoxViewTextColor" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource textColor}"/>
+            </Style>
             <Style x:Key="labelFont" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>

@@ -77,7 +77,7 @@ namespace XamarinMHA
             Utilities.toggleSpinner(spinner);
 
             TimeLeftPage timeLeftPage = new TimeLeftPage(totalFunding, timeConsumed);
-            timeLeftPage.BindingContext = user;
+            //timeLeftPage.BindingContext = user;
             await Navigation.PushAsync(timeLeftPage);
         }
 

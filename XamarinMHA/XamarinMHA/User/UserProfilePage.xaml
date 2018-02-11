@@ -43,7 +43,7 @@
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource fontAwesome}" Text="&#xf252;" HorizontalTextAlignment="Center"/>
-                        <Label Text="Time Left" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
+                        <Label Text="Allowance" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TimeLeftImageTapped" />

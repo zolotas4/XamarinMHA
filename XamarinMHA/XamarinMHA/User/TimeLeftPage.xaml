@@ -2,34 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinMHA.User.TimeLeftPage"
-             Title="Time Left">
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             Title="Allowance">
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20,20,20,20" VerticalOptions="Center" HorizontalOptions="Center">
-                <StackLayout Orientation="Horizontal" Margin="0,0,0,20" VerticalOptions="Center">
-                    <Label Text="&#xf251;" Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Total Allowance:" Style="{StaticResource whiteLargeFonts}" />
-                        <Label x:Name="totalAllowanceLabel" Style="{StaticResource whiteLargeFonts}" />
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="0,0,0,20" VerticalOptions="Center">
-                    <Label Text="&#xf252;" Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Allowance used: " Style="{StaticResource whiteLargeFonts}" />
-                        <Label x:Name="usedAllownaceLabel" Style="{StaticResource whiteLargeFonts}" />
-                    </StackLayout>
+            <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <oxy:PlotView Grid.Row="0" Grid.Column="0" Model="{Binding PieModel}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" VerticalOptions="Center" HorizontalOptions="Center" />
+            <StackLayout Grid.Row="1" Grid.Column="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20,20,20,20" VerticalOptions="Start" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <BoxView WidthRequest="20" HeightRequest="20" Style="{StaticResource legendBoxViewAppColor}" VerticalOptions="Center"/>
+                    <Label Text="Time Left:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                    <Label x:Name="timeLeftLabel" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                    <Label Text="&#xf253;" Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Time Left:" Style="{StaticResource whiteLargeFonts}" />
-                        <Label x:Name="timeLeftLabel" Style="{StaticResource whiteLargeFonts}" />
-                    </StackLayout>
+                    <BoxView WidthRequest="20" HeightRequest="20" Style="{StaticResource legendBoxViewTextColor}" VerticalOptions="Center"/>
+                    <Label Text="Time Used:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                    <Label x:Name="usedAllownaceLabel" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
-            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
-        </AbsoluteLayout>
+            </Grid>
     </ContentPage.Content>
+    
 </ContentPage>
