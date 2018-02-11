@@ -7,23 +7,25 @@
         <ToolbarItem Text="Mentor Sign Up" Clicked="MentorRegisterButtonClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
-            <Frame Style="{StaticResource loginFrame}" OutlineColor="AliceBlue" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Margin="60">
-                <StackLayout x:Name="LoginPageLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                        <Label Text="Username:" VerticalTextAlignment="Center"  Style="{StaticResource labelFont}"/>
-                        <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" Style="{StaticResource labelFont}"/>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" VerticalOptions="CenterAndExpand">
+                <Frame Style="{StaticResource loginFrame}"  Margin="60">
+                    <StackLayout x:Name="LoginPageLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Username:" VerticalTextAlignment="Center"  Style="{StaticResource labelFont}"/>
+                            <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" Style="{StaticResource labelFont}"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Password:" VerticalTextAlignment="Center" Style="{StaticResource labelFont}"/>
+                            <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" HorizontalOptions="FillAndExpand" Style="{StaticResource labelFont}"/>
+                        </StackLayout>
+                        <Button Text="Login" Clicked="LoginButtonClicked" Style="{StaticResource buttonStyle}" VerticalOptions="Center"/>
+                        <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
+                        <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Password:" VerticalTextAlignment="Center" Style="{StaticResource labelFont}"/>
-                        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="true" HorizontalOptions="FillAndExpand" Style="{StaticResource labelFont}"/>
-                    </StackLayout>
-                    <Button Text="Login" Clicked="LoginButtonClicked" Style="{StaticResource buttonStyle}" VerticalOptions="Center"/>
-                    <Label x:Name="loginButton" Style="{StaticResource whiteLargeFonts}"/>
-                    <Label x:Name="invalidPasswordLabel" Text="Invalid Username and/or Password" IsVisible="False" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
-                </StackLayout>
-            </Frame>
-            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
+                </Frame>
+            </StackLayout>
+            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.4,-1,-1"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

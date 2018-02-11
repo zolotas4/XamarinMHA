@@ -27,12 +27,14 @@ namespace XamarinMHA
         async void CompleteRegistrationButtonClicked(object sender, EventArgs e)
         {
             Person person = new Person(firstNameEntry.Text, lastNameEntry.Text, usernameEntry.Text, passwordEntry.Text, emailEntry.Text, phoneEntry.Text, dobEntry.Date.Date.ToString(), "false", "false");
+            Utilities.toggleSpinner(spinner);
             HttpClient oHttpClient = new HttpClient();
             HttpResponseMessage response = await oHttpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, sContentType));
             if (response.IsSuccessStatusCode)
             {
                 String sendEmailUrl = Utilities.LOCALHOST + "email/send/" + person.Email + "/" + person.FirstName + "/";
                 response = await oHttpClient.GetAsync(sendEmailUrl);
+                Utilities.toggleSpinner(spinner);
                 UploadVerificationDocumentPage page = new UploadVerificationDocumentPage
                 {
                     BindingContext = person
