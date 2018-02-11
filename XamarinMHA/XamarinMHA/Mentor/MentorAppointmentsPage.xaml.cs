@@ -1,6 +1,7 @@
 ﻿using AppointmentModel;
 using MentorModel;
 using Newtonsoft.Json;
+using SessionModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,7 +27,9 @@ namespace XamarinMHA
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Utilities.toggleSpinner(spinner);
             populateListWithAppointments();
+            Utilities.toggleSpinner(spinner);
         }
 
         protected override void OnBindingContextChanged()
@@ -37,15 +40,16 @@ namespace XamarinMHA
 
         async void populateListWithAppointments()
         {
-            AppointmentEmbeddedWrapper appointmentsList = new AppointmentEmbeddedWrapper();
+            SessionEmbeddedWrapper sessionsList = new SessionEmbeddedWrapper();
             HttpClient oHttpClient = new HttpClient();
-            string url = Utilities.LOCALHOST + "appointments/search/findByMentorOrderByStartingDateTimeAsc?mentor=" + mentor.UserName;
+            string url = Utilities.LOCALHOST + "sessions/search/findByMentorGreaterThanOrderByDateAsc?mentor=" + mentor.UserName + "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
+            Debug.WriteLine(url);
             var response = await oHttpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
-                appointmentsList = JsonConvert.DeserializeObject<AppointmentEmbeddedWrapper>(await response.Content.ReadAsStringAsync());
+                sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response.Content.ReadAsStringAsync());
             }
-            AppointmentsList.ItemsSource = appointmentsList.Embedded.Appointments;
+            AppointmentsList.ItemsSource = sessionsList.Embedded.Sessions;
         }
 
         async void AppointmentSelected(object sender, SelectedItemChangedEventArgs e)
