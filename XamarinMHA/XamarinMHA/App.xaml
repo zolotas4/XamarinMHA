@@ -68,6 +68,11 @@
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
                 <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
             </Style>
+            <Style x:Key="labelFontAppColor" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
+            </Style>
             <Style x:Key="textFont" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
@@ -77,6 +82,9 @@
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="TextColor" Value="{DynamicResource textColor}"/>
                 <Setter Property="FontFamily" Value="{DynamicResource fontFamilyName}" />
+            </Style>
+            <Style x:Key="listStyle" TargetType="ListView">
+                <Setter Property="SeparatorColor" Value="{DynamicResource appColor}"/>
             </Style>
             <x:String x:Key="appColor">#EB004C</x:String>
             <x:String x:Key="textColor">#454343</x:String>
