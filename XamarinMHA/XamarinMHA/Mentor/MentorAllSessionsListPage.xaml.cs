@@ -16,7 +16,7 @@ using static XamarinMHA.MentorHomePage;
 namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MentorAllSessionsListPage : ContentPage
+    public partial class MentorAllSessionsListPage : TabbedPage
     {
         Mentor mentor;
         public MentorAllSessionsListPage()

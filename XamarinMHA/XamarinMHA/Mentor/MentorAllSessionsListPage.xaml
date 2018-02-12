@@ -1,42 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinMHA.MentorAllSessionsListPage">
-    <ContentPage.Content>
-        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="XamarinMHA.MentorAllSessionsListPage"
+            Title="Log Sessions">
+    <ContentPage Title="Open Sessions">
+            <ScrollView>
                 <StackLayout Padding="20">
-                    <Label x:Name="openSessionsLabel" Text="Open Sessions" Style="{StaticResource labelFontAppColor}" HorizontalTextAlignment="Center"/>
-                        <ListView x:Name="OpenSessionsList" HasUnevenRows="True" Style="{StaticResource listStyle}" ItemTapped="SessionItemTapped" VerticalOptions="FillAndExpand" >
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1">
-                                            <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource textFont}"/>
-                                            <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
-                                            <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
-                                        </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    <Label x:Name="loggedSessionsLabel" Text="Logged Sessions" Style="{StaticResource labelFontAppColor}" HorizontalTextAlignment="Center"/>
-                        <ListView x:Name="LoggedSessionsList" HasUnevenRows="True" Style="{StaticResource listStyle}" ItemTapped="SessionItemTapped" VerticalOptions="FillAndExpand">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
+                    <ListView x:Name="OpenSessionsList" HasUnevenRows="True" Style="{StaticResource listStyle}" ItemTapped="SessionItemTapped" VerticalOptions="FillAndExpand" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1">
+                                        <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource textFont}"/>
+                                        <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
+                                        <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+    </ContentPage>
+    <ContentPage Title="Logged Sessions">
+            <ScrollView>
+                <StackLayout Padding="20">
+                    <ListView x:Name="LoggedSessionsList" HasUnevenRows="True" Style="{StaticResource listStyle}" ItemTapped="SessionItemTapped" VerticalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
                                     <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="2">
                                         <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource textFont}"/>
                                         <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
                                         <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
-                                        </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </ScrollView>
-            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
-        </AbsoluteLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentPage>
+    <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
+</TabbedPage>
