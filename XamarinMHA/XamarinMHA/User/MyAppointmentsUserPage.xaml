@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinMHA.MyAppointmentsUserPage">
+             x:Class="XamarinMHA.MyAppointmentsUserPage"
+             Title="My Appointments">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20">
                 <StackLayout>
-                    <Label x:Name="titleLabel" Text="Your Appointments" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center"/>
-                    <ListView x:Name="AppointmentsList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="AppointmentItemTapped" >
+                    <ListView x:Name="AppointmentsList" HasUnevenRows="True" Style="{StaticResource listStyle}" ItemTapped="AppointmentItemTapped" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1">
-                                        <Label Text="{Binding MentorFirstLastName, StringFormat='Appointment with mentor {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                                        <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
-                                        <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
+                                        <Label Text="{Binding MentorFirstLastName, StringFormat='Appointment with mentor {0:N}'}}" FontAttributes="Bold" Style="{StaticResource textFont}"/>
+                                        <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
+                                        <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
