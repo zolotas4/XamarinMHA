@@ -52,6 +52,7 @@ namespace XamarinMHA.User
                     AngleSpan = 360,
                     StartAngle = 0,
                     OutsideLabelFormat = "",
+                    InsideLabelFormat = "",
                     TickHorizontalLength = 0.00,
                     TickRadialLength = 0.00
                 };

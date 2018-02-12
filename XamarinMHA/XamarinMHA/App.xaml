@@ -42,6 +42,11 @@
                 <On Platform="Android" Value="FontAwesomeBrand.otf#FontAwesome" />
                 <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/FontAwesomeBrand.otf#FontAwesomeBrand" />
             </OnPlatform>
+            <Style x:Key="fontAwesome30" TargetType="Label">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
+                <Setter Property="FontFamily" Value="{StaticResource fontAwesomeString}" />
+            </Style>
             <Style x:Key="fontAwesome" TargetType="Label">
                 <Setter Property="FontSize" Value="50"/>
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>

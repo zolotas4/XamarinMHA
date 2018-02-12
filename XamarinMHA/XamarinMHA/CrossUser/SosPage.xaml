@@ -11,7 +11,7 @@
                     </StackLayout>
                     <Frame Margin="0,0,0,20">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                            <Label Text="&#xf0f9; " Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="&#xf0f9; " Style="{StaticResource fontAwesome30}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
                             <StackLayout Orientation="Vertical">
                                 <Label Text="111" Style="{StaticResource fontAwesome}" HorizontalTextAlignment="Center" FontSize="40"/>
                                 <Label Text="In case of an emergency call NHS at 111." Style="{StaticResource textFont}" HorizontalTextAlignment="Center"/>
@@ -20,7 +20,7 @@
                     </Frame>
                     <Frame Margin="0,0,0,0">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                            <Label Text="&#xf095; " Style="{StaticResource fontAwesome}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                            <Label Text="&#xf095; " Style="{StaticResource fontAwesome30}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
                             <StackLayout Orientation="Vertical">
                                 <Label Text="116 123" FontAttributes="Bold"  Style="{StaticResource fontAwesome}" HorizontalTextAlignment="Center" FontSize="40"/>
                                 <Label Text="Call the Samaritans at 116123 to talk to someone now." Style="{StaticResource textFont}" HorizontalTextAlignment="Center"/>
