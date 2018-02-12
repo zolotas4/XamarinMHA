@@ -38,6 +38,9 @@
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource fontAwesome}" Text="&#xf2b9;" HorizontalTextAlignment="Center"/>
                     <Label Text="Accounts" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AccountsImageTapped" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >

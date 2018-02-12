@@ -37,10 +37,20 @@
                 <On Platform="Android" Value="FontAwesome.otf#FontAwesome" />
                 <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/FontAwesome.otf#FontAwesome" />
             </OnPlatform>
+            <OnPlatform x:Key="fontAwesomeBrandString" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="FontAwesomeBrand" />
+                <On Platform="Android" Value="FontAwesomeBrand.otf#FontAwesome" />
+                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/FontAwesomeBrand.otf#FontAwesomeBrand" />
+            </OnPlatform>
             <Style x:Key="fontAwesome" TargetType="Label">
                 <Setter Property="FontSize" Value="50"/>
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
                 <Setter Property="FontFamily" Value="{StaticResource fontAwesomeString}" />
+            </Style>
+            <Style x:Key="fontAwesomeBrand" TargetType="Label">
+                <Setter Property="FontSize" Value="50"/>
+                <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
+                <Setter Property="FontFamily" Value="{StaticResource fontAwesomeBrandString}" />
             </Style>
             <Style x:Key="fontAwesomeLarge" TargetType="Label">
                 <Setter Property="FontSize" Value="80"/>

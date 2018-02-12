@@ -44,6 +44,15 @@ namespace XamarinMHA
             await Navigation.PushAsync(userDetails);
         }
 
+        async void AccountsImageTapped(object sender, EventArgs args)
+        {
+            UserSocialAccountsPage userSocialMedia = new UserSocialAccountsPage
+            {
+                BindingContext = user
+            };
+            await Navigation.PushAsync(userSocialMedia);
+        }
+
         async void TimeLeftImageTapped(object sender, EventArgs args)
         {
             Utilities.toggleSpinner(spinner);

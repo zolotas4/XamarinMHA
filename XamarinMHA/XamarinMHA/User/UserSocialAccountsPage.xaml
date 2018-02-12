@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinMHA.User.UserSocialAccountsPage"
+             Title="Accounts">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="20" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="&#xf17e; " VerticalTextAlignment="Center" Style="{StaticResource fontAwesomeBrand}" TextColor="#01a5e2"/>
+                    <Entry x:Name="skypeEntry" HorizontalOptions="FillAndExpand" Style="{StaticResource textFont}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="&#xf232; " VerticalTextAlignment="Center" Style="{StaticResource fontAwesomeBrand}" TextColor="#00c54c"/>
+                    <Entry x:Name="whatsAppEntry" HorizontalOptions="FillAndExpand" Style="{StaticResource textFont}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="&#xf39f; " VerticalTextAlignment="Center" Style="{StaticResource fontAwesomeBrand}" TextColor="#0c83ff"/>
+                    <Entry x:Name="messengerEntry" HorizontalOptions="FillAndExpand" Style="{StaticResource textFont}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="&#xf409; " VerticalTextAlignment="Center" Style="{StaticResource fontAwesomeBrand}" TextColor="#76448a"/>
+                    <Entry x:Name="viberEntry" HorizontalOptions="FillAndExpand" Style="{StaticResource textFont}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,20,0,20">
+                    <Label Text="Preferred Account:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                    <Picker SelectedIndex="1" x:Name="defaultSocialPicker" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>Skype</x:String>
+                            <x:String>FB Messenger</x:String>
+                            <x:String>WhatsApp</x:String>
+                            <x:String>Viber</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <Button Style="{StaticResource buttonStyle}" Text="Save" Clicked="SaveButtonClicked"/>
+            </StackLayout>
+            <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.4,-1,-1"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

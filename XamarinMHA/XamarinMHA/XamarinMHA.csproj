@@ -133,6 +133,9 @@
     <Compile Include="User\UserResourcesPage.xaml.cs">
       <DependentUpon>UserResourcesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User\UserSocialAccountsPage.xaml.cs">
+      <DependentUpon>UserSocialAccountsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +366,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="User\TimeLeftPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="User\UserSocialAccountsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

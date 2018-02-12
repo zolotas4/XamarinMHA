@@ -20,7 +20,7 @@ namespace PeopleModel
     [JsonObject("people")]
     public class Person
     {
-        public Person(string FirstName, string LastName, string UserName, string Password, string Email, string Phone, string DateOfBirth, string Approved, string Submitted)
+        public Person(string FirstName, string LastName, string UserName, string Password, string Email, string Phone, string DateOfBirth, string Messenger, string Skype, string WhatsApp, string Viber, string DefaultSocial, string Approved, string Submitted)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
@@ -29,6 +29,11 @@ namespace PeopleModel
             this.Email = Email;
             this.Phone = Phone;
             this.DateOfBirth = DateOfBirth;
+            this.Messenger = Messenger;
+            this.Skype = Skype;
+            this.WhatsApp = WhatsApp;
+            this.Viber = Viber;
+            this.DefaultSocial = DefaultSocial;
             this.Approved = Approved;
             this.Submitted = Submitted;
             this.FirstLastName = FirstName + " " + LastName;
@@ -50,6 +55,16 @@ namespace PeopleModel
         public String DateOfBirth { get; set; }
         [JsonProperty("phone")]
         public String Phone { get; set; }
+        [JsonProperty("messenger")]
+        public String Messenger { get; set; }
+        [JsonProperty("skype")]
+        public String Skype { get; set; }
+        [JsonProperty("whatsApp")]
+        public String WhatsApp { get; set; }
+        [JsonProperty("viber")]
+        public String Viber { get; set; }
+        [JsonProperty("defaultSocial")]
+        public String DefaultSocial { get; set; }
         [JsonProperty("approved")]
         public String Approved { get; set; }
         [JsonProperty("submitted")]
