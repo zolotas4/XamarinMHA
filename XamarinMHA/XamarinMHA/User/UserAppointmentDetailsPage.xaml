@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinMHA.UserAppointmentDetailsPage">
+             x:Class="XamarinMHA.UserAppointmentDetailsPage"
+             Title="Appointment Details">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20">
                 <StackLayout>
-                    <Label Style="{StaticResource whiteLargeFonts}" Text="Appointment Details" HorizontalTextAlignment="Center"/>
-                    <Label Style="{StaticResource whiteTextFonts}" Text="You have the following appointment scheduled" HorizontalTextAlignment="Center" Margin="0,0,0,10"/>
-                    <Label Text="{Binding MentorFirstLastName, StringFormat='Mentor: {0:N}'}}" Style="{StaticResource whiteTextFonts}"/>
-                    <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
-                    <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
-                    <Button x:Name="cancelAppointment"  Text="Cancel Appointment" Clicked="cancelAppointmentButtonClicked" Style="{StaticResource buttonStyle}"/>
+                    <Label Style="{StaticResource labelFontAppColor}" Text="You have the following appointment scheduled" HorizontalTextAlignment="Center" Margin="0,0,0,10"/>
+                    <Label Text="{Binding MentorFirstLastName, StringFormat='Mentor: {0:N}'}}" Style="{StaticResource textFont}"/>
+                    <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
+                    <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
+                    <Label Text="{Binding MentorFirstLastName, StringFormat='{0:N} will contact you at your preferred social account. Please make sure that you have one selected in the accounts page of your profile.'}}" Style="{StaticResource textFont}"/>
+                    <Button x:Name="cancelAppointment"  Text="Cancel Appointment" Clicked="cancelAppointmentButtonClicked" Style="{StaticResource buttonStyle}" Margin="0,20,0,0"/>
                 </StackLayout>
             </ScrollView>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
