@@ -5,47 +5,51 @@
              Title="Log Session">
     <ContentPage Title="Session Details">
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <StackLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <Label x:Name="titleLabel" Text="Session Details" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
-                <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource whiteTextFonts}" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Duration: " VerticalTextAlignment="Center" Style="{StaticResource whiteTextFonts}"/>
-                    <Entry x:Name="durationHoursEntry" Placeholder="hours" Keyboard="Numeric" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="End"/>
-                    <Label Text="h" Style="{StaticResource whiteTextFonts}" VerticalTextAlignment="Center"/>
-                    <Entry x:Name="durationMinsEntry" Placeholder="mins" Keyboard="Numeric" Style="{StaticResource whiteTextFonts}" HorizontalTextAlignment="End"/>
-                    <Label Text="m" Style="{StaticResource whiteTextFonts}" VerticalTextAlignment="Center"/>
-                </StackLayout>
-                <Label Text="Comments" Style="{StaticResource whiteLargeFonts}"/>
-                <Editor x:Name="commentsEditor" Text="Enter comments here..." VerticalOptions="FillAndExpand"/>
-                <Button x:Name="logSessionButton" Text="Log Session" Style="{StaticResource buttonStyle}" Clicked="logSessionButtonClicked"/>
+            <StackLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20">
+                <Label x:Name="titleLabel" Text="Session Details" Style="{StaticResource labelFontAppColor}" HorizontalTextAlignment="Center"/>
+                <Frame>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with {0:N}'}}" FontAttributes="Bold" Style="{StaticResource textFont}"/>
+                        <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
+                        <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Duration: " VerticalTextAlignment="Center" Style="{StaticResource textFont}"/>
+                            <Entry x:Name="durationHoursEntry" Placeholder="hours" Keyboard="Numeric" Style="{StaticResource textFont}" HorizontalTextAlignment="End"/>
+                            <Label Text="h" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="durationMinsEntry" Placeholder="mins" Keyboard="Numeric" Style="{StaticResource textFont}" HorizontalTextAlignment="End"/>
+                            <Label Text="m" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Comments" Style="{StaticResource labelFontAppColor}" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                <Frame VerticalOptions="FillAndExpand">
+                    <Editor x:Name="commentsEditor" Text="Enter comments here..." VerticalOptions="FillAndExpand"/>
+                </Frame>
+                <Button x:Name="logSessionButton" Text="Log Session" Style="{StaticResource buttonStyle}" Clicked="logSessionButtonClicked" Margin="0,20,0,0"/>
             </StackLayout>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>
     </ContentPage>
-
     <ContentPage Title="Suggest Resources">
-        <StackLayout  Padding="20,5">
-            <SearchBar x:Name="searchAllResourcesSearchBar" TextChanged="searchAllOnTextChanged"/>
-            <ListView x:Name="allResourcesList" HasUnevenRows="True" SeparatorColor="#449D44" ItemTapped="ResourceItemTapped">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
-                                    <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource whiteTextFonts}"/>
-                                    <Label Text="{Binding shortDescription}" Style="{StaticResource whiteTextFonts}" />
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20">
+                <SearchBar x:Name="searchAllResourcesSearchBar" TextChanged="searchAllOnTextChanged"/>
+                <ListView x:Name="allResourcesList" HasUnevenRows="True" Style="{StaticResource listStyle}" ItemTapped="ResourceItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical"  Margin="0,10" Spacing="1" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold" Style="{StaticResource textFont}"/>
+                                        <Label Text="{Binding shortDescription}" Style="{StaticResource textFont}" />
+                                    </StackLayout>
                                 </StackLayout>
-                                <Image x:Name="tickImage" Source="unticked.png">
-                                    
-                                </Image>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <ActivityIndicator x:Name="spinner2" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
+        </AbsoluteLayout>
     </ContentPage>
 </TabbedPage>

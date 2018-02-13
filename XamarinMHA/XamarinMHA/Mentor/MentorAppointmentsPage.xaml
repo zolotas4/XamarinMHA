@@ -12,7 +12,8 @@
                             <ViewCell>
                                 <StackLayout Orientation="Vertical" Spacing="2" Margin="0,10,0,10">
                                     <Label Text="{Binding PersonFirstLastName, StringFormat='Appointment with: {0:N}'}}" Style="{StaticResource textFont}" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Date}" Style="{StaticResource textFont}"/>
+                                    <Label Text="{Binding Date, StringFormat='Date: {0:N}'}" Style="{StaticResource textFont}" />
+                                    <Label Text="{Binding Time, StringFormat='Time: {0:N}'}" Style="{StaticResource textFont}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

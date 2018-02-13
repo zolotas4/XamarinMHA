@@ -5,12 +5,12 @@ LoginPage [DONE]
 RegisterPage [DONE]
 ResourcesPage [DONE]
 SosPage [DONE]
-MentorAllSessionsList
-MentorAppointmentDetails
-MentorAppointments
+MentorAllSessionsList [DONE]  - Spinner
+MentorAppointmentDetails [DONE]
+MentorAppointments [DONE]
 MentorHome [DONE]
-MentorLogSession
-MentorRegisterPage
+MentorLogSession [DONE] - Suggest resources is not working properly - Spinner
+MentorRegisterPage [DONE]
 MentorRegistrationSuccessful
 UserProfileApproval
 BookAppointment
