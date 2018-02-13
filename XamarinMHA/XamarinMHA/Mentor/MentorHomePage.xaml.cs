@@ -56,10 +56,34 @@ namespace XamarinMHA
 
         async void MyApointmentsImageTapped(object sender, EventArgs args)
         {
+            List<Session> sessionsList = new List<Session>();
+            Utilities.toggleSpinner(spinner);
+            HttpClient oHttpClient = new HttpClient();
+            string url = Utilities.LOCALHOST + "sessions/search/findByMentorGreaterThanOrderByDateAsc?mentor=" + mentor.UserName + "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
+            Debug.WriteLine(url);
+            var response = await oHttpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response.Content.ReadAsStringAsync()).Embedded.Sessions;
+            }
+
+            List<TempSession> formattedSessionsList = new List<TempSession>();
+
+            foreach (Session session in sessionsList)
+            {
+                HttpClient oHttpClient2 = new HttpClient();
+
+                string url2 = Utilities.LOCALHOST + "people/search/findByUserName?username=" + session.Person;
+                HttpResponseMessage response2 = await oHttpClient.GetAsync(url2);
+                Person user = JsonConvert.DeserializeObject<Person>(await response2.Content.ReadAsStringAsync());
+                TempSession tempSession = new TempSession(user.FirstLastName, session.date.ToString("dd-MM-yyyy"), Utilities.FindTimeBaseOnSlotNumber(session.startingSlotNumber), session);
+                formattedSessionsList.Add(tempSession);
+            }
             MentorAppointmentsPage mentorAppointmentsPage = new MentorAppointmentsPage
             {
-                BindingContext = mentor
+                BindingContext = formattedSessionsList
             };
+            Utilities.toggleSpinner(spinner);
             await Navigation.PushAsync(mentorAppointmentsPage);
         }
 

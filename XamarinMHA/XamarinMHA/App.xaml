@@ -57,6 +57,11 @@
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>
                 <Setter Property="FontFamily" Value="{StaticResource fontAwesomeBrandString}" />
             </Style>
+            <Style x:Key="fontAwesomeBrandTextFont" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="{DynamicResource testColor}"/>
+                <Setter Property="FontFamily" Value="{StaticResource fontAwesomeBrandString}" />
+            </Style>
             <Style x:Key="fontAwesomeLarge" TargetType="Label">
                 <Setter Property="FontSize" Value="80"/>
                 <Setter Property="TextColor" Value="{DynamicResource appColor}"/>

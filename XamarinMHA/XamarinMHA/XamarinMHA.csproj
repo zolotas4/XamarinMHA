@@ -42,6 +42,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mentor\MentorAppointmentDetails.xaml.cs">
+      <DependentUpon>MentorAppointmentDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User\FundingEmbeddedWrapper.cs" />
     <Compile Include="User\TimeLeftPage.xaml.cs">
       <DependentUpon>TimeLeftPage.xaml</DependentUpon>
@@ -372,6 +375,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="User\UserSocialAccountsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mentor\MentorAppointmentDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

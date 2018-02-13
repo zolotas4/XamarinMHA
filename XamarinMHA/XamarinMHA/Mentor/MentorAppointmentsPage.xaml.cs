@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static XamarinMHA.MentorHomePage;
 
 namespace XamarinMHA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MentorAppointmentsPage : ContentPage
     {
-        private Mentor mentor;
         public MentorAppointmentsPage()
         {
             InitializeComponent();
@@ -27,38 +27,27 @@ namespace XamarinMHA
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            Utilities.toggleSpinner(spinner);
-            populateListWithAppointments();
-            Utilities.toggleSpinner(spinner);
+            
         }
 
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
-            mentor = (Mentor)BindingContext;
-        }
-
-        async void populateListWithAppointments()
-        {
-            SessionEmbeddedWrapper sessionsList = new SessionEmbeddedWrapper();
-            HttpClient oHttpClient = new HttpClient();
-            string url = Utilities.LOCALHOST + "sessions/search/findByMentorGreaterThanOrderByDateAsc?mentor=" + mentor.UserName + "&date=" + DateTime.Now.ToString("yyyy-MM-dd");
-            Debug.WriteLine(url);
-            var response = await oHttpClient.GetAsync(url);
-            if (response.IsSuccessStatusCode)
+            List<TempSession> appointments = (List<TempSession>)BindingContext;
+            foreach (TempSession s in appointments)
             {
-                sessionsList = JsonConvert.DeserializeObject<SessionEmbeddedWrapper>(await response.Content.ReadAsStringAsync());
+                Debug.WriteLine(s.PersonFirstLastName);
             }
-            AppointmentsList.ItemsSource = sessionsList.Embedded.Sessions;
+            AppointmentsList.ItemsSource = appointments;
         }
 
         async void AppointmentSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            UserProfileForApproval userProfileForApproval = new UserProfileForApproval
+            MentorAppointmentDetails mentorAppointmentDetails = new MentorAppointmentDetails
             {
                 BindingContext = e.SelectedItem
             };
-            await Navigation.PushAsync(userProfileForApproval);
+            await Navigation.PushAsync(mentorAppointmentDetails);
         }
     }
 }
