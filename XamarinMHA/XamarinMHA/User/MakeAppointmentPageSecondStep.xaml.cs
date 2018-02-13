@@ -102,7 +102,7 @@ namespace XamarinMHA
                 {
                     previousTappedItem.BackgroundColor = Color.Transparent;
                 }
-                ((Label) e.SelectedItem).BackgroundColor = Color.FromHex("#449D44");
+                ((Label)e.SelectedItem).BackgroundColor = (Color) Application.Current.Resources["appColorNotString"]; //Color.FromHex("#449D44");
                 previousTappedItem = (Label) e.SelectedItem;
                 bookAppointment.IsEnabled = true;
                 //((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.

@@ -5,26 +5,32 @@
              Title="Make an Appointment">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Margin="20">
                 <StackLayout>
-                    <Label Text="Select Date" Style="{StaticResource whiteLargeFonts}"/>
-                    <DatePicker x:Name="dateEntry" Format="dd-MM-yyyy" TextColor="White"/>
-                    <Label Text="Select Mentor" Style="{StaticResource whiteLargeFonts}" x:Name="selectMentorLabel"/>
-                    <StackLayout Orientation="Horizontal" x:Name="mentorSelectionContainer">
-                        <Image Source="icon.png" x:Name="MentorPic"></Image>
-                        <Picker x:Name="mentorPicker" HorizontalOptions="FillAndExpand" SelectedIndexChanged="mentorPickerSelectedIndexChanged" TextColor="White"></Picker>
-                    </StackLayout>
-                    <Label Text="Select Slot Duration" Style="{StaticResource whiteLargeFonts}"/>
-                    <Picker x:Name="slotDurationPicker" HorizontalOptions="FillAndExpand" TextColor="White">
-                        <Picker.Items>
-                            <x:String>30 Minutes</x:String>
-                            <x:String>1 Hour</x:String>
-                            <x:String>2 Hours</x:String>
-                        </Picker.Items>
-                        <Picker.SelectedIndex>0</Picker.SelectedIndex>
-                    </Picker>
-                    <Button x:Name="findSlotButton"  Text="Find Slot" Clicked="findSlotButtonClicked" Style="{StaticResource buttonStyle}"/>
+                    <Label Text="Select Date and Duration" Style="{StaticResource appLargeFonts}" HorizontalTextAlignment="Center"/>
+                    <Frame HorizontalOptions="Center">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <DatePicker x:Name="dateEntry" Format="dd-MM-yyyy"/>
+                                <Picker x:Name="slotDurationPicker" >
+                                    <Picker.Items>
+                                        <x:String>30 Minutes</x:String>
+                                        <x:String>1 Hour</x:String>
+                                        <x:String>2 Hours</x:String>
+                                    </Picker.Items>
+                                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                                </Picker>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Select Mentor" Style="{StaticResource appLargeFonts}" x:Name="selectMentorLabel" HorizontalTextAlignment="Center" Margin="0,10,0,0"/>
+                    <Frame HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" x:Name="mentorSelectionContainer">
+                            <Image Source="emptyUser.png" x:Name="MentorPic" WidthRequest="90"></Image>
+                            <Picker x:Name="mentorPicker" SelectedIndexChanged="mentorPickerSelectedIndexChanged" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button x:Name="findSlotButton"  Text="Find Slot" Clicked="findSlotButtonClicked" Style="{StaticResource buttonStyle}" Margin="0,20,0,0"/>
                 </StackLayout>
             </ScrollView>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>

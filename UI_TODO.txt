@@ -11,12 +11,12 @@ MentorAppointments [DONE]
 MentorHome [DONE]
 MentorLogSession [DONE] - Suggest resources is not working properly - Spinner
 MentorRegisterPage [DONE]
-MentorRegistrationSuccessful
+MentorRegistrationSuccessful 
 UserProfileApproval
 BookAppointment
 DetailedResource [DONE]
-MakeAppointment
-MakeAppointmentSecondStep
+MakeAppointment [DONE]
+MakeAppointmentSecondStep [DONE] - List is occupying more space than needed
 MyAppointmentsUser [DONE]
 TimeLeft [DONE]
 UploadVerificationDocument
@@ -27,3 +27,5 @@ UserProfile
 UserResources [DONE]
 UserSocialAccounts [DONE]
 MainPage [DONE]
+AdminHome
+ApproveSubmittedUsers

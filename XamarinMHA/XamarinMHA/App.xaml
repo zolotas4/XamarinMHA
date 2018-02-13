@@ -106,6 +106,16 @@
             <Style x:Key="listStyle" TargetType="ListView">
                 <Setter Property="SeparatorColor" Value="{DynamicResource appColor}"/>
             </Style>
+            <Color x:FactoryMethod="FromHex" x:Key="appColorNotString">
+                <x:Arguments>
+                    <x:String>#EB004C</x:String>
+                </x:Arguments>
+            </Color>
+            <Color x:FactoryMethod="FromHex" x:Key="textColorNotString">
+                <x:Arguments>
+                    <x:String>#454343</x:String>
+                </x:Arguments>
+            </Color>
             <x:String x:Key="appColor">#EB004C</x:String>
             <x:String x:Key="textColor">#454343</x:String>
         </ResourceDictionary>

@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinMHA.BookAppointmentPage">
+             x:Class="XamarinMHA.BookAppointmentPage"
+             Title="Appointment Booked">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Margin="20">
                 <StackLayout>
-                    <Label x:Name="titleLabel" />
-                    <Image Source="tick.png"></Image>
-                    <Label x:Name="confirmationText" Style="{StaticResource whiteLargeFonts}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center"></Label>
-                    <Button x:Name="backToHomeButton"  Text="Home" Clicked="backToHomeButtonClicked" Style="{StaticResource buttonStyle}"/>
+                    <Label Text="&#xf058;" HorizontalTextAlignment="Center" Style="{StaticResource fontAwesomeLarge}"/>
+                    <Label x:Name="confirmationText" Style="{StaticResource textFont}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center" Margin="0,20,0,20"/>
+                    <Button x:Name="backToHomeButton"  Text="Home" Clicked="backToHomeButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="Center"/>
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

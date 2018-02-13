@@ -2,21 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinMHA.MakeAppointmentPageSecondStep"
-             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             Title="Select Time">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20">
                 <StackLayout>
-                    <Label x:Name="titleLabel" />
-                    <flv:FlowListView x:Name="mentorAvailableSlotsListFlow" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="false" FlowItemTapped="mentorAvailableSlotsListFlow_ItemSelected">
+                    <flv:FlowListView x:Name="mentorAvailableSlotsListFlow" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="false" FlowItemTapped="mentorAvailableSlotsListFlow_ItemSelected" VerticalOptions="FillAndExpand">
                         <flv:FlowListView.FlowColumnTemplate>
                             <DataTemplate>
-                                <Label HorizontalOptions="Fill" VerticalOptions="Fill" XAlign="Center" YAlign="Center" Text="{Binding Time}" TextColor="White"/>
+                                <Label HorizontalOptions="Fill" VerticalOptions="Fill" XAlign="Center" YAlign="Center" Text="{Binding Time}" TextColor="{StaticResource textColorNotString}"/>
                             </DataTemplate>
                         </flv:FlowListView.FlowColumnTemplate>
                     </flv:FlowListView>
-                    <Button x:Name="bookAppointment"  Text="Book Appointment" Clicked="bookAppointmentButtonClicked" Style="{StaticResource buttonStyle}" IsEnabled="False"/>
+                    <Button x:Name="bookAppointment"  Text="Book Appointment" Clicked="bookAppointmentButtonClicked" Style="{StaticResource buttonStyle}" IsEnabled="False" Margin="0,20,0,0"/>
                 </StackLayout>
             </ScrollView>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
