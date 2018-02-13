@@ -36,10 +36,9 @@ namespace XamarinMHA
             await Navigation.PushAsync(userProfile);
         }
 
-        async void LogSessionsImageTapped(object sender, EventArgs args)
+        async void MentorRegistrationImageTapped(object sender, EventArgs args)
         {
-
-            var imageSender = (Image)sender;
+            await Navigation.PushAsync(new MentorRegisterPage());
         }
 
         async void ApproveUsersImageTapped(object sender, EventArgs args)

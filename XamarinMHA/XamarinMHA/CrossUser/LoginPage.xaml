@@ -4,7 +4,6 @@
              Title="Login">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sign Up" Clicked="RegisterButtonClicked"/>
-        <ToolbarItem Text="Mentor Sign Up" Clicked="MentorRegisterButtonClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

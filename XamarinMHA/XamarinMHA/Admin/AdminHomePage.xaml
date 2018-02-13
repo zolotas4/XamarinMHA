@@ -38,10 +38,10 @@
                 <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,0">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource fontAwesome}" Text="&#xf303;" HorizontalTextAlignment="Center"/>
-                        <Label Text="Log Sessions" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
+                        <Label Text="Mentor&#10;Registration" HorizontalTextAlignment="Center" Style="{StaticResource appLargeFonts}"/>
                     </StackLayout>
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="LogSessionsImageTapped" />
+                        <TapGestureRecognizer Tapped="MentorRegistrationImageTapped" />
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
