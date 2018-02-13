@@ -87,6 +87,15 @@ namespace XamarinMHA
             await Navigation.PushAsync(mentorAppointmentsPage);
         }
 
+        private async Task LogoutButtonClicked(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("Logout", "Are you sure?", "Yes", "No");
+            if (answer == true)
+            {
+                await Navigation.PopToRootAsync();
+            }
+        }
+
         public class TempSession
         {
             public TempSession(String personFirstLastName, String date, String time, Session session)

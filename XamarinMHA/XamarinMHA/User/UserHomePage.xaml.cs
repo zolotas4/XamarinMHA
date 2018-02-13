@@ -68,9 +68,13 @@ namespace XamarinMHA
             
         }
 
-        private void LogoutButtonClicked(object sender, EventArgs e)
+        private async Task LogoutButtonClicked(object sender, EventArgs e)
         {
-
+            var answer = await DisplayAlert("Logout", "Are you sure?", "Yes", "No");
+            if (answer == true)
+            {
+                await Navigation.PopToRootAsync();
+            }
         }
     }
 }

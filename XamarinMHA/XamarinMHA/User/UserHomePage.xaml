@@ -55,8 +55,6 @@
             </Grid>
     </ContentPage.Content>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Logout" Order="Primary" Clicked="LogoutButtonClicked">
-
-        </ToolbarItem>
+        <ToolbarItem Text="Logout" Order="Primary" Clicked="LogoutButtonClicked"/>
     </ContentPage.ToolbarItems>
 </ContentPage>
