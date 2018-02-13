@@ -16,7 +16,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="uoyWide.png" Aspect="AspectFill"/>
-                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Text="{Binding FirstName, StringFormat='Welcome {0}.'}" Style="{StaticResource whiteLargeFonts}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0"/>
                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,1,1">
                     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Style="{StaticResource fontAwesome}" Text="&#xf274;" HorizontalTextAlignment="Center" />

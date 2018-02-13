@@ -9,7 +9,6 @@
             <Label x:Name="Description" Text="{Binding description, StringFormat='Description: {0:N}'}}" Style="{StaticResource textFont}"/>
             <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="FillAndExpand">
                 <Button Text="Download" Clicked="DownloadButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Send Email" Clicked="DownloadButtonClicked"  Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

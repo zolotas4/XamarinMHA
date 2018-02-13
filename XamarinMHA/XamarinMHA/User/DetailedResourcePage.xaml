@@ -9,13 +9,19 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
             <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Padding="20,20,20,20">
-                <Label Text="{Binding title, StringFormat='Title: {0:N}'}}" FontAttributes="Bold"/>
-                <Label x:Name="Author" Text="Author:" />
-                <Label x:Name="Description" Text="{Binding title, StringFormat='Description: {0:N}'}}" />
-                <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="FillAndExpand">
-                    <Button Text="Download" Clicked="DownloadButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Send To Email" Clicked="SendToEmailButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
+                <Label x:Name="Author" Text="{Binding author, StringFormat='Author: {0:N}'}}"  Style="{StaticResource textFont}" />
+                <Label x:Name="Description" Text="{Binding description, StringFormat='Description: {0:N}'}}" Style="{StaticResource textFont}"/>
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Text="Download" Clicked="DownloadButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
+                    <Button Grid.Row="0" Grid.Column="1" Text="Send To Email" Clicked="SendToEmailButtonClicked" Style="{StaticResource buttonStyle}" HorizontalOptions="FillAndExpand"/>
+                </Grid>
             </StackLayout>
             <ActivityIndicator x:Name="spinner" Color="Red" IsRunning="false" IsVisible="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"/>
         </AbsoluteLayout>

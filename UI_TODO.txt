@@ -8,13 +8,13 @@ SosPage [DONE]
 MentorAllSessionsList
 MentorAppointmentDetails
 MentorAppointments
-MentorHome
+MentorHome [DONE]
 MentorLogSession
 MentorRegisterPage
 MentorRegistrationSuccessful
 UserProfileApproval
 BookAppointment
-DetailedResource
+DetailedResource [DONE]
 MakeAppointment
 MakeAppointmentSecondStep
 MyAppointmentsUser [DONE]
