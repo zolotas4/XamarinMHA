@@ -44,7 +44,6 @@ namespace XamarinMHA
 
         async void ApproveUsersImageTapped(object sender, EventArgs args)
         {
-            var imageSender = (Image)sender;
             ApproveSubmittedUsersPage approveSubmittedUsersPage = new ApproveSubmittedUsersPage
             {
                 BindingContext = admin

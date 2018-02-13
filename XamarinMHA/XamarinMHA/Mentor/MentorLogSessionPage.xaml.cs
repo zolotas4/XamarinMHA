@@ -23,7 +23,6 @@ namespace XamarinMHA
 
         TempSession tempSession;
         string sContentType = "application/json";
-        Person user;
         public MentorLogSessionPage()
         {
             InitializeComponent();

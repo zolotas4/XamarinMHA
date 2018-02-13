@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" VerticalOptions="CenterAndExpand">
-                <Frame Style="{StaticResource loginFrame}"  Margin="60">
+                <Frame Style="{StaticResource loginFrame}"  Margin="20">
                     <StackLayout x:Name="LoginPageLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                             <Label Text="Username:" VerticalTextAlignment="Center"  Style="{StaticResource labelFont}"/>

@@ -5,24 +5,40 @@
              Title="Edit your Details">
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <Label Text="First Name" />
-                <Entry x:Name="firstNameEntry" Text="{Binding FirstName}"/>
-                <Label Text="Last Name" />
-                <Entry x:Name="lastNameEntry" Text="{Binding LastName}"/>
-                <Label Text="Email" />
-                <Entry x:Name="emailEntry" Keyboard="Email" Text="{Binding Email}"/>
-                <Label Text="Date of Birth" />
-                <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy" />
-                <Label Text="Phone" />
-                <Entry x:Name="phoneEntry" Keyboard="Numeric" Text="{Binding Phone}"/>
-                <Label Text="Username" />
-                <Entry x:Name="usernameEntry" Text="{Binding UserName}"/>
-                <Label Text="Password" />
-                <Entry x:Name="passwordEntry" IsPassword="true" />
-                <Button Text="Save" Style="{StaticResource buttonStyle}"/>
-                <Label x:Name="SaveDetailsButton" />
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Margin="20">
+                <Frame>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="First Name:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="firstNameEntry" Text="{Binding FirstName}" Style="{StaticResource textFont}" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Last Name:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="lastNameEntry" Text="{Binding LastName}" Style="{StaticResource textFont}" HorizontalOptions="FillAndExpand"/>
+                         </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Email:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="emailEntry" Keyboard="Email" Text="{Binding Email}" Style="{StaticResource textFont}" HorizontalOptions="FillAndExpand"/>
+                         </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Date of Birth:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <DatePicker x:Name="dobEntry" Format="dd-MM-yyyy" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Phone:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="phoneEntry" Keyboard="Numeric" Text="{Binding Phone}" Style="{StaticResource textFont}" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Username:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="usernameEntry" Text="{Binding UserName}" Style="{StaticResource textFont}" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Password:" Style="{StaticResource textFont}" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="passwordEntry" IsPassword="true" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Save" Style="{StaticResource buttonStyle}" Margin="0,20,0,0"/>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

@@ -117,7 +117,7 @@
     <Compile Include="User\UserDetailsPage.xaml.cs">
       <DependentUpon>UserDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Mentor\UserProfileForApproval.xaml.cs">
+    <Compile Include="Admin\UserProfileForApproval.xaml.cs">
       <DependentUpon>UserProfileForApproval.xaml</DependentUpon>
     </Compile>
     <Compile Include="User\UserProfilePage.xaml.cs">
@@ -290,7 +290,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mentor\UserProfileForApproval.xaml">
+    <EmbeddedResource Include="Admin\UserProfileForApproval.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

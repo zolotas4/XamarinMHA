@@ -11,21 +11,21 @@ MentorAppointments [DONE]
 MentorHome [DONE]
 MentorLogSession [DONE] - Suggest resources is not working properly - Spinner
 MentorRegisterPage [DONE]
-MentorRegistrationSuccessful 
-UserProfileApproval
-BookAppointment
+UserResources [DONE]
+UserSocialAccounts [DONE]
+MainPage [DONE]
+BookAppointment [DONE]
 DetailedResource [DONE]
 MakeAppointment [DONE]
 MakeAppointmentSecondStep [DONE] - List is occupying more space than needed
 MyAppointmentsUser [DONE]
 TimeLeft [DONE]
-UploadVerificationDocument
-UserAppointmentDetails [DONE]
-UserDetails
 UserHome [DONE]
-UserProfile
-UserResources [DONE]
-UserSocialAccounts [DONE]
-MainPage [DONE]
-AdminHome
-ApproveSubmittedUsers
+UserAppointmentDetails [DONE]
+UserDetails [DONE]
+UploadVerificationDocument [DONE]
+MentorRegistrationSuccessful 
+UserProfileApproval [DONE]
+UserProfile [DONE]
+AdminHome [DONE]
+ApproveSubmittedUsers [DONE]

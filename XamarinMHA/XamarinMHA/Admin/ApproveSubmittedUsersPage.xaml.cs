@@ -24,7 +24,9 @@ namespace XamarinMHA
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Utilities.toggleSpinner(spinner);
             populateListWithSubmittedButNotApprovedUsers();
+            Utilities.toggleSpinner(spinner);
         }
 
         async void populateListWithSubmittedButNotApprovedUsers()

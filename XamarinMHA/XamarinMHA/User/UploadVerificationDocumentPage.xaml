@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinMHA.UploadVerificationDocumentPage">
+             x:Class="XamarinMHA.UploadVerificationDocumentPage"
+             Title="Upload Proofs">
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Image Style="{StaticResource backImage}"/>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
             <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
-                <StackLayout>
-                    <Label x:Name="IntroText" Text="An email was sent to the provided email adress containg instructions on how to verify your subscription. Please use the following button to upload the required proof." />
-                    <Button x:Name="SelectImageButton"  Text="Select Image" Clicked="SelectImageButtonClicked" Style="{StaticResource buttonStyle}"/>
+                <StackLayout Padding="20">
+                    <Label Text="&#xf1d8;" Style="{StaticResource fontAwesome}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="IntroText" Text="An email was sent to the provided email adress containg instructions on how to verify your subscription. Please use the following button to upload the required proof." Style="{StaticResource textFont}" HorizontalTextAlignment="Center"/>
+                    <Button x:Name="SelectImageButton"  Text="Select Image" Clicked="SelectImageButtonClicked" Style="{StaticResource buttonStyle}" Margin="0,20,0,20"/>
                     <Image x:Name="VerificationFormImageHolder" IsVisible="False"></Image>
-                    <Button x:Name="UploadImageButton" Text="Upload Image" Clicked="UploadImageButtonClicked" IsVisible="False" Style="{StaticResource buttonStyle}"/>
+                    <Button x:Name="UploadImageButton" Text="Upload Image" Clicked="UploadImageButtonClicked" IsVisible="False" Style="{StaticResource buttonStyle}" Margin="0,20,0,0"/>
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

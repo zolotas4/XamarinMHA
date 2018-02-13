@@ -32,7 +32,7 @@ namespace XamarinMHA
             user = (Person)BindingContext;
             if (user.Submitted == "true")
             {
-                IntroText.Text = "We have received your verification form. We will email you when it has been approved.";
+                IntroText.Text = "We have received your verification form. We will send you an email when it has been approved.";
                 UploadImageButton.IsVisible = false;
                 SelectImageButton.IsVisible = false;
             }
